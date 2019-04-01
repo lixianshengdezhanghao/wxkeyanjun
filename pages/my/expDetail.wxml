@@ -1,0 +1,7 @@
+<!--pages/index/experimentdetail.wxml-->
+<view class="page">
+<view>{{experiment}}</view>
+<view>{{description}}</view>
+<image class='image_frame' src="{{imageUrl}}" mode="aspectFill">
+</image>
+</view>

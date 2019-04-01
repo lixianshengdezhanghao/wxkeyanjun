@@ -1,0 +1,36 @@
+<view class='page'>
+  <view class="page__bd container__bd">
+    <view class="weui-cells weui-cells_after-title ">
+      <!-- 套件信息 -->
+      <navigator url="./notice_detail/notice_detail?bindinfo={{bindinfo}}" bindtap="toDetail">
+        <view class="notice-content">
+          <image class="icon" src="../../../images/customer/taojian.png"></image>
+          <!-- <view wx:if="{{noticeNumOfBind}}"> {{noticeNumOfBind}}</view> -->
+          <view class="text">套件信息
+            <view class="introduction">简单的介绍</view>
+          </view>
+        </view>
+      </navigator>
+      <!-- 套件信息结束 -->
+
+      <!-- 订单通知 -->
+        <view class="notice-content" bindtap="toOrder">
+          <image class="icon" src="../../../images/customer/dingdan.png"></image>
+          <view class="text">项目进度
+              <view class="introduction">简单的介绍</view>
+          </view>
+        </view>
+      <!-- 订单通知结束 -->
+
+      <!-- 物流跟踪 -->
+      <view class="notice-content" bindtap="toLogistics">
+        <image class="icon" src="../../../images/customer/wuliu.png"></image>
+        <view class="text">物流跟踪
+            <view class="introduction">简单的介绍</view>
+        </view>
+      </view>
+      <!-- 物流跟踪结束 -->
+
+    </view>  
+  </view>
+</view>

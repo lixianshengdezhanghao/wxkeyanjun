@@ -1,0 +1,58 @@
+<view class='page'>
+  <view class="page__hd">
+    <view class="container">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view class="page__bd container__bd">
+    <view class="weui-cells weui-cells_after-title ">
+      <navigator url="./order" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd notice ">
+          <image style="width:50rpx;height:50rpx" src="/images/order.png" background-size="cover"></image>
+          <view class="weui-cell__bd text-my">{{content.myOrder}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    <view class="weui-cells weui-cells_after-title ">
+      <navigator url="./discount" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd notice ">
+          <image style="width:50rpx;height:50rpx" src="/images/discount.png" background-size="cover"></image>
+          <view class="weui-cell__bd text-my">{{content.myDiscount}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    <view class="weui-cells weui-cells_after-title ">
+      <navigator url="../userInfo/userInfo" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd notice ">
+          <image style="width:50rpx;height:50rpx" src="/images/userinfo.png" background-size="cover"></image>
+          <view class="weui-cell__bd text-my">{{content.myInfo}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    <view class="weui-cells weui-cells_after-title ">
+      <navigator url="../protocol/protocol" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd notice ">
+          <image style="width:50rpx;height:50rpx" src="/images/userinfo.png" background-size="cover"></image>
+          <!-- <view class="weui-cell__bd text-my">{{content.myInfo}}</view> -->
+          <view class="weui-cell__bd text-my">查看protocol</view>
+
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <picker  class="weui-cell weui-cell_access" bindchange="bindLanguageChange" value="{{Language[index_Language]}}" range="{{content.Language}}" name='Language'>
+        <view class="weui-cell__bd  notice">
+          <image style="width:50rpx;height:50rpx" src="/images/setting.png" background-size="cover"></image>
+          <view class="weui-cell__bd text-my-language">{{content.changeLanguage}}</view>
+        </view>
+        <!-- <text class="weui-cell__ft weui-cell__ft_in-access">{{content.Language[index_Language]}}</text> -->
+      </picker>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,185 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title{
+  font-family: 隶书;
+  font-size: 40rpx;
+  color:	#4169E1;
+}
+.titleEnglish{
+  font-family: Times New Roman, Times, serif;
+  color:	#4169E1;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  font-size:30rpx;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.btnArea{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* .weui-btn{
+  width:200rpx;
+  height: 100rpx;
+} */
+.footer{
+  margin-top:30rpx;
+  display: flex;
+  flex-direction: row;
+}
+.units{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top:100rpx;
+  margin-left:50rpx
+}
+.unit{
+  margin-top:30rpx;
+  font-size: 28rpx;
+}
+.logo{
+   width: 50%; 
+  height: 100rpx;
+  padding-top: 2rpx;
+  margin-left: 5rpx;
+
+}
+.footer-image{
+  width:50%;
+  height:450rpx;
+}
+.copyright{
+  text-align: center;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.weui-btn-language{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  border-radius: 20rpx;
+  background-color:#87CEEB;
+   /* width:60%; */
+  height:60rpx;
+  margin:0 20%;
+  color:white;
+  font-size:28rpx;
+  box-shadow:0rpx 2rpx 5rpx 5rpx #BEBEBE;
+}
+.free-dialog__mask {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ z-index: 10;
+ background: rgba(0, 0, 0, 0.7);
+ display: none;
+}
+.free-dialog__container {
+ position: fixed;
+ left: 0;
+ bottom: 0;
+ width: 750rpx;
+ background: white;
+ transform: translateY(150%);
+ transition: all 0.4s ease;
+ z-index: 11;
+}
+.free-dialog--show .free-dialog__container {
+ transform: translateY(0);
+}
+.free-dialog--show .free-dialog__mask {
+ display: block;
+}
+/*模态框中的内容*/
+.free-button{
+ display: inline-block;
+ width:100rpx;
+ text-align: center;
+ font-size:30rpx;
+ color:#707070;
+ margin-bottom:20rpx;
+}
+.free-dialog-submit{
+ float: right;
+ color:#48c23d;
+}
+checkbox-group{
+ margin:10rpx 0rpx;
+}
+radio-group{
+ margin:10rpx 0rpx;
+}
+/* radio-group>label{
+ width:22.5%;
+ display: inline-block;
+ border:1rpx solid #ddd;
+ padding:10rpx 2rpx;
+ margin:0rpx 4rpx 4rpx;
+}
+ 
+radio-group label radio{
+ width:100%;
+ z-index: 3;
+ display: none;
+}
+.checked{
+ background:#48c23d;
+ color:#fff;
+}
+radio-group label .free-text{
+ width:100%;
+ text-align: center;
+ display: inline-block;
+ font-size:20rpx;
+} */
+.radios{
+  font-size:26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subradio{
+  margin-left: 20rpx;
+}
+
+.btn.on{
+  border:0.5rpx solid yellow;
+  color:yellow;
+  background-color: red
+}
+.btn::after{
+  border:0.5rpx solid blue;
+    /* background-color:#87CEEB; */
+}
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  border-radius: 30rpx;
+  /* background-color:red; */
+   /* width:60%; */
+  height:60rpx;
+  margin:0 20%;
+  color:white;
+  font-size:28rpx;
+}
+

@@ -1,0 +1,81 @@
+.input-project{
+border: 1rpx solid #CDC9C9 ;
+ /* margin: 30rpx 40rpx; */
+ padding: 0 10rpx;
+ display: flex;
+ font-size: 25rpx;
+ box-sizing: border-box;
+  width: 60%;
+  height: 60rpx;
+  border-radius: 8rpx;
+  align-items: center;
+  margin-top:10rpx;
+  margin-left:10rpx;
+}
+
+.weui-btn{
+  margin-top:200rpx;
+}
+
+.tempArr{ 
+  font-size: 25rpx;
+  background-color: #fff;
+  /* margin-left:20rpx; */
+  flex: 1;
+  padding:5rpx;
+  align-items: center;
+}
+.scroll{
+  font-size: 25rpx;
+  background-color: #fff;
+  margin-left:34%;
+  width:60%;
+  border:1rpx solid #CDC9C9;
+}
+.weui-search-bar__input{
+  font-size:23rpx;
+}
+.taxonPicker{
+  box-sizing: border-box;
+  width: 60%;
+  min-height: 60rpx;
+  /* height: 100rpx; */
+  border:1rpx solid #CDC9C9;
+  border-radius: 8rpx;
+  align-items: center;
+  padding: 0 10rpx;
+  margin-top:10rpx;
+  margin-left:10rpx;
+}
+.picker-FluidName{
+  box-sizing: border-box;
+  width: 60%;
+  min-height: 60rpx;
+  border:1rpx solid #CDC9C9;
+  border-radius: 8rpx;
+  align-items: center;
+  padding: 0 10rpx;
+  margin-top:10rpx;
+  margin-left:10rpx;
+}
+/*模态框中的内容*/
+.free-button{
+ display: inline-block;
+ width:100rpx;
+ text-align: center;
+ font-size:30rpx;
+ color:#707070;
+ margin-bottom:20rpx;
+}
+.free-dialog-submit{
+ float: right;
+ color:#48c23d;
+}
+/* picker{
+  height:inherit;
+} */
+.options{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

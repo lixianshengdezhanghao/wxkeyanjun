@@ -1,0 +1,15 @@
+
+/* .container__bd{
+  margin-top:20rpx;
+  padding:20rpx 30rpx;
+} */
+.text-my{
+  padding-left:60rpx;
+  font-size:30rpx;
+}
+.container{
+  border-bottom: 1rpx solid #fff; 
+  align-items: center;
+  margin-top:2rpx;
+  padding: 20rpx;
+}

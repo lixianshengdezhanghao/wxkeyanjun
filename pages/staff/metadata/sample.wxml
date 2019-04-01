@@ -1,0 +1,161 @@
+<view class='page'>
+  <view class='page__bd'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class='classify'>General</view>
+      <view class='select_box'>
+        <text class='select_info'> Project:</text>
+        <text class='select_text'>{{Project}}</text>
+      </view>
+      <view class='select_box'>
+
+        <text class='select_info'> Firmiana:</text>
+        <text class="select_text">{{Firmiana}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'> Project Manager:</text>
+        <text class="select_text">{{PM}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Experiment Type:</text>
+        <text class="select_text">{{ExperimentType}}</text>
+      </view>
+      <view class='classify'>Sample Preparation</view>
+      <view class='select_box'>
+        <text class='select_info' style='width:40%'> Sample Preparation Date:</text>
+        <text class="select_text"> {{date}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'> Operator:</text>
+
+        <text class='select_text'>{{operatorName}}</text>
+      </view>
+
+
+      <view class='select_box' name="conditionID">
+        <text class='select_info'>Sample Number:</text>
+        <text class='select_text'>{{conditionID}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Location:</text>
+        <picker mode="multiSelector" bindchange="bindLocationPicker" value="{{Location[0][LocationIndex[0]]}}-{{Location[1][LocationIndex[1]]}}-{{Location[2][LocationIndex[2]]}}-{{Location[3][LocationIndex[3]]}}-{{Location[4][LocationIndex[4]]}}" range="{{Location}}"
+          name="location">
+          <view class="weui-input" style='height:50rpx;'>
+            Location: {{Location[0][LocationIndex[0]]}}-{{Location[1][LocationIndex[1]]}}-{{Location[2][LocationIndex[2]]}}-{{Location[3][LocationIndex[3]]}}-{{Location[4][LocationIndex[4]]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class='select_box'>
+        <text class='select_info'>Taxons:</text>
+        <text class='select_text'>{{Taxons}}</text>
+      </view>
+      <view wx:if="{{sourceTypeSelected == '组织'}}">
+        <view class='select_box'>
+          <text class='select_info'>System:</text>
+          <text class='select_text'>{{System}}</text>
+        </view>
+        <view class='select_box'>
+          <text class='select_info'>organ:</text>
+          <text class='select_text'>{{organ}}</text>
+        </view>
+        <view class='select_box'>
+          <text class='select_info'>Status:</text>
+          <text class='select_text'>{{status}}</text>
+        </view>
+        <view class='select_box'>
+          <text class='select_info'>Sample storage:</text>
+          <text class='select_text'></text>
+        </view>
+      </view>
+      <view wx:if="{{sourceTypeSelected == '细胞'}}">
+        <view class='select_box'>
+          <text class='select_info'>Cell:</text>
+          <text class='select_text'>{{CellType}}</text>
+        </view>
+      </view>
+      <view wx:if="{{sourceTypeSelected == '体液'}}">
+        <view class='select_box'>
+          <text class='select_info'>Fluid:</text>
+          <text class='select_text'>{{CellType}}</text>
+        </view>
+      </view>
+      <!-- <view>
+    Genotype:
+    <input class='weui-input' bindinput="bindKeyInput" placeholder="{{GenoType}}" disabled="true"></input>
+  </view> -->
+      <view class='select_box'>
+        <text class='select_info'>Amount:</text>
+        <text class='select_text'>{{Amount}}</text>
+      </view>
+      <!-- <view>
+    Subcellular Organelle:
+    <input class='weui-input' bindinput="bindKeyInput"  placeholder="{{Subcellular}}" disabled="true"></input>
+  </view> -->
+      <!-- <view>
+    Digest Type:
+    <input class='weui-input' bindinput="bindKeyInput"  placeholder="{{DigestType}}" disabled="true"></input>
+  </view> -->
+      <view class='select_box'>
+        <text class='select_info'>Protocol:</text>
+        <text class='select_text'>{{Protocol}}</text>   
+      </view>
+
+
+      <view class='select_box'>
+        <text class='select_info'>Temporary placement:</text>
+        <input class='weui-input' bindinput="bindKeyInput" name="Temporary"></input>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Recommend loading:</text>
+        <input class='weui-input' bindinput="bindKeyInput" name="loading"></input>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>MS sample amount</text>
+        <input class='weui-input' bindinput="bindKeyInput" name="ms amount"></input>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Extra Comments:</text>
+        <input class='weui-input' bindinput="bindKeyInput" name="comments"></input>
+      </view>
+
+      <view class='classify'>MS analysis</view>
+      <view class='select_box'>
+        <text class='select_info'>MS analysis:</text>
+        <view class='select_text'>
+        <picker mode="date" value="{{date}}" start="2018-11-18" end="2020-09-01" bindchange="bindDateChange">
+          <text > {{date}}</text>
+        </picker>
+        </view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Operator:</text>
+        <text class='select_text'>{{app.globalData.userInfo.nickName}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Instrument:</text>
+        <text class='select_text'>{{Instrument}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Tolerance:</text>
+        <text class='select_text'>{{Tolerance}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Search Database:</text>
+        <text class='select_text'>{{Database}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Fixed Modification</text>
+        <text class='select_text'>{{Fixed}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Dynamic Modification:</text>
+        <text class='select_text'>{{Dynamic}}</text>
+      </view>
+
+      <view class="btn-area" >
+        <button class='weui-btn' style='font-size:25rpx;' formType="submit">Submit</button>
+        <button class='weui-btn' style='font-size:25rpx;' formType="reset">Reset</button>
+      </view>
+    </form>
+  </view>
+</view>

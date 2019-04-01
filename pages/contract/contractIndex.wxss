@@ -1,0 +1,29 @@
+.title{
+  margin-top:20rpx;
+  /* letter-spacing: 3rpx; */
+  font-size:40rpx;
+}
+.version{
+  text-align:center;
+  font-size: 25rpx;
+  margin:20rpx;
+}
+.contractNO{
+  margin:20rpx;
+}
+.projectName{
+  margin:10rpx;
+  font-size:30rpx;
+}
+.subTitle{
+  display: flex;
+  flex-direction: column;
+}
+.page__bd{
+  padding: 20rpx;
+  margin-top:20rpx;
+}
+.footer{
+  margin-top:200rpx;
+  text-align: center;
+}

@@ -1,0 +1,339 @@
+<view class='page'>
+  <view class='page__hd'>
+    <text class='title'> {{content.title}} </text>
+  </view>
+  <view class='page__bd'>
+    <!-- <view> 
+      <text class='contractNO'> {{content.contractNo}}: </text>
+    </view> -->
+
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <scroll-view scroll-y class='scroll-view ' scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class='contractContent'>
+          <!-- <view style='text-indent: 50rpx;'>本合同甲方委托乙方{{projectName}}项目进行专项技术服务，并支付相应的技术服务报酬。双方经过平等协商，在真实、充分地表达各自意愿的基础上，根据《中华人民共和国合同法》的规定，达成如下协议，并由双方共同恪守。</view> -->
+          <view class='indent'>
+          {{content.head1}}{{projectName}}{{content.head2}}
+            <!-- 依据《中华人民共和国合同法》的规定，合同双方就{{projectName}}项目的技术服务经协商一致，签订本合同。 -->
+          </view>
+          <view class='item'>
+            <text style='font-size:35rpx;'>{{content.title1}}</text>
+            <view class='indent'>{{content.title1_description1}}{{projectName}}{{content.title1_description2}}
+            </view>
+            <!-- <text>（属技术培训合同应当填写培训内容和要求、培训计划、进度，属技术中介合同应当填写中介内容和要求）</text>
+            <text>本合同甲方委托乙方{{projectName}}的探究项目进行专项技术服务，并支付相应的技术服务报酬。双方经过平等协商，在真实、充分地表达各自意愿的基础上，根据《中华人民共和国合同法》的规定，达成如下协议，并由双方共同恪守。</text> -->
+            <text class='entries'> {{content.Article1}} </text>  
+            <view   class='indent'> {{content.Article1_description}}{{projectName}}</view>
+            <text class='indent'>{{content.Article1_content}}</text>
+            <!-- <text class='entries'> 第一条 </text>  
+            <view> 甲方委托乙方进行技术服务的内容如下：{{projectName}}</view>
+            <view>1、样本制备 2、质谱鉴定 3、数据分析 </view> -->
+          </view>
+          <!-- <view class='item'>
+            <text class='entries'> 第二条 </text>
+            <view> 为保证乙方有效进行技术服务工作，甲方应当向乙方提供相关资料、数据、样品、批号等，包括：</view>
+            <view> 样品名称:{{sampleName}}</view>
+            <view> 样品批号:{{sampleBatchNumber}}</view>
+            <view> 乙方收到甲方提供的样本后，对样本质量进行检测，对检测合格样本进行质谱检测，检测不合格样本需及时跟甲方沟通，确认再次送样事宜。</view>
+          </view> -->
+          <view class='item'>
+            <text class='entries'> {{content.Article2}} </text>
+            <text class='indent'> {{content.Article2_description}}</text>
+            <view class='indent'> {{content.Article2_content}}</view>
+          </view>
+
+          <view class='item'>
+            <text style='font-size:35rpx;'>{{content.title2}}</text>
+            <text class='entries'> {{content.Article3}} </text>
+            <!-- <view> 双方约定，乙方在{{deadline}}之前完成全部检测服务，乙方负责向甲方提供复旦大学人类表型组研究院出具的检测报告原件一份。 合同签订后30个自然日内，甲方负责提供合格的样本给乙方； 乙方需要从收到合格样本开始的180个自然日内完成所有样本的质谱检测及数据分析工作，并向甲方提供复旦大学人类表型组研究院出具的检测报告原件一份。若过程中出现意料之外的事宜，甲乙双方协商解决。
+            </view> -->
+            <text class='indent'> {{content.Article3_description1}}</text>
+            <view class='indent'>{{content.Article3_sampleName}}</view>
+            <view class='indent'> {{content.Article3_sampleLotNumber}}</view>
+            <text class='indent'>{{content.Article3_description2}}</text>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> {{content.Article4}} </text>
+            <view class='indent'>{{content.Article4_description}}</view>
+            <view style='margin-left:30rpx;'>
+              <text> {{content.Article4_content}} </text>
+            </view>
+          </view>
+          <view class='item'>
+            <text class='entries'> {{content.Article5}}  </text>
+            <view class='indent'>{{content.Article5_description}}</view>
+            <view style='margin-left:30rpx;'>
+              <text> {{content.Article5_content}} </text>
+            </view>
+          </view>
+          <view class='item'>
+            <text style='font-size:35rpx;'>{{content.title3}}</text>
+            <view class='indent'>{{content.title3_description1}}{{time}}{{content.title3_description2}}{{content.title3_description3}}</view>
+            <view class='indent'>{{content.title3_description4}}</view>
+
+
+          </view>
+
+          <view class='item'>
+            <text class='entries'> {{content.Article6}} </text>
+            <view style='margin-left:30rpx;'>
+              <text class='indent'> {{content.Article6_description1}}{{day}} {{content.Article6_description2}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> {{content.Article7}} </text>
+            <text >{{content.Article7_description}}</text>
+            <view style='margin-left:30rpx;'>
+              <text class='indent'> {{content.Article7_content}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> {{content.Article8}} </text>
+            <view class='indent'>{{content.Article8_description1}}{{content.Article8_description2}}{{content.Article8_description3}}</view>
+            <view class='indent'>{{content.Article8_description4}}</view>
+            <view class='indent'>{{content.Article8_description5}}</view>
+            <!-- <view style='margin-left:30rpx;'>
+              <text> {{eighth}} </text>
+            </view> -->
+          </view>
+
+          <view class='item'>
+            <text class='entries'> {{content.Article9}} </text>
+            <view class='indent'>{{content.Article9_description}}</view>
+            <view style='margin-left:30rpx;'>
+              <text> {{content.Article9_content}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text style='font-size:35rpx;'>{{content.title4}}</text>
+            <view class='indent'>{{content.title4_description1}}
+            </view>
+            <view class='indent'> {{content.title4_description2}}
+            </view>
+
+          </view>
+
+          <view class='item'>
+            <text style='font-size:35rpx;'>{{content.title5}}</text>
+            <view class='indent'>{{content.title5_description1}}</view>
+             <view class='indent'>{{content.title5_content1}}{{}}</view>
+            <text>{{content.title5_description2}}</text>
+            </view>
+
+
+
+          <view class="table" style='margin:10rpx;'>
+            <view class="tr bg-w">
+              <view class="th-1">{{content.srvType}}</view>
+              <view class="th-2">{{content.srvContent}}</view>
+              <view class="th-3">{{content.amount}}</view>
+              <view class="th-4">{{content.unitPrice}}</view>
+              <view class="th-5">{{content.money}}</view>
+            </view>
+            <block wx:for="{{MoneyList}}" wx:key="{{category}}">
+              <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td-1" selectable="true">{{item.category}}</view>
+                <scroll-view wx:if='{{index==0}}' scroll-y class="td-2" style='height:100%;'>
+                  <text class="th-text" style='padding:4rpx'>{{item.content}}</text>
+                </scroll-view>
+                <view wx:else class="td-2" selectable="true" scroll-x="true">
+                  <text class="th-text" style="overflow-x:auto;overflow-y:scroll" selectable="true">{{item.content}}</text>
+                </view>
+                <view class="td-3" wx:if='{{index ==0}}' style="overflow-y:auto;overflow-x:scroll" selectable="true" scroll-y="true">
+                  <text wx:if='{{item.money!=0}}' class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true"> 样本数: {{totalConditionNumber}}</text>
+                </view>
+                <view wx:else class="td-3">
+                  <!-- <view class="th-text" wx:if='{{index ==2}}' style="overflow-y:auto;overflow-x:scroll" selectable="true"> -->
+                  <view wx:if='{{item.money!=0}}'>
+                    <view class="th-text">总技术重复数: {{item.amount}} </view>
+                    <view class="th-text">服务数: {{serviceNum}}</view>
+                  </view>
+                  <view wx:else>
+                    0
+                  </view>
+                  <!-- </view> -->
+                </view>
+                <scroll-view wx:if='{{index==0}}' class="td-4" scroll-y style='height:120rpx'>
+                  <view wx:for='{{item.unitPrice}}'>
+                    <text class="th-text">{{item}}</text>
+                  </view>
+                </scroll-view>
+                <view class="td-4" wx:else>
+                  <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.unitPrice}}</text>
+                </view>
+                <!-- <view class="td-4" selectable="true" scroll-y="true">
+                <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.unitPrice}}</text>
+              </view> -->
+                <view class="td-5" selectable="true" scroll-y="true">
+                  <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.money}}</text>
+                </view>
+                <!--view class="td">{{item.type}}</view-->
+              </view>
+              <view class="tr bg-g2" wx:else>
+                <view class="td-1" selectable="true">{{item.category}}</view>
+                <view class="td-2" selectable="true" scroll-y="true">
+                  <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.content}}</text>
+                </view>
+                <view class="td-3">
+                  <scroll-view scroll-y style='height:100%' wx:if='{{index == 1}}'>
+                    <text class="th-text" style='font-size:18rpx'> 技术重复 * 分级数:</text>
+                    <block wx:for='{{item.amount}}'>
+                      <text class="th-text">{{item.TR}} * {{item.FN}}</text>
+                    </block>
+                    <text class="th-text" style='font-size:20rpx'> 服务数: {{serviceNum}}</text>
+                  </scroll-view>
+                  <view wx:else>
+                    <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.amount}}</text>
+                  </view>
+
+                </view>
+                <view class="td-4" selectable="true" scroll-y="true">
+                  <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.unitPrice}}</text>
+                </view>
+                <view class="td-5" selectable="true" scroll-y="true">
+                  <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.money}}</text>
+                </view>
+              </view>
+            </block>
+          </view>
+
+
+
+          <text class='select_info'> {{content.totalMoney}}:</text>
+          <text class="input-number" name='TotalPrice'>{{TotalPrice}}</text>
+
+        </view>
+        <view>2．技术服务费由甲方按照以下第 种方式支付乙方。</view>
+        <radio-group class="radio-group" bindchange="paymentChange">
+          <label class="radio" wx:for="{{payment}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
+            <view style='margin-left:40rpx;'>
+              <text>{{item.value}}</text>
+            </view>
+          </label>
+        </radio-group>
+
+
+        <view class='item'>
+          <text style='font-size:35rpx;'>六、违约金或者损失赔偿额的计算方法：</text>
+          <view>违反本合同约定，违约方应当按照《中华人民共和国合同法》有关条款的规定，承担违约责任。</view>
+          <view>（一）甲方违反本合同第九条第2项约定，应当支付违约金，合同总金额的5%。
+          </view>
+          <view>(二)其它：</view>
+        </view>
+
+        <view class='item'>
+          <text style='font-size:35rpx;'>七、合同争议的解决方式：</text>
+          <view>在履行本合同过程中发生的争议，当事人双方可以通过和解或者调解解决。当事人不愿和解、调解或者和解、调解不成的，采用以下第 （一）种方式解决。</view>
+          <view>（一）双方同意由 仲裁委员会仲裁。</view>
+          <view>（二）向人民法院起诉，约定 人民法院管辖。</view>
+          <view>①被告住所地 ②合同履行地 ③合同签订地 ④原告住所地 ⑤标的物所在地</view>
+        </view>
+
+
+        <view class='item'>
+          <text style='font-size:35rpx;'>八：其它（上述条款未尽事宜，如中介方的权利、义务、服务费及其支付方式、定金、财产抵押及担保等）：无</text>
+        </view>
+
+
+
+
+        <!-- <view class='item'>
+            <text class='entries'> 第六条 </text>
+            <view style='margin-left:30rpx;'>
+              <text> {{sixth}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> 第七条 </text>
+            <view style='margin-left:30rpx;'>
+              <text> {{seventh}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> 第八条 </text>
+            <view style='margin-left:30rpx;'>
+              <text> {{eighth}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> 第九条 </text>
+            <view style='margin-left:30rpx;'>
+              <text> {{ninth}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> 第十条 </text>
+            <view style='margin-left:30rpx;'>
+              <text> {{tenth}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> 第十一条 </text>
+            <view style='margin-left:30rpx;'>
+              <text> {{eleventh}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> 第十二条 </text>
+            <view style='margin-left:30rpx;'>
+              <text> {{twelfth}} </text>
+            </view>
+          </view>
+
+          <view class='item'>
+            <text class='entries'> 第十三条 </text>
+            <view style='margin-left:30rpx;'>
+              <text> {{thirteenth}} </text>
+            </view>
+          </view>
+        </view>
+
+      <!-- </scroll-view> -->
+  <!-- </view> -->
+  </scroll-view>
+
+  <view class='subtitle_box'>
+    <text class='subtitle'> {{content.partyA}}:{{PartyA}}</text>
+  </view>
+  <view class='subtitle_box'>
+    <text class='subtitle'> {{content.legalOrPrincipal}}:{{legalPerson}}</text>
+  </view>
+  <view class='subtitle_box'>
+    <text class='subtitle'> {{content.seal}}:</text>
+    <button class='sign-btn' hover-class='click-button' bindtap='signName'> {{content.sign}}:</button>
+  </view>
+  <view class='subtitle_box'>
+    <image src='{{signImage}}' class='image-sign' />
+  </view>
+  <view class='subtitle_box' style='font-size:28rpx;margin-left:350rpx;'>{{content.date}}:{{time}} </view>
+
+
+  <view class='subtitle_box'>
+    <text class='subtitle'> {{content.partyB}}\t: \t\t{{content.partyB_content}}</text>
+  </view>
+  <view class='subtitle_box'>
+    <text class='subtitle'> {{content.legalOrPrincipal}}: \t\t {{content.legalRepresentative_content}}</text>
+  </view>
+  <view class='subtitle_box'>
+    <text class='subtitle'> {{content.seal}}:</text>
+    <!-- <button class='sign-btn' bindtap='signName'> 签名:</button> -->
+  </view>
+  <!-- <view class='subtitle_box'>
+        <image src='{{signImage}}' class='image-sign' />
+      </view> -->
+  <view class='subtitle_box' style='font-size:28rpx;margin-left:350rpx;'>{{content.date}}:{{time}} </view>
+  <button class='weui-btn' hover-class='click-button' formType="submit">{{content.confirm}}</button>
+
+  </form>
+</view>
+</view>

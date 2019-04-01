@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Firmiana  个人蛋白质组检测服务",
+    "usingComponents": {
+        "v-steps": "/component/steps/steps"
+    }
+}

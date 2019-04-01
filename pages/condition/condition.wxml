@@ -1,0 +1,222 @@
+<view class='page'>
+  <scroll-view scroll-y style="height: 1250rpx;" scroll-top="{{scrollTop}}">
+    <view class='title'>{{content.sample}} {{conditionNumber}}</view>
+    <view class="page__bd">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class='select_box'>
+          <text class='select_info'>{{content.age_growthCycle}}:</text>
+          <input class="picker" bindinput='bindAgeNumChange' name='ageNum' value="{{tempConditions.ageNum}}" />
+          <view class='picker'>
+            <picker bindchange="bindAgeUnitChange" value="{{index_ageunit}}" range="{{content.AgeUnit}}" name='index_ageunit'>
+              <text class='select_text'>{{content.AgeUnit[index_ageunit]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+        <view class='select_box'>
+          <text class='select_info'>{{content.gender}}:</text>
+          <view class='picker' style='width:230rpx'>
+            <picker bindchange="bindGenderChange" value="{{index_gender}}" range="{{content.Gender}}" name='index_gender'>
+              <text class='select_text'>{{content.Gender[index_gender]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+        <!-- <view class='select_box'>
+          <text class='select_info'> 基因型:</text>
+          <view class='picker' style='width:220rpx'>
+            <picker bindchange="bindGenotypeChange" value="{{index_genotype}}" range="{{Genotype}}" name='index_genotype'>
+              <text class='select_text'>{{Genotype[index_genotype]}}</text>
+            </picker>
+          </view>
+        </view> -->
+        <view class='select_box'>
+          <text class='select_info'>{{content.targetGeneNumber}}:</text>
+          <view class='picker'>
+            <picker bindchange="bindGeneNumChange" value="{{index_genenum}}" range="{{GeneNum}}" name='index_genenum'>
+              <text class='select_text'>{{GeneNum[index_genenum]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+        <block wx:for-items="{{TargetGeneNumberList}}" wx:for-item='items' wx:key="{{index}}">
+          <view class='select_box'>
+<text class='targetGene'>{{content.targetGene}} {{items.name}}:</text>
+            <input class='input-geneSymbol' bindinput='bindGeneSymbol{{items.id}}' data-typeid="{{items.id}}" placeholder='Gene Symbol' name='GeneSymbol{{items.id}}' value='{{inputGeneSymbol[items.id-1]}}' />
+            <input class='input-geneID' bindinput='bindGeneID{{items.id}}' data-typeid="{{items.id}}" placeholder='Gene ID' value='{{inputGeneID[items.id-1]}}' name='GeneID{{items.id}}' />
+
+          </view>
+          <!-- GeneSymbol是存当前输入值的数组，填上后要把对应的GeneSymbol[]清空 -->
+          <view class="tempArr" wx:if="{{GeneSymbol[items.id-1].length > 0}}">
+            <view wx:for='{{tempGeneSymbolArray}}' bindtap='geneSymbolInput{{items.id}}' data-geneSymbol='{{item}}' style='margin-left:28%'>
+              {{item}}
+            </view>
+          </view>
+          <view class="tempArr" wx:if="{{GeneID[items.id-1].length > 0}}">
+            <!-- wx:if="{{GeneID[items.id-1].length > 0}}" -->
+            <view wx:for='{{tempGeneIDArray}}' bindtap='geneIDInput{{items.id}}' data-geneID='{{item}}' style='margin-left:63%'>
+              <!-- <view wx:if='{{item.length>1}}'> -->
+              {{item}}
+              <!-- </view> -->
+            </view>
+          </view>
+          <view class='select_box targetGenebox'>
+            <text class='geneInfo'>{{content.TaxonID}}:</text>
+            <view class='picker'>
+              <picker range='{{TaxonIDList}}' data-typeid="{{items.id}}" bindchange='bindTaxonID{{items.id}}' value='{{TaxonIDIndex[items.id-1]}}' name='TaxonID{{items.id}}'>
+                <text class='select_text'>{{TaxonIDList[TaxonIDIndex[items.id-1]]}}</text>
+              </picker>
+            </view>
+<text class='geneInfo'>{{content.genotype}}:</text>
+            <view class='picker' style='width:220rpx'>
+              <picker bindchange="bindGenotype{{items.id}}" data-typeid="{{items.id}}" value="{{GenotypeIndex[items.id-1]}}" range="{{GenoTypeList}}" name='GenoType{{items.id}}'>
+                <text class='select_text'>{{GenoTypeList[GenotypeIndex[items.id-1]]}}</text>
+              </picker>
+            </view>
+          </view>
+        </block>
+        <view class='select_box'>
+         <text class='select_info'>{{content.sampleStatus}}:</text>
+          <view class='picker' style='width:300rpx'>
+            <picker bindchange="bindSampleStatusChange" value="{{index_samplestatus}}" range="{{content.SampleStatus}}" name='index_samplestatus'>
+              <text class='select_text'>{{content.SampleStatus[index_samplestatus]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+        <view class='select_box'>
+       
+          <text class='select_info'>{{content.storageForm}}:</text>
+          <view class='picker' style='width:300rpx'>
+            <picker bindchange="bindStoreFormChange" value="{{index_storeform}}" range="{{content.StorageForm}}" name='index_storeform'>
+              <text class='select_text'>{{content.StorageForm[index_storeform]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+        <view class='select_box'>
+       
+           <text class='select_info'>{{content.amount}}:</text>
+          <view style='display:flex' wx:if="{{StoreFormSelected == '干粉' || StoreFormSelected == 'Dry Powder'}}">
+            <input class="input-number" style='width:200rpx;' bindinput='bindDoughAmountChange' name='SampleAmount' placeholder='{{content.placeholder_dryPowder}}' />
+            <picker class='input-number' style='width:100rpx;padding:5rpx 20rpx;' bindchange="bindSampleAmountUnitChange" value="{{index_sampleAmountUnit}}" range="{{SampleAmountUnit}}" name='index_sampleAmountUnit'>
+              <text class='select_text'>{{SampleAmountUnit[index_sampleAmountUnit]}}</text>
+            </picker>
+            <!-- <text class='input-number' style='width:100rpx;padding:5rpx 20rpx;' name='unit_dryPowder'>g</text> -->
+          </view>
+          <view wx:elif="{{StoreFormSelected== '实体细胞' ||StoreFormSelected == 'Solid Cell' }}">
+            <!-- <input class="input-number" style='width:200rpx;' bindinput='bindDoughAmountChange' name='SampleAmount' placeholder='数目' /> -->
+<input class="input-number" style='width:200rpx;' bindinput='bindDoughAmountChange' name='SampleAmount' placeholder='{{content.placeholder_number}}' />
+          </view>
+          <view style='display:flex' wx:elif="{{StoreFormSelected== '实体组织' || StoreFormSelected == 'Solid Tissue'}}">
+            <input class="input-number" style='width:200rpx;' bindinput='bindDoughAmountChange' name='SampleAmount' placeholder='{{content.placeholder_weight}}' />
+            <picker class='input-number' style='width:100rpx;padding:5rpx 20rpx;' bindchange="bindSampleAmountUnitChange" value="{{index_sampleAmountUnit}}" range="{{SampleAmountUnit}}" name='index_sampleAmountUnit'>
+              <text class='select_text'>{{SampleAmountUnit[index_sampleAmountUnit]}}</text>
+            </picker>
+          </view>
+          <view style='display:flex' wx:elif="{{StoreFormSelected == '实体切片' || StoreFormSelected == 'Solid Slice'}}">
+            <input class="input-number" style='width:200rpx;' bindinput='bindDoughAmountChange' name='SampleAmount' placeholder='{{content.placeholder_volume}}' />
+            <picker class='input-number' style='width:100rpx;padding:5rpx 20rpx;' bindchange="bindSampleAmountUnitChange" value="{{index_sampleAmountUnit}}" range="{{SampleAmountUnit}}" name='index_sampleAmountUnit'>
+              <text class='select_text'>{{SampleAmountUnit[index_sampleAmountUnit]}}</text>
+            </picker>
+          </view>
+          <view wx:elif="{{StoreFormSelected == '体液原液' || StoreFormSelected == 'Fluid Solution' }}" style='display:flex'>
+            <input class="input-number" style='width:200rpx;' bindinput='bindDoughAmountChange' name='SampleAmount' placeholder='{{content.placeholder_volume}}' />
+            <picker class='input-number' style='width:100rpx;padding:5rpx 20rpx;' bindchange="bindSampleAmountUnitChange" value="{{index_sampleAmountUnit}}" range="{{SampleAmountUnit}}" name='index_sampleAmountUnit'>
+              <text class='select_text'>{{SampleAmountUnit[index_sampleAmountUnit]}}</text>
+            </picker>
+          </view>
+          <view style='display:flex;' wx:else>
+            <input class="input-number" style='width:200rpx;' bindinput='bindSampleConcentrationChange' name='SampleConcentration' placeholder='concentration' />
+            <view class='picker' style='width:100rpx;'>
+              <picker bindchange="bindConcentrationUnitChange" value="{{index_concentrationunit}}" range="{{ConcentrationUnit}}" name='index_concentrationunit'>
+                <text class='select_text'>{{ConcentrationUnit[index_concentrationunit]}}</text>
+              </picker>
+            </view>
+            <input class="input-number" style='width:120rpx;' bindinput='bindSampleVolumeChange' name='SampleVolume' placeholder='volume' />
+            <view class='picker' style='width:60rpx;'>
+              <picker bindchange="bindVolumeUnitChange" value="{{index_volumeunit}}" range="{{VolumeUnit}}" name='index_volumeunit'>
+                <text class='select_text'>{{VolumeUnit[index_volumeunit]}}</text>
+              </picker>
+            </view>
+          </view>
+          <view class='star' style='margin-left:2rpx'> **</view>
+        </view>
+        <view class='select_box'>
+     
+          <text class='select_info'>{{content.treatment}}:</text>
+          <view class='picker' style='padding:0 5rpx;width:240rpx'>
+            <picker bindchange="bindTreatmentMethodsChange" value="{{index_treatmentmethods}}" range="{{TreatmentMethods}}" name='index_treatmentmethods'>
+              <text class='select_text'>{{TreatmentMethods[index_treatmentmethods]}}</text>
+            </picker>
+          </view>
+
+          <view class='picker-treatment2' style='padding:0 5rpx;width:220rpx'>
+            <picker bindchange="bindTreatment_detailChange" value="{{index_treatmentdetail}}" range="{{Treatment_detail}}" name='index_treatmentdetail'>
+              <text class='select_text'>{{Treatment_detail[index_treatmentdetail]}}</text>
+            </picker>
+          </view>
+          <view class='star' style='margin-left:2rpx'> **</view>
+        </view>
+
+        <view hidden='{{hide}}' class='select_box'>
+          <text class='select_info' style='width:30%'>{{content.dose}}:</text>
+          <view class='picker' style='width:200rpx;'>
+            <picker bindchange="bindParamTypeChange" value="{{index_paramtype}}" range="{{ParamType}}" name='index_paramtype'>
+              <text class='select_text'>{{ParamType[index_paramtype]}}</text>
+            </picker>
+          </view>
+          <input class="input-number" style='width:100rpx;' bindinput='bindParamAmountChange' name='ParamAmount' value='{{tempConditions.ParamAmount}}' />
+          <view class='picker' style='width:150rpx;'>
+            <picker bindchange="bindParamUnitChange" value="{{index_paramunit}}" range="{{ParamUnit}}" name='index_paramunit'>
+              <text class='select_text'>{{ParamUnit[index_paramunit]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+
+        <view hidden='{{hide}}' class='select_box'>
+          <text class='select_info'>{{content.duration}}:</text>
+          <input class="input-number" bindinput='bindDurationChange' name='DurationTime' value='{{tempConditions.DurationTime}}' />
+          <view class='picker'>
+            <picker bindchange="bindDurationUnitChange" value="{{index_durationunit}}" range="{{DurationUnit}}" name='index_durationunit'>
+              <text class='select_text'>{{DurationUnit[index_durationunit]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+        <view class='select_box'>
+          
+          <text class='select_info' style='width:300rpx'>{{content.fractionNumber}}:</text>
+          <input class="input-number" bindinput='bindFractionNumberChange' name='FractionNumber' value='{{tempConditions.FractionNumber}}' />
+          <view class='star'> **</view>
+        </view>
+        <view class='select_box'>
+           <text class='select_info' style='width:300rpx'>{{content.bioRepet}}:</text>
+          <text class='input-number'>1</text>
+          <!-- <input class="input-number" bindinput='bindBiologicalRepetitionChange' name='BiologicalRepetition' value='{{tempConditions.BiologicalRepetition}}' /> -->
+        </view>
+        <view class='select_box'>
+           <text class='select_info' style='width:300rpx'>{{content.techRepet}}:</text>
+          <input class="input-number" bindinput='bindTechnicalRepetitionChange' name='TechnicalRepetition' value='{{tempConditions.TechnicalRepetition}}' />
+          <view class='star'> **</view>
+        </view>
+        <!-- <view class='condition-navigate'>
+          <input class="input-conditionPage" bindinput='bindConditionPageChange' name='ConditionPage' />
+          <text class='totalCondition'>/{{totalConditionNumber}}</text>
+          <button class='weui-btn' style='width:150rpx;' bindtap='conditionNavigate'>跳转</button>
+        </view> -->
+        <view class='buttonArea'>
+          <button bindtap="lastCondition" class='weui-btn' hover-class='click-button'>{{content.previous}} </button>
+          <button formType="submit" class='weui-btn' hover-class='click-button'>{{content.saveAndNext}}</button>
+        </view>
+        <!-- <view class='button_wrapper'>
+            <button bindtap="nextCondition" class='weui-btn'>Next</button>
+          </view> -->
+        <!-- <view class='button_wrapper'>
+            <button formType="submit" class='weui-btn' style='font-size:25rpx;'>保存并跳转到下一页</button>
+          </view> -->
+      </form>
+    </view>
+  </scroll-view>
+</view>

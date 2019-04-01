@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "报告 - Firmiana - 个人健康指数",
+  "usingComponents": {
+    "i-progress": "/component-library/iview/progress/index",
+    "van-collapse": "/component-library/vant/collapse/index",
+    "van-collapse-item": "/component-library/vant/collapse-item/index"
+  }
+}

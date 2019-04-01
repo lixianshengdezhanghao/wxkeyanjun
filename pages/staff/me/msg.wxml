@@ -1,0 +1,21 @@
+<!--pages/me/msg.wxml-->
+
+<view class="page__hd">
+    <view class="page__title">MESSAGES</view>
+  </view>
+<view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="kind-list__item">
+          <view id="{{item.id}}" data-tp="{{item.tp}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="changeviewer">
+            <view class="weui-flex__item">{{item.name}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>

@@ -1,0 +1,12 @@
+.page__bd{
+  padding: 20rpx;
+  margin-top:20rpx;
+}
+.explanation{
+  margin:20rpx;
+  font-size: 25rpx;
+}
+.weui-btn{
+  margin-top:40rpx;
+
+}

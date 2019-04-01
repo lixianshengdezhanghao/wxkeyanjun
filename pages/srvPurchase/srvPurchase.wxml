@@ -1,0 +1,56 @@
+
+<view class='page'>
+  <view class='page__bd'>
+    <view class='container'>
+      <button class='weui-btn' hover-class='click-button' style='width:50%;height:100rpx;font-size:40rpx;' bindtap='next'> {{content.addProject}}</button>
+      <button class='weui-btn' hover-class='click-button' style='width:50%;height:100rpx;font-size:40rpx;' bindtap='toindex'> {{content.backToHomepage}}</button>
+    </view>
+  </view>
+  <view class='help'>
+    <view class='help_item'>
+      <view class='title' data-index='1' catchtap='panel'>
+        <view class='title_1'>{{content.basicInfo}}</view>
+      </view>
+      <view class='detail' wx:if="{{showIndex == 1}}">{{content.basicInfoContent}}</view>
+    </view>
+    <view class='help_item'>
+      <view class='title' data-index='2' catchtap='panel'>
+        <view class='title_1'>{{content.samPre_MS}}</view>
+      </view>
+      <view class='detail' wx:if="{{showIndex == 2}}">{{content.samPre_MSContent}}</view>
+    </view>
+    <view class='help_item'>
+      <view class='title' data-index='3' catchtap='panel'>
+        <view class='title_1'>{{content.dataAnalysis}}</view>
+      </view>
+      <view class='detail' wx:if="{{showIndex == 3}}">{{content.dataAnalysisContent}}</view>
+    </view>
+
+    <view class='help_item'>
+      <view class='title' data-index='4' catchtap='panel'>
+        <view class='title_1'>{{content.standard}}</view>
+      </view>
+      <view class='detail' wx:if="{{showIndex == 4}}">{{content.standardContent}}</view>
+    </view>
+    <view class='help_item'>
+      <view class='title' data-index='5' catchtap='panel'>
+        <view class='title_1'>{{content.teamIntro}}</view>
+      </view>
+      <view class='detail' wx:if="{{showIndex == 5}}">{{content.teamIntroContent}}</view>
+    </view>
+    <view class='help_item'>
+      <view class='title' data-index='6' catchtap='panel'>
+        <view class='title_1'>{{content.instrument}}</view>
+      </view>
+      <view class='detail' wx:if="{{showIndex == 6}}">{{content.instrumentContent}}</view>
+      <swiper class='instrument' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgList}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,150 @@
+/* 步骤条 */
+.header {
+  background: #fff;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 60rpx;
+  box-shadow: 0rpx 2rpx 15rpx 4rpx rgba(116, 116, 116, 0.1);
+  height: 200rpx;
+}
+/* 步骤结束 */
+
+/* 步骤名称 */
+.bind-title {
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 1rpx 10rpx 4rpx rgba(116, 116, 116, 0.1);
+  height: 80rpx;
+  width: 98%;
+  font-size: 40rpx;
+  font-weight: 600;
+  margin: 25rpx auto 20rpx auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+/* 步骤名称结束 */
+
+/* 个人信息板块 */
+.personal-information {
+  background: #fff;
+  box-shadow: 0rpx 2rpx 20rpx 4rpx rgba(116, 116, 116, 0.1);
+  border-radius: 25rpx;
+  width: 98%;
+  margin: 25rpx auto 0rpx auto;
+  padding: 10rpx 20rpx 10rxp 20rxp;
+}
+
+.item {
+  line-height: 80rpx;
+  padding-left: 20rpx;
+  display: flex;
+  margin: 10rpx;
+}
+
+.item-title {
+  width: 130rpx;
+}
+
+.label {
+  font-size: 30rpx;
+}
+
+.unit {
+  padding-top: 10rpx;
+  padding-left: 20rpx;
+  width: 100rpx;
+}
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: none;
+  background: #87CEEB;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+radio .wx-radio-input {
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+  border: none;
+  background: #87CEEB;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.weui-input-parameter-smoke {
+  height: 8rpx;
+  width: 60rpx;
+  /* padding:0 25rpx; */
+  margin: 0 10rpx;
+  border: 1rpx solid #C0C0C0;
+  text-align: center;
+}
+
+.smoke {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+}
+
+/*画廊*/
+.gallery {
+  /*margin-bottom: 100rpx;*/
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/*每张图片所占容器*/
+.item {
+  position: relative;
+  margin: 5px;
+}
+
+.delete {
+  position: absolute;
+  height: 20px;
+  bottom: 0;
+  width: 90%;
+  background: #ccc;
+  opacity: .8;
+}
+
+.delete image {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+/* 个人信息板块结束 */

@@ -1,0 +1,7 @@
+<view class='page'>
+  <!-- <view class='container'>
+    <contact-button type="default-dark" size="20" session-from="weapp">
+    </contact-button>
+  </view> -->
+  <button class='contact-btn' hover-class='click-button'  open-type="contact">{{content.contact}}</button>
+</view>

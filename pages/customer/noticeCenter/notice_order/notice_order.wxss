@@ -1,0 +1,155 @@
+page {
+    background: #fff;
+}
+
+/* 标题 */
+.title-order {
+    width: 100%;
+    height: 300rpx;
+    margin-bottom: 150rpx;
+    position: relative;
+}
+
+.cell {
+    height: 100%;
+    width: 100%;
+    filter: blur(2px);
+}
+
+.titleO {
+    height: 200rpx;
+    width: 80%;
+    background: #fff;
+    position: absolute;
+    top: 150rpx;
+    left: 10%;
+    border-radius: 10rpx;
+    box-shadow: 0rpx 2rpx 20rpx 5rpx rgba(25, 25, 25, .1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-text {
+    font-size: 45rpx;
+    color: #87CEEB;
+    margin-left: 100rpx;
+}
+
+.icon {
+    height: 80rpx;
+    width: 80rpx;
+    margin-right: 100rpx;
+}
+/* 标题结束 */
+
+/* 进度条右侧 */
+.content-order {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100rpx;
+    margin-right: 100rpx;
+    align-items: center;
+}
+
+.element view {
+    height: 80rpx;
+    width: 300rpx;
+    text-align: center;
+    background: #fff;
+    border-radius: 25rpx;
+    line-height: 80rpx;
+    box-shadow: 0rpx 2rpx 15rpx 5rpx rgba(25, 25, 25, .1);
+    color: #87CEEB;
+}
+.element>view:not(:last-child){
+    margin-bottom: 50rpx;
+}
+/* 结束 */
+
+
+/* 进度条 */
+#progressBar {
+    width: 50rpx;
+    height: 570rpx;
+    position: relative;
+    margin: 0 0 0 50rpx;
+}
+
+#progressBar view {
+    width: 10rpx;
+    height: 570rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -4rpx;
+    background: #ccc;
+}
+
+#progressBar view text {
+    position: absolute;
+    display: inline-block;
+    background: #87CEEB;
+    width: 10rpx;
+}
+
+.progress_speed0 {
+    height: 0;
+}
+
+.progress_speed1 {
+    height: 25%;
+}
+
+.progress_speed2 {
+    height: 50%;
+}
+
+.progress_speed3 {
+    height: 75%;
+}
+
+.progress_speed4 {
+    height: 100%;
+}
+
+#progressBar>text {
+    position: absolute;
+    top: 0;
+    margin-top: -10rpx;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    margin-left: -20rpx;
+    color: #fff;
+}
+
+#progressBar>text:nth-child(1) {
+    top: 0%;
+}
+
+#progressBar>text:nth-child(2) {
+    top: 25%;
+}
+
+#progressBar>text:nth-child(3) {
+    top: 50%;
+}
+
+#progressBar>text:nth-child(4) {
+    top: 75%;
+}
+
+#progressBar>text:nth-child(5) {
+    top: 100%;
+}
+
+.bule {
+    background: #87CEEB;
+}
+
+.white {
+    background: #ccc;
+}
+
+/* 进度条结束 */

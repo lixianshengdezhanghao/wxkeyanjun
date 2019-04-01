@@ -1,0 +1,41 @@
+<!--pages/customer/bind-succeed/bind-succeed.wxml-->
+<view class="page">
+    <view class="header">
+        <v-steps stepsId="{{stepsId}}"></v-steps>
+    </view>
+
+    <view class="bind-title">绑定成功</view>
+
+    <view class="footer-content">
+        <view class="btn-title">
+            恭喜绑定成功，您可以在以下选项中继续选择我们的服务
+        </view>
+        <view class="content-btn">
+            <view class="bind-btn"  bindtap="next">
+                <image class="bind-btn-img" src="/images/customer/pro/test-pro.png"></image>
+                <view class="bind-btn-text">
+                    选择检测项目
+                </view>
+            </view>
+            <view class="bind-btn">
+                <image class="bind-btn-img" src="/images/customer/pro/apply.png"></image>
+                <view class="bind-btn-text">
+                    继续申请套件
+                </view>
+            </view>
+            <view class="bind-btn">
+                <image class="bind-btn-img" src="/images/customer/pro/bind.png"></image>
+                <view class="bind-btn-text">
+                    绑定多个套件
+                </view>
+            </view>
+            <view class="bind-btn">
+                <image class="bind-btn-img" src="/images/customer/pro/again.png"></image>
+                <view class="bind-btn-text">
+                    重新绑定套件
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>

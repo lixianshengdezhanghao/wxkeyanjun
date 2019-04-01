@@ -1,0 +1,7 @@
+.order{
+  border-bottom: 1rpx solid #E3E3E3	;
+  margin-top:10rpx;
+}
+.order-info{
+  /* margin-left:rpx; */
+}

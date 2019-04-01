@@ -1,0 +1,163 @@
+<view class='page'>
+  <view class="page__hd ">
+    <text class='title'> {{content.orderInfo}}</text>
+  </view>
+  <view class="page__bd">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class='select_box'>
+        <text class='select_info'>  {{content.sampleInfo}}:</text>
+        <view class='order-info'>
+          <view class='subinfo'> {{content.projectName}}:{{basicinfo.projectName}} </view>
+          <view> {{content.sourceType}}:{{basicinfo.sourceType}} </view>
+          <view> {{content.species}}:{{basicinfo.Species}} </view>
+          <view> {{content.Taxon}}:{{basicinfo.TaxonName}} </view>
+          <view> {{content.TaxonID}}:{{basicinfo.TaxonID}} </view>
+          <view> {{content.strainName}}:{{basicinfo.strainName}} </view>
+          <view wx:if="{{basicinfo.sourceType == '组织' || basicinfo.sourceType == 'Tissue'}}">
+            <view> {{content.system}}:{{basicinfo.System}} </view>
+            <view> {{content.organ}}:{{basicinfo.Organ}} </view>
+            <view> {{content.status}}:{{basicinfo.Status}}</view>
+          </view>
+          <view wx:elif="{{basicinfo.sourceType == '细胞' || basicinfo.sourceType == 'Cell'}}">
+            <view> {{content.cellType}}:{{basicinfo.CellType}} </view>
+            <view> {{content.cellName}}:{{basicinfo.cellName}} </view>
+          </view>
+          <view wx:else>
+            <view> {{content.fluidName}}:{{basicinfo.FluidName}}</view>
+          </view>
+
+
+          <view class='condition-box' wx:for='{{TotalConditions}}' wx:for-index='idx'>
+            <view>****{{content.sample}}{{idx+1}}*****</view>
+            <view> {{content.age}}:{{item.ageNum}} {{item.ageUnit}}</view>
+            <view> {{content.gender}}:{{item.Gender}}</view>
+            <view> {{content.targetGeneNumber}}:{{item.GeneNum}}</view>
+            <view wx:for='{{item.TargetGeneInfo}}' wx:for-index='targetidx'>
+              <view>{{content.targetGene}}-{{targetidx+1}}</view>
+              <view> {{content.geneID}}:{{item.GeneID}}</view>
+              <view> {{content.geneSymbol}}:{{item.GeneSymbol}}</view>
+              <view> {{content.taxonID}}:{{item.TaxonID}}</view>
+              <view> {{content.Genotype}}:{{item.GenoType}}</view>
+            </view>
+            <view> {{content.sampleStatus}}{{item.SampleStatus}}</view>
+            <view> {{content.storeForm}}:{{item.StoreForm}}
+              <view wx:if='{{item.SampleConcentration}}'> {{content.amount}}: {{content.concentration}}:{{item.SampleConcentration}} {{item.ConcentrationUnit}} {{content.volume}}:{{item.SampleVolume}} {{item.VolumeUnit}}</view>
+              <view wx:else>{{content.amount}}:{{item.SampleAmount}} {{item.SampleAmountUnit}}</view>
+              <!-- <view> 溶液:{{item.Solution}}</view> -->
+              <view> {{content.treatment}}:{{item.TreatmentMethods}}--{{item.TreatmentDetail}}</view>
+              <view> {{content.dose}}:{{item.ParamType}}--{{item.ParamAmount}}--{{item.ParamUnit}}</view>
+              <view> {{content.duration}}:{{item.DurationTime}} {{item.DurationUnit}}</view>
+              <view> {{content.fractionNumber}}:{{item.FractionNumber}}</view>
+              <!-- <view> 生物学重复:{{item.BiologicalRepetition}}</view> -->
+              <view> {{content.bioRepet}}:1</view>
+
+              <view> {{content.techRepet}}:{{item.TechnicalRepetition}}</view>
+            </view>
+          </view>
+          <view> {{content.selectedServices}}:</view>
+          <view wx:for='{{selectedService}}'>
+            <view> {{item}} </view>
+          </view>
+          <view>{{content.analysisTime}}:{{AnalysisTime}}</view>
+          <view>{{content.dataAnalysis}}:{{DataAnalysis}}</view>
+          <view> {{content.address}}:{{Address}}</view>
+        </view>
+      </view>
+
+
+
+   
+
+
+      <view class="table" style='margin:10rpx;'>
+        <view class="tr bg-w">
+          <view class="th-1">{{content.serviceType}}</view>
+          <view class="th-2">{{content.serviceContent}}</view>
+          <view class="th-3">{{content.number}}</view>
+          <view class="th-4">{{content.unitPrice}}</view>
+          <view class="th-5">{{content.Amount}}</view>
+        </view>
+        <block wx:for="{{MoneyList}}" wx:key="{{category}}">
+          <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="td-1" selectable="true">{{item.category}}</view>
+            <scroll-view wx:if='{{index==0}}' scroll-y class="td-2" style='height:100%;'>
+              <text class="th-text" style='padding:4rpx'>{{item.content}}</text>
+            </scroll-view>
+            <view wx:else class="td-2" selectable="true" scroll-x="true">
+              <text class="th-text" style="overflow-x:auto;overflow-y:scroll" selectable="true">{{item.content}}</text>
+            </view>
+            <view class="td-3" wx:if='{{index ==0}}' style="overflow-y:auto;overflow-x:scroll" selectable="true" scroll-y="true">
+              <text wx:if='{{item.money!=0}}' class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true"> {{content.sampleNum}}: {{totalConditionNumber}}</text>
+            </view>
+            <view wx:else class="td-3">
+              <!-- <view class="th-text" wx:if='{{index ==2}}' style="overflow-y:auto;overflow-x:scroll" selectable="true"> -->
+              <view wx:if='{{item.money!=0}}'>
+                <view class="th-text">{{content.totalTechRepet}}: {{item.amount}} </view>
+                <view class="th-text">{{content.serviceNum}}: {{serviceNum}}</view>
+              </view>
+              <view wx:else>
+                0
+              </view>
+              <!-- </view> -->
+            </view>
+            <scroll-view wx:if='{{index==0}}' class="td-4" scroll-y style='height:120rpx'>
+              <view wx:for='{{item.unitPrice}}'>
+                <text class="th-text">{{item}}</text>
+              </view>
+            </scroll-view>
+            <view class="td-4" wx:else>
+              <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.unitPrice}}</text>
+            </view>
+            <!-- <view class="td-4" selectable="true" scroll-y="true">
+                <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.unitPrice}}</text>
+              </view> -->
+            <view class="td-5" selectable="true" scroll-y="true">
+              <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.money}}</text>
+            </view>
+            <!--view class="td">{{item.type}}</view-->
+          </view>
+          <view class="tr bg-g2" wx:else>
+            <view class="td-1" selectable="true">{{item.category}}</view>
+            <view class="td-2" selectable="true" scroll-y="true">
+              <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.content}}</text>
+            </view>
+            <view class="td-3">
+              <scroll-view scroll-y style='height:100%' wx:if='{{index == 1}}'>
+                <text class="th-text" style='font-size:18rpx'> {{content.techRepet}} * {{content.fractionNumber}}:</text>
+                <block wx:for='{{item.amount}}'>
+                  <text class="th-text">{{item.TR}} * {{item.FN}}</text>
+                </block>
+                <text class="th-text" style='font-size:20rpx'> {{content.serviceNum}}: {{serviceNum}}</text>
+              </scroll-view>
+              <view wx:else>
+                <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.amount}}</text>
+              </view>
+
+            </view>
+            <view class="td-4" selectable="true" scroll-y="true">
+              <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.unitPrice}}</text>
+            </view>
+            <view class="td-5" selectable="true" scroll-y="true">
+              <text class="th-text" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.money}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view class='calculate' hidden='{{hidden}}'> {{TotalPrice1}} *
+        <text class='code'>{{code}} </text> = {{TotalPrice}}</view>
+      <view class='select_box priceArea' style='margin-top:20rpx;'>
+
+        <text class='select_info'> {{content.totalAmount}}:</text>
+        <text class="input-number" name='TotalPrice'>{{TotalPrice}}</text>
+
+        <button class='weui-btn discountbtn' disabled='{{discounted}}' bindtap='discountScan' hover-class='click-button'>{{content.discount}}?</button>
+
+      </view>
+
+
+      <button class='weui-btn' hover-class='click-button' formType="submit"> {{content.confirm}}</button>
+    </form>
+
+  </view>
+</view>

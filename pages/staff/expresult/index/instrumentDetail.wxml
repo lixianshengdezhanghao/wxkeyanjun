@@ -1,0 +1,25 @@
+<view class="page">
+  <view class='page__hd'>
+    <text class='title'>{{instrument}}</text>
+  </view>
+  <view class='page__bd'>
+  <view class="reset" catchtap="reset">
+  <view>{{content.reset}}</view>
+</view>
+  <picker mode="date" value="{{time}}" start="2018-09-01" end="{{endTime}}" bindchange="bindTimeChange">
+      <view class="picker"> {{content.chooseDate}}: {{date}}</view>
+    </picker>
+    <view wx:for="{{captures}}" class='item'>
+
+      <view class='time'>{{item.instrument}}</view>
+
+      <image class='image_frame' data-src="{{item.url}}"  src="{{item.url}}" mode="aspectFill" bindtap='previewImage'>
+      </image>
+    </view>
+     
+<view class="gotop" hidden='{{!cangotop}}'catchtap="goTop">
+  <view>{{content.toTop}}</view>
+</view>
+
+  </view>
+</view>

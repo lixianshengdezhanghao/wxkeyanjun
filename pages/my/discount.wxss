@@ -1,0 +1,21 @@
+.section__ctn{
+  display: inline-block;
+  /* display: flex; */
+  /* width:80%; */
+
+  text-align: center;
+  align-items:center;
+  margin-left:15%;
+  margin-top:100rpx;
+}
+.description{
+  font-size:30rpx;
+  font-family: "Times New Roman",Georgia,Serif;
+  text-align: center;
+  padding-top:20rpx;
+}
+.figure{
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+}

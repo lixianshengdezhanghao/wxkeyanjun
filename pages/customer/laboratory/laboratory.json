@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Firmiana-蛋白质组检测实验室",
+    "usingComponents": {
+        "v-tabBar":"/component/tabBar/tabBar"
+      }
+}

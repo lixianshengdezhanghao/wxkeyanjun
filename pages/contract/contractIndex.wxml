@@ -1,0 +1,28 @@
+<view class='page'>
+  <view class='page__hd'>
+    <text class='title'> {{content.title}}</text>
+    <view class='version'>{{content.version}}</view>
+    <!-- <view class='contractNO'> 合同编号: {{contractNO}}</view> -->
+    <view style='text-align:center;font-size:25rpx'> {{content.include}}</view>
+  </view>
+
+  <view class='page__bd'>
+    <!-- <view class='subTitle'> -->
+    <view class='projectName' > {{content.projectName}}:{{projectName}} </view>
+    <view class='projectName' > {{content.projectNumber}}:{{projectNumber}} </view>
+    <view class='projectName'> {{content.PartyA}}:{{PartyA}} </view>
+    <view class='projectName'> {{content.PartyB}}: {{content.PartyB_content}} </view>
+        <view class='projectName' style='margin-top:80rpx'> {{content.signingPlace}}:{{content.signingPlace_content}} </view>
+
+    <view class='projectName' > {{content.signingDate}}: {{time}} </view>
+    <view class='projectName'> {{content.validityPeriod}}: {{time}}  {{content.to}} {{lastTime}}</view>
+    <!-- </view> -->
+
+    <view class='footer'> 
+      <view>{{content.unit1}}</view>
+      <view style='margin-top:20rpx'>{{content.unit2}}</view>
+    </view>
+    <button class='weui-btn' hover-class='click-button' bindtap='next'> {{content.next}}</button>
+  </view>
+
+</view>

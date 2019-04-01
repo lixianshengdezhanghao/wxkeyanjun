@@ -1,0 +1,40 @@
+<!--component/steps/steps.wxml-->
+<view class="bind-step">
+    <i-steps>
+        <i-step status="{{steps.EngName[stepsId[0]]}}">
+            <view slot="title">
+                {{steps.NumName[stepsId[0]]}}
+            </view>
+            <view slot="content">
+                扫描套件
+            </view>
+        </i-step>
+
+        <i-step status="{{steps.EngName[stepsId[1]]}}">
+            <view slot="title">
+                {{steps.NumName[stepsId[1]]}}
+            </view>
+            <view slot="content">
+                服务协议
+            </view>
+        </i-step>
+ 
+        <i-step status="{{steps.EngName[stepsId[2]]}}">
+            <view slot="title">
+                {{steps.NumName[stepsId[2]]}}
+            </view>
+            <view slot="content">
+                个人信息
+            </view>
+        </i-step>
+ 
+        <i-step status="{{steps.EngName[stepsId[3]]}}">
+            <view slot="title">
+                {{steps.NumName[stepsId[3]]}}
+            </view>
+            <view slot="content">
+                绑定成功
+            </view>
+        </i-step>
+    </i-steps>
+</view>

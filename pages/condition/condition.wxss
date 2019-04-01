@@ -1,0 +1,105 @@
+/* pages/condition/condition.wxss */
+.condition-navigate{
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx;
+  margin-left: 200rpx;
+}
+.totalCondition{
+  /* border:1rpx solid #C0C0C0; */
+  width: 50rpx;
+  /* margin-left:20rpx; */
+  margin:20rpx;
+}
+.input-geneSymbol{
+  border: 1rpx solid #CDC9C9;
+ margin: 10rpx 10rpx;     
+ padding: 0 20rpx;
+ width: 200rpx;
+ font-size: 22rpx;
+}
+.input-geneID{
+  border: 1rpx solid #CDC9C9;
+ margin: 10rpx 10rpx;     
+ padding: 0 10rpx;
+ width: 130rpx;
+ font-size: 22rpx;
+}
+.input-conditionPage{
+   border: 1rpx solid #C0C0C0;
+   padding: 0 20rpx;
+ /* margin:5rpx 80rpx; */
+ margin:20rpx;
+ width:80rpx;
+}
+.input-number-age{
+  border: 1rpx solid #CDC9C9;
+ margin: 10rpx ;
+ padding: 0 20rpx;
+ width: 100rpx;
+ font-size: 25rpx;
+ height: 60rpx;
+ border-radius: 8rpx;
+ box-sizing: border-box;
+}
+.input-number{
+  border: 1rpx solid #CDC9C9;
+ margin: 10rpx;
+ padding: 0 20rpx;
+ width: 200rpx;
+ font-size: 25rpx;
+}
+.input-word{
+  border: 1rpx solid #CDC9C9;
+ margin: 10rpx;
+ padding: 0 20rpx;
+ width:300rpx;
+}
+.picker{
+  width:150rpx;
+  margin-right:10rpx;
+}
+.weui-btn{
+  margin-bottom: 30rpx;
+  font-size: 25rpx;
+  width:40%;
+}
+.weui-btn:first-child {
+  margin-top: 30rpx;
+}
+.buttonArea{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  /* flex-direction: row; */
+  margin-top:10rpx;
+}
+.targetGene{
+  font-size: 28rpx;
+  margin: 20rpx;
+}
+.targetGenebox{
+  margin-left: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+.geneInfo{
+  font-size: 26rpx;
+  margin-top:20rpx;
+  margin-left:30rpx;
+}
+.tempArr{
+  font-size: 25rpx;
+  background-color: #fff;
+}
+.picker-treatment2{
+  box-sizing: border-box;
+  width: 60%;
+  min-height: 60rpx;
+  border:1rpx solid #CDC9C9;
+  border-radius: 8rpx;
+  align-items: center;
+  padding: 0 10rpx;
+  margin-top:10rpx;
+  margin-left:10rpx;
+}

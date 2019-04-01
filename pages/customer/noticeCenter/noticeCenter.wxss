@@ -1,0 +1,33 @@
+/* pages/notice/notice.wxss */
+.weui-cells{
+  background: #F8F8F8;
+}
+
+.notice-content,navigator{
+  height: 200rpx;
+  width: 680rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30rpx;
+  margin-top:30rpx;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 2rpx 30rpx 5rpx rgba(25, 25, 25, .1);
+  background: #fff;
+}
+.notice-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon{
+  height: 120rpx;
+  width: 120rpx;
+  margin-left: 100rpx;
+}
+.text{
+  margin-right: 200rpx;
+}
+.introduction{
+  font-size: 25rpx;
+  color: #808080;
+}

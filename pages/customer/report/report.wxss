@@ -1,0 +1,95 @@
+/* pages/report/report.wxss */
+
+/* 上部分 */
+.report-header{
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 60rpx;
+  box-shadow: 0rpx 2rpx 15rpx 4rpx rgba(116, 116, 116, 0.1);
+}
+.content-people{
+  margin:50rpx 0rpx 60rpx 60rpx;
+  display: flex;
+  align-items: center;
+}
+.userinfo-img{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.userinfo-name{
+  margin-left: 30rpx;
+  font-size: 34rpx;
+  font-weight:500;
+}
+.sex{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #808080;
+}
+.time{
+  color: #808080;
+  display: flex;
+  margin:60rpx 60rpx 60rpx 0rpx;
+}
+.line{
+  width: 2rpx;
+  height: 75rpx;
+  background: #808080;
+}
+.index{
+  font-size: 50rpx;
+  font-weight: 400;
+  margin-right: 8rpx;
+}
+.date{
+  margin-left: 8rpx;
+  font-size: 24rpx;
+}
+/* 下部分结束 */
+
+/* 项目部分 */
+.project{
+  height: 80rpx;
+  width: 90%;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 0rpx 15rpx 4rpx rgba(194, 194, 194, 0.1);
+  margin: 20rpx auto 20rpx auto;
+  background: #fff;
+  line-height: 80rpx;
+  padding-left: 6%;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.report-result{
+  width: 84%;
+  margin: 20rpx auto 20rpx auto;
+  padding:40rpx 6% 40rpx 6%;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.health-index{
+  margin-bottom: 30rpx;
+}
+.project-index{
+  width: 96%;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 0rpx 15rpx 4rpx rgba(194, 194, 194, 0.1);
+  margin: 20rpx auto 20rpx auto;
+  background: #fff;
+}
+van-collapse{
+  border-radius: 10rpx;
+}
+
+.project-data{
+  padding:40rpx 6% 40rpx 6%;
+}
+.index-title{
+  margin-bottom: 20rpx;
+}
+/* 项目部份结束 */
+
+/* 尾部指数部分 */

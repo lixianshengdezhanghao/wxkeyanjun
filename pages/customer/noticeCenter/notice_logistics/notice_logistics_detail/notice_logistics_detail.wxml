@@ -1,0 +1,16 @@
+<!--pages/customer/noticeCenter/notice_logistics/notice_logistics_detail/notice_logistics_detail.wxml-->
+<view class='pages'>
+    <view class="cover">
+        <view class="header">
+            <image class="header-img" src="/images/customer/wuliu.png"></image>
+            <view class="name">顺丰</view>
+            <view class="number">{{id}}</view>
+        </view>
+        <view class="time">查看具体项目<text>></text></view>
+        <view class="line"></view>
+        <view class="dist">
+            <van-steps steps="{{steps}}" active="{{0}}" direction="vertical" active-color="#87CEEB" />
+        </view>
+    </view>
+
+</view>

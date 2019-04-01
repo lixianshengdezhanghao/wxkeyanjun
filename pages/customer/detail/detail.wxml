@@ -1,0 +1,171 @@
+  <view class="main">
+    <view class="goods-box">
+        <image src="{{img}}" class="goods-thumb"></image>
+        <navigator  url="../cart/cart">
+            <view class="carts-icon {{scaleCart?'on':''}}">
+                <image src="/images/cart2.png"></image>
+                <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+            </view>
+        </navigator>
+
+        <view class="goods-title">{{name}}</view>
+        <!-- <view class="goods-price">￥ {{totalPrice}}</view> -->
+        <!-- <block  wx:if="{{stock}}">
+          <text class="goods-stock" > 有货  请依次选择以下服务类别--</text>
+          <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+            <view class="goods-picker">
+              <block wx:if="{{Type == 'bodyFluid'}}">
+                <text class="goods-service">1.健康评估：{{multiArray[0][multiIndex[0]]}} </text>
+                <text class="goods-service">2.重大疾病风险预测：{{multiArray[1][multiIndex[1]]}} </text>
+                <!-- <text class="goods-noservice">3.预后预测及用药指导：{{multiArray[2][multiIndex[2]]}} </text> -->
+              <!-- </block>
+              <block wx:elif="{{Type == 'cell'}}">
+                <text class="goods-service">1.健康评估：{{multiArray[0][multiIndex[0]]}} </text> 
+                <text  class="goods-service">2.重大疾病风险预测：{{multiArray[1][multiIndex[1]]}} </text> 
+                <text  class="goods-service">3.预后预测及用药指导：{{multiArray[2][multiIndex[2]]}}</text>
+              </block>
+              <block wx:else>
+                <text class="goods-service">1.重大疾病风险预测：{{multiArray[1][multiIndex[1]]}} </text> 
+                <text  class="goods-service">2.预后预测及用药指导：{{multiArray[2][multiIndex[2]]}}</text>
+                <!-- <text class="goods-noservice">3.健康评估：{{multiArray[0][multiIndex[0]]}}  </text> -->
+              <!-- </block>
+            </view>
+          </picker>
+          <text wx:if="{{Type == 'bodyFluid'}}" class="goods-noservice">3.预后预测及用药指导：暂不支持 </text>
+          <text wx:if="{{Type == 'tissue'}}" class="goods-noservice">3.健康评估：暂不支持  </text>
+
+        </block> --> 
+        <!--picker的方式呈现  -->
+        <!-- <block  wx:if="{{stock}}">
+          <text class="goods-stock" > 有货  请选择以下服务类别--</text>
+          <block wx:if="{{Type == 'bodyFluid'}}">
+            <button class="assess-btn {{assessSelected?'on':''}}" plain='true' bindtap='bindAssessmentChange'> 健康状态评估 </button>
+            <picker bindchange="bindRiskChange" value="{{idx_risk}}" range="{{riskArr}}">
+              <button class="service-btn {{riskSelected?'on':''}}" plain='true'>
+              重大疾病风险预测：{{riskArr[idx_risk]}}
+              </button>
+            </picker>
+            <picker bindchange="bindPrognosisChange" value="{{idx_pro}}" range="{{prognosisArr}}">
+              <button disabled class="service-btn {{progSelected?'on':''}}" plain='true'>
+              预后预测及用药指导：暂不支持
+              </button>
+            </picker>
+          </block>
+          <block wx:elif="{{Type == 'cell'}}">
+            <button class="assess-btn {{assessSelected?'on':''}}" plain='true' bindtap='bindAssessmentChange'> 健康状态评估 </button>
+            <picker bindchange="bindRiskChange" value="{{idx_risk}}" range="{{riskArr}}">
+              <button class="service-btn {{riskSelected?'on':''}}" plain='true'>
+              重大疾病风险预测：{{riskArr[idx_risk]}}
+              </button>
+            </picker>
+            <picker bindchange="bindPrognosisChange" value="{{idx_pro}}" range="{{prognosisArr}}">
+              <button  class="service-btn {{progSelected?'on':''}}" plain='true'>
+              预后预测及用药指导：{{prognosisArr[idx_pro]}}
+              </button>
+            </picker>
+          </block>
+          <block wx:else>
+            <button disabled class="assess-btn {{assessSelected?'on':''}}" plain='true' bindtap='bindAssessmentChange'> 健康状态评估：<text>暂不支持</text></button>
+            <picker bindchange="bindRiskChange" value="{{idx_risk}}" range="{{riskArr}}">
+              <button class="service-btn {{riskSelected?'on':''}}" plain='true'>
+              重大疾病风险预测：{{riskArr[idx_risk]}}
+              </button>
+            </picker>
+            <picker bindchange="bindPrognosisChange" value="{{idx_pro}}" range="{{prognosisArr}}">
+              <button  class="service-btn {{progSelected?'on':''}}" plain='true'>
+              预后预测及用药指导：{{prognosisArr[idx_pro]}}
+              </button>
+            </picker>
+          </block>
+        </block> -->
+        <!--button 的方式呈现  -->
+        <block  wx:if="{{stock}}">
+          <text class="goods-stock" > 有货  请选择以下服务类别--</text>
+          <block wx:if="{{Type == 'bodyFluid'}}">
+            <view class="srv-title"> 健康评估:</view>
+            <button class="assess-btn {{assessSelected?'on':''}}" plain='true' bindtap='bindAssessmentChange'> 健康状态评估  </button>
+            <view class="srv-title"> 重大疾病风险预测：</view>
+             <view class="btn-container">
+            <block wx:for="{{riskArr}}" >
+             
+              <button class="subservice-btn "  plain='true' data-id="{{index}}" bindtap='bindriskChange' style="{{index == idx_risk? 'border:0.5rpx solid #9AC0CD;color:#9AC0CD;' : 'border:0.5rpx solid #ededed'}}"> 
+               <text class="chose-p" >{{item.name}} </text> 
+               <!-- <text class="chose-p" >¥{{item.price}} </text> -->
+               </button>
+             
+            </block>
+             </view>
+             <view class="srv-title"> 预后预测及用药指导： </view>
+            <button disabled class="assess-btn" plain='true'>
+              暂不支持
+            </button>
+          </block>
+          <block wx:elif="{{Type == 'cell'}}">
+          <view class="srv-title"> 健康评估:</view>
+            <button class="assess-btn {{assessSelected?'on':''}}" plain='true' bindtap='bindAssessmentChange'> 健康状态评估 ¥500  </button>
+            <view class="srv-title"> 重大疾病风险预测：</view>
+            <view class="btn-container">
+            <block wx:for="{{riskArr}}">
+              <button class="subservice-btn " plain='true' data-id="{{index}}" bindtap='bindriskChange' style="{{index == idx_risk? 'border:0.5rpx solid #9AC0CD;color:#9AC0CD;' : 'border:0.5rpx solid #ededed'}}"> 
+                <text class="chose-p" >{{item.name}} </text> 
+                <text class="chose-p" >¥{{item.price}} </text> 
+              </button>
+            </block>
+            </view>
+            <view class="srv-title"> 预后预测及用药指导：</view>
+            <view class="btn-container">
+            <block wx:for="{{prognosisArr}}">
+              <button class="subservice-btn " plain='true' data-id="{{index}}" bindtap='bindprognosisChange' style="{{index == idx_pro? 'border:0.5rpx solid #9AC0CD;color:#9AC0CD;' : 'border:0.5rpx solid #ededed'}}">
+                <text class="chose-p" >{{item.name}} </text> 
+                <text class="chose-p" >¥{{item.price}} </text> 
+              </button>
+            </block>
+            </view>
+          </block>
+          <block wx:else>
+          <view class="srv-title"> 健康状态评估:</view>
+            <button disabled class="assess-btn {{assessSelected?'on':''}}" plain='true' > 暂不支持 </button>
+            <view class="srv-title"> 重大疾病风险预测：</view>
+            <view class="btn-container">
+            <block wx:for="{{riskArr}}">
+              <button class="subservice-btn " plain='true' data-id="{{index}}" bindtap='bindriskChange' style="{{index == idx_risk? 'border:0.5rpx solid #9AC0CD;color:#9AC0CD;' : 'border:0.5rpx solid #ededed'}}"> 
+                <text class="chose-p" >{{item.name}} </text> 
+                <text class="chose-p" >¥{{item.price}} </text> 
+              </button>
+            </block>
+            </view>
+            <view class="srv-title"> 预后预测及用药指导：</view>
+            <view class="btn-container">
+            <block wx:for="{{prognosisArr}}">
+              <button class="subservice-btn" plain='true' data-id="{{index}}" bindtap='bindprognosisChange' style="{{index == idx_pro? 'border:0.5rpx solid #9AC0CD;color:#9AC0CD;' : 'border:0.5rpx solid #ededed'}}">
+                <text class="chose-p" >{{item.name}} </text> 
+                <text class="chose-p" >¥{{item.price}} </text> 
+              </button>
+            </block>
+            </view>
+          </block>
+        </block>
+        <view class="goods-stock" wx:else >
+          <text class="goods-stock"> 无货 </text>
+        </view>
+        <view  class='goods-operation' >
+            <text class="goods-operation-num">数量  {{num}}</text>
+            <text class="goods-operation-add" bindtap="addCount">+</text>
+            <text class="goods-to-cart" catchtap="addToCart">加入检测清单</text>
+            <image src="/images/cart1.png"  class="goods-cart-img" catchtap="addToCart"></image>
+        </view>
+        <!-- <image wx:if="{{show}}" src="/images/cart1.png" class="to-carts-icon"></image> -->
+        
+    </view>
+    <view class="goods-tab-box">
+        <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">检测详情</view>
+        <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">产品参数</view>
+        <view class="goods-tab-nav {{curIndex === 2 ?'on':''}}" bindtap="bindTap" data-index="2">检测保障</view>
+        <view class="goods-content">
+            <text wx:if="{{curIndex === 0}}" class="srv-detail">{{goods.detail}}</text>
+            <view wx:if="{{curIndex === 1}}">{{parameter}}</view>
+            <text wx:if="{{curIndex === 2}}">{{goods.service}}</text>
+        </view>
+    </view>
+
+</view>

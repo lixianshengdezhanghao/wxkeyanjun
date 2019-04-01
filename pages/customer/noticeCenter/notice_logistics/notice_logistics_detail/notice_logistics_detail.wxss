@@ -1,0 +1,47 @@
+/* pages/customer/noticeCenter/notice_logistics/notice_logistics_detail/notice_logistics_detail.wxss */
+.cover{
+    background: #fff;
+    border-radius: 10rpx;
+    width: 700rpx;
+    margin: 50rpx auto 50rpx auto;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header-img{
+    width: 100rpx;
+    height: 100rpx;
+    margin-top: 50rpx;
+    font-size: 36rpx;
+}
+.number{
+    font-size: 28rpx;
+    color: #808080;
+}
+.name,.number{
+    margin-top: 10rpx;
+}
+.time{
+    text-align: right;
+    margin-right: 50rpx;
+    font-size: 26rpx;
+    color: #999999;
+}
+.line{
+    height: 1rpx;
+    width: 600rpx;
+    margin: 20rpx auto 20rpx auto;
+    border-bottom:1rpx dashed #999999;
+}
+.time text{
+    margin-left: 10rpx;
+}
+
+.dist{
+    width: 600rpx;
+    margin: 30rpx 50rpx 0 50rpx;
+    padding-bottom:50rpx; 
+}

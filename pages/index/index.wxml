@@ -1,0 +1,72 @@
+<view class='page'>
+  <view class="page__hd">
+    <image mode='widthFix' src='/images/logo.jpg' class='logo' />
+    <view class='titleEnglish'>{{content.iProteomePlatform}} </view>
+  </view>
+  <view class='page__bd'>
+    <!-- <view class='picker'>
+    <picker class='weui-btn-language' bindchange='changeLanguage' range='{{languages}}'> {{content.changeLanguage}}</picker>
+  </view> -->
+    <view class='weui-btn-language' hover-class='click-button' bindtap="selectDialog">{{content.changeLanguage}}</view>
+    <!-- <button class='weui-btn' bindtap="selectDialog" >{{content.changeLanguage}}</button> -->
+    <view class='select_box'>
+      <view class="free-dialog {{showDialog ? 'free-dialog--show' : '' }}">
+        <view class="free-dialog__mask" bindtap="selectDialog" />
+        <view class="free-dialog__container">
+          <view style="padding: 5% 5% 15%;">
+            <view bindtap='cancel' class="free-button free-dialog-reset">{{content.Cancel}}</view>
+            <view bindtap='confirm' class="free-button free-dialog-submit">{{content.Confirm}}</view>
+            <view>
+              <radio-group class='radios' bindchange="changeLanguage">
+                <!-- class='free-radios' -->
+                <label class="subradio" wx:for="{{languages}}">
+                  <!-- class="free-radio" -->
+                  <!-- wx:key="{{index}}" data-id="{{index}}" style="{{item.checked?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}" -->
+                  <radio value="{{item.language}}" checked="{{item.checked}}" />
+                  <!-- <text class="free-text"> -->
+                  {{item.language}}
+                  <!-- </text> -->
+                </label>
+
+              </radio-group>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view bindtap="bindViewTap" class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <block wx:if='{{userInfo}}'>
+        <view wx:if='{{registeredName}}' class="userinfo-nickname">
+        {{content.welcome}},{{registeredName}},{{content.click_to_login}}
+          <!-- <text class="userinfo-nickname">{{content.welcome}},{{registeredName}},{{content.click_to_login}}</text> -->
+        </view>
+        <view wx:else class="userinfo-nickname">{{content.welcome}},{{userInfo.nickName}},{{content.click_to_register}}</view>
+      </block>
+
+    </view>
+    <!-- <view class='btnArea'>
+      <button class='weui-btn'> 消费者</button>
+      <button class='weui-btn'> 科研君</button>
+      <button class='weui-btn'> 工作人员</button> -->
+    <!-- <button class='weui-btn' open-type="getUserInfo" hidden='{{haveHeadImg}}' lang="zh_CN" bindgetuserinfo="onGotUserInfo">登录</button> -->
+    <button class='weui-btn' hover-class='click-button' open-type="getUserInfo" hidden='{{haveHeadImg}}' lang="zh_CN" bindgetuserinfo="onGotUserInfo">{{content.Login}}</button>
+    <button class='weui-btn' hover-class='click-button' bindtap='simpleLearn'>{{content.AboutUs}}</button>
+    <button class='weui-btn' hover-class='click-button' bindtap='bindToWorker'>{{content.Staff}}</button>
+    <button class='weui-btn' hover-class='click-button' bindtap='bindToCustomer'>{{content.customer}}</button>
+    <view class='footer'>
+      <view class='units'>
+        <view class='unit'> {{content.unit1}} </view>
+        <view class='unit'> {{content.unit2}}</view>
+        <view class='unit'> {{content.unit3}} </view>
+        <view class='unit'> V0.1.1 </view>
+      </view>
+      <image src='/images/picture.jpg' class='footer-image' />
+    </view>
+    <view class='copyright'> Copyright © 2018 iProteome. All rights reserved.</view>
+  </view>
+
+
+
+
+</view>

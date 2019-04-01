@@ -1,0 +1,70 @@
+/* pages/customer/customer.wxss */
+/*画廊*/
+.gallery {
+  /*margin-bottom: 100rpx;*/
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/*删除按钮*/
+.delete {
+  position: relative;
+  height: 80rpx;
+  margin-top:80px;
+  width: 80rpx;
+  opacity: .8;
+}
+  .delete image {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+}  
+.form-box{
+  position: relative;
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 30rpx;
+  display: flex;
+  margin-top:20rpx;
+   padding:50rpx; 
+}
+
+.form-box  input{
+ border: 1rpx solid #C0C0C0;
+ margin:10rpx 5rpx;
+ width:150rpx;
+ border-radius: 30rpx;
+ text-align: center;
+}
+.title{
+  /* margin-top:20rpx;  */
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150rpx;
+  letter-spacing: 5rpx;
+  font-size: 40rpx;
+}
+.picker{
+  margin-left:20rpx;
+}
+ .item{
+  line-height:80rpx;
+  padding-left:20rpx;
+  display: flex;
+   margin:10rpx; 
+} 
+.item-title{
+  width:130rpx;
+}
+.radio{
+  margin-left:20rpx;
+}
+.btn-area{
+  margin: 30rpx;
+}
+.weui-btn::after{
+  border:0.5rpx solid #87CEEB;
+}

@@ -1,0 +1,24 @@
+<view class='page'>
+  <view class='page__hd'>
+    <view  class='container'>
+      <text class="title"> 消息中心 </text>
+    </view>
+  </view>
+
+  <block  wx:if="{{bindinfo.length}}">
+    <block wx:for="{{bindinfo}}">
+      <view class="item" style="background-color:#71C671" >
+        <view style="display:flex;flex-direction:row">
+          <view style="display:flex;flex-direction:column"  >
+            <text class="theme" data-index="{{index}}" catchlongpress="deleteNotice"> 绑定套件成功！你的套件码为：{{item.code}},检测者姓名为：{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class="item"  style="background-color:#71C671"> 你当前暂未绑定任何套件 </view>
+  </block>
+  
+
+</view>

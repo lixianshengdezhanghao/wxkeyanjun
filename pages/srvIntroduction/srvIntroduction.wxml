@@ -1,0 +1,6 @@
+<view class='page'>
+  <view class='container'>
+    <button class='weui-btn' hover-class='click-button' bindtap='toProcess'> {{content.srvProcess}}</button>
+    <button class='weui-btn' hover-class='click-button' bindtap='toProduct'> {{content.srvProduct}}</button>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+.title{
+  display: flex;
+  justify-content: center;
+  text-align:center;
+  padding:20rpx;
+  padding-left:40rpx;
+  letter-spacing:5rpx;
+}
+.item{
+  position: relative;
+  margin: 40rpx 60rpx; 
+  padding:20rpx 30rpx;
+  border:1rpx solid #fff;
+  /* background-color: #87CEFA; */
+  width:550rpx;
+  /* height:280rpx; */
+  font-size: 30rpx;
+  border-radius: 30rpx;
+  color:white;
+  letter-spacing:5rpx;
+}

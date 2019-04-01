@@ -1,0 +1,84 @@
+@import "../../../style/weui.wxss";
+/* 步骤条 */
+.header{
+  background: #fff;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 60rpx;
+  box-shadow: 0rpx 2rpx 15rpx 4rpx rgba(116, 116, 116, 0.1);
+  height: 200rpx;
+}
+/* 步骤结束 */
+
+/* 步骤名称 */
+.bind-title{
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 1rpx 10rpx 4rpx rgba(116, 116, 116, 0.1);
+  height: 80rpx;
+  width: 98%;
+  font-size: 40rpx;
+  font-weight: 600;
+  margin: 25rpx auto 20rpx auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+/* 步骤名称结束 */
+
+/* 服务协议 */
+.footer-content{
+  background: #fff;
+  box-shadow: 0rpx 2rpx 20rpx 4rpx rgba(116, 116, 116, 0.1);
+  border-radius: 25rpx;
+  width: 98%;
+  margin: 25rpx auto 0rpx auto;
+  padding: 10rpx 20rpx 10rxp 20rxp;
+}
+.scroll-view{
+  display:inline-block;
+  overflow:scroll;
+  height: 500rpx;
+  position: relative;
+  /* background-color: #f1f1f1; */
+  font-size: 30rpx;
+  width:650rpx;
+  border-radius: 25rpx;
+  margin: 30rpx auto 0 40rpx;
+  box-shadow: 0rpx 0rpx 10rpx 4rpx rgba(155, 154, 154, 0.1) inset;
+}
+
+.title{
+  margin-top:20rpx; 
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150rpx;
+  letter-spacing: 5rpx;
+  font-size: 40rpx;
+}
+.article{
+  position: relative;
+  padding:20rpx 60rpx;
+  margin:20rpx 30rpx;
+}
+/* 服务协议结束 */
+
+/* 按钮 */
+.my_btn {
+  width: 600rpx;
+  border-radius: 50rpx;
+  position: absolute;
+  margin: 30rpx 70rpx;
+  font-size: 40rpx;
+  color: white;
+  overflow: hidden;
+  background-color: #87CEEB;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my_btn::after {
+  border: 1rpx solid white;
+}

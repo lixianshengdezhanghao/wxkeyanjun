@@ -1,0 +1,97 @@
+.select_info{
+  font-size:25rpx;
+  width:40%;
+}
+.classify{
+   background-color: #157fcc;
+   color:white;
+   width:100%;
+   padding-left:10rpx;
+}
+.weui-input{
+  font-size:22rpx;
+  padding-left:10rpx;
+  margin:10rpx;
+  flex: 0.7;
+}
+.select_text{
+  flex: 0.7;
+border: 1rpx solid #efefef;
+ font-size:22rpx;
+  padding-left:10rpx;
+  margin:10rpx;
+  min-height:45rpx;
+}
+.btn-area{
+  margin-top:50rpx;
+}
+.free-dialog__mask {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ z-index: 10;
+ background: rgba(0, 0, 0, 0.7);
+ display: none;
+}
+.free-dialog__container {
+ position: fixed;
+ left: 0;
+ bottom: 0;
+ width: 750rpx;
+ background: white;
+ transform: translateY(150%);
+ transition: all 0.4s ease;
+ z-index: 11;
+}
+.free-dialog--show .free-dialog__container {
+ transform: translateY(0);
+}
+.free-dialog--show .free-dialog__mask {
+ display: block;
+}
+/*模态框中的内容*/
+.free-button{
+ display: inline-block;
+ width:100rpx;
+ text-align: center;
+ font-size:30rpx;
+ color:#707070;
+ margin-bottom:20rpx;
+}
+.free-dialog-submit{
+ float: right;
+ color:#48c23d;
+}
+checkbox-group{
+ margin:10rpx 0rpx;
+}
+radio-group{
+ margin:10rpx 0rpx;
+}
+radio-group>label{
+ width:22.5%;
+ display: inline-block;
+ border:1rpx solid #ddd;
+ padding:10rpx 2rpx;
+ margin:0rpx 4rpx 4rpx;
+}
+ 
+radio-group label radio{
+ width:100%;
+ z-index: 3;
+ display: none;
+}
+.checked{
+ background:#48c23d;
+ color:#fff;
+}
+radio-group label .free-text{
+ width:100%;
+ text-align: center;
+ display: inline-block;
+ font-size:20rpx;
+}
+
+

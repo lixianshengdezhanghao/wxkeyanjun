@@ -1,0 +1,22 @@
+<view class='page'>
+  <view  class='page__hd' style='border-bottom:1rpx solid #E8E8E8'>
+    <text class='title' >  {{content.title}} </text>
+     
+  </view>
+
+  <view class='page__bd'>
+   <view class='description'> {{content.text}}</view>
+    <view class="section__ctn" wx:for='{{content.imgList}}'>
+      <view class='figure'>
+      <image style="width: 100rpx; height: 100rpx; background-color: #eeeeee;" data-src="{{item.url}}" src="{{item.url}}" bindtap='previewImage' bindlongtap='saveImage'></image>
+      <text > {{item.count}}</text>
+      </view>
+    </view>
+
+
+
+  </view>
+
+
+
+</view>

@@ -1,0 +1,38 @@
+ <view class='page'>
+  <view class='page__hd'>
+    <text class='title'>{{content.title}}</text>
+    <image class='PlatFormIntroduction' src='https://firmiana.ncpsb.org/static/we/PlatFormIntroduction.jpeg' />
+  </view>
+
+  <view class='page__bd'>
+    <view class='item'>
+      <text class='entries'> {{content.subtitle1}} </text>
+      <text class='content'> {{content.subtitle1_content}} </text>
+    </view>
+
+     <view class='item'>
+      <text class='entries'> {{content.subtitle2}}  </text>
+      <view class='content'> {{content.subtitle2_content}} </view>
+    </view> 
+
+    
+    <swiper class='instrument' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgList}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class='item'>
+      <text class='entries'> {{content.subtitle3}}  </text>
+      <text class='content'> {{content.subtitle3_content}} </text>
+    </view>
+
+
+
+  </view>
+
+
+
+</view>

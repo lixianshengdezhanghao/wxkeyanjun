@@ -1,0 +1,11 @@
+.content{
+  border-bottom:1rpx solid #E8E8E8;
+  font-size:28rpx;
+  margin:20rpx ;
+  padding-left:50rpx;
+  padding-bottom: 20rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  display: flex;
+}

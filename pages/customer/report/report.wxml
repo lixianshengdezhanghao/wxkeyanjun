@@ -1,0 +1,85 @@
+<!--pages/report/report.wxml-->
+<view class='page'>
+  <!-- 头部 -->
+  <view class="container-report">
+    <view class="report-header">
+      <view class="content-people">
+        <image class="userinfo-img" src="{{userInfo.avatarUrl}}"></image>
+        <view class="userinfo-information">
+          <text class="userinfo-name">王富贵-健康报告</text>
+          <view class="sex">性别:男<text class="age" style="margin-left:20rpx;">年龄:66</text></view>
+        </view>
+      </view>
+      <view class="time">
+        <view>
+          <text class="index">22</text>
+        </view>
+        <view class="line"></view>
+        <view class="date">
+          <view class="month">三月</view>
+          <text>2019</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 内容 -->
+    <view class="content-report">
+      <view class="project">检测项目:尿检</view>
+      <view class="report-result">
+          <view class="health-index">
+            <view class="health-index-title">健康指数</view>
+            <view class="progress-item">
+              <i-progress percent="90" status="success"></i-progress>
+            </view>
+          </view>
+          <view class="sicken-index">
+            <view class="health-index-title">患病指数</view>
+            <i-progress percent="25" status="wrong"></i-progress>
+          </view>
+        </view>
+      </view>
+      <view class="project-index">
+        <view class="project-data">
+          <view class="index-title">检测指标(1):</view>
+          <view class="index-content">
+            JavaScript目前的使用范围比较广泛，JS是前端开发的重要内容之一，特点是灵活且功能强大，目前JS正伴随着Nodejs从前端走向后端。
+          </view>
+        </view>
+        <van-collapse value="{{ activeNames }}" bind:change="onChange">
+          <van-collapse-item title="查看图表数据对比" name="1">
+            图1&图2
+          </van-collapse-item>
+        </van-collapse>
+      </view>
+      <view class="project-index">
+        <view class="project-data">
+          <view class="index-title">检测指标(2):</view>
+          <view class="index-content">
+            JavaScript目前的使用范围比较广泛，JS是前端开发的重要内容之一，特点是灵活且功能强大，目前JS正伴随着Nodejs从前端走向后端。
+          </view>
+        </view>
+        <van-collapse value="{{ activeNames }}" bind:change="onChange">
+          <van-collapse-item title="查看图表数据对比" name="2">
+            图1&图2
+          </van-collapse-item>
+        </van-collapse>
+      </view>
+      <view class="project-index">
+        <view class="project-data">
+          <view class="index-title">检测指标(3):</view>
+          <view class="index-content">
+            JavaScript目前的使用范围比较广泛，JS是前端开发的重要内容之一，特点是灵活且功能强大，目前JS正伴随着Nodejs从前端走向后端。
+          </view>
+        </view>
+        <van-collapse value="{{ activeNames }}" bind:change="onChange">
+          <van-collapse-item title="查看图表数据对比" name="3">
+            <view>图1&图2</view>
+          </van-collapse-item>
+        </van-collapse>
+      </view>
+    </view>
+    <!-- 内容结束 -->
+
+    <!-- 尾部 -->
+    
+</view>

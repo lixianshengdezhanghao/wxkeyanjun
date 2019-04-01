@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-steps": "/component-library/iview/steps/index",
+    "i-step": "/component-library/iview/step/index",
+    "i-icon": "/component-library/iview/icon/index"
+  }
+}

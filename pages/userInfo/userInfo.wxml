@@ -1,0 +1,36 @@
+<view class='page'>
+  <view class='container'>
+    <view class='title'> {{content.title}}</view>
+    <view class='userinfo'>
+            <text class='item'> {{content.name}}</text>
+
+      <text class='item-info'>{{registerInfo.name}}</text>
+    </view>
+    <view class='userinfo'>
+      <text class='item'> {{content.phoneNumber}}</text>
+      <text class='item-info'>{{registerInfo.phone}}</text>
+    </view>
+    <view class='userinfo'>
+            <text class='item'> {{content.mail}}</text>
+
+      <text class='item-info'>{{registerInfo.mail}}</text>
+    </view>
+    <view class='userinfo'>
+      <text class='item'> {{content.workUnit}}</text>
+      <text class='item-info'>{{registerInfo.unit}}</text>
+    </view>
+    <view class='userinfo'>
+      <text class='item'> {{content.department}}</text>
+      <text class='item-info'>{{registerInfo.department}}</text>
+    </view>
+    <view class='userinfo'>
+      <text class='item'> {{content.researchInterests}}</text>
+      <text class='item-info' style='margin-left:40rpx'>{{registerInfo.researchInterests}}</text>
+    </view>
+
+
+
+  </view>
+
+
+</view>

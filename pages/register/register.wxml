@@ -1,0 +1,72 @@
+<view class="page">
+  <wxs src="../../utils/validate.wxs" module="util" />
+  <wxs src="../../utils/validatePI.wxs" module="util2" />
+  <view class='title'> {{content.title}}</view>
+  <view class='container'>
+    <form bindsubmit="formSubmit" bindreset="formReset" class="form-box">
+      <view wx:if="{{isRegistered}}" > 
+      
+        <text class='userinfo'>{{content.registered}}</text>
+      </view>
+      <view wx:else> 
+      <view  class='userinfo'>
+        <text> {{content.name}}</text>
+        <input name='name' />
+        <view class='star'> **{{content.note}}</view>
+      </view>
+      <view class='userinfo'>
+        <text> {{content.telephone}}</text>
+        <input  name='phone' />
+        <view class='star'> **</view>
+      </view>
+      <view class='userinfo'>
+        <text> {{content.mail}}</text>
+        <input class="email_input {{util.validateEmail(email)?'':'error'}}" name='mail' value='{{email}}' bindinput='emailInput'></input>
+        <view class='star'> **</view>
+      </view>
+      <view class='userinfo'>
+        <text> {{content.workUnit}}</text>
+        <input type="text" class="weui-search-bar__input" value="{{inputUnit}}" focus="{{inputShowed}}" bindinput="inputTyping" name='unit'/>
+        <view class='star'> **</view>
+      </view>
+      <view class="tempArr" wx:if="{{inputUnit.length > 0}}">
+        <view wx:for='{{temporaryUnitArray}}' bindtap='unitInput' data-unit='{{item}}'>
+          {{item}}
+        </view>
+      </view>
+      <view class='userinfo'>
+        <text> {{content.department}}</text>
+        <input name='department' />
+        <view class='star'> **</view>
+      </view>
+      <view class='userinfo'>
+        <text> {{content.name_PI}}</text>
+        <input name='namePI' />
+      </view>
+      <view class='userinfo'>
+        <text> {{content.mail_PI}}</text>
+        <input class="email_input {{util2.validatePIEmail(mailPI)?'':'error'}}" name='mailPI' value='{{mailPI}}' bindinput='emailPIInput'></input>
+      </view>
+      <view class='userinfo'>
+        <text> {{content.researchInterests}}</text>
+        <input name='researchInterests' />
+        <view class='star'> **</view>
+      </view>
+      <view class='userinfo'>
+        <text> {{content.password}}</text>
+        <input name='input_password' password='true' type='number' />
+        <view class='star'> **</view>
+      </view>
+      <view class='userinfo'>
+        <text> {{content.confirmPassword}}</text>
+        <input name='confirm_password' password='true' type='number'  />
+        <view class='star'> **</view>
+      </view>
+      <view class='button_wrapper' >
+        <button type='primary' disabled="{{util.validateEmail(email)?false:true }}"  formType="submit" hover-class='click-button' >{{content.register}}</button>
+      </view>
+
+      </view>
+    </form>
+  </view>
+</view>

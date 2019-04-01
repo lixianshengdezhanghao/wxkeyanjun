@@ -1,0 +1,42 @@
+.module{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin:30rpx;
+  
+}
+.subModule{
+  border: 1rpx solid white;
+  border-radius: 20%;
+  width:300rpx;
+  height:300rpx;
+  margin:20rpx;
+  margin-top:50rpx;
+  /* padding:50rpx; */
+ color:white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+ 
+  font-size: 40rpx;
+}
+.btnArea{
+  /* display: flex; */
+  margin:20rpx;
+  font-size: 30rpx;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+.btn{
+  display: inline-block;
+  margin:50rpx 20rpx -20rpx;
+  font-size: 25rpx;
+  background-color:#87CEEB;
+  color:white;
+  border-radius: 20rpx;
+  box-shadow:0rpx 2rpx 5rpx 5rpx #BEBEBE;
+}
+.btn::after {
+  border: 0;
+}

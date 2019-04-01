@@ -1,0 +1,175 @@
+<view class='page'>
+  <view class="page__hd ">
+    <text class='title'> {{content.sampleInfo}}</text>
+  </view>
+  <view class="page__bd">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class='select_box'>
+        <text class='select_info'> {{content.projectName}}:</text>
+
+        <view class='input-project'>
+          <input bindinput='projectNameChange' placeholder='Mouse TF 20181203' name='projectName' />
+        </view>
+        <view class='star'> **</view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info' style='width:30%'>  {{content.sampleType}}:</text>
+        <view>
+          <radio-group style="margin-left:10rpx;margin-top:10rpx;" name='sourceType' bindchange="sourceTypeChange">
+            <label wx:for="{{content.sourceType}}">
+              <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}} </label>
+          </radio-group>
+        </view>
+        <view class='star'> **</view>
+      </view>
+   
+      <view class='select_box'>
+        <text class='select_info'>  {{content.bioClassification}}:</text>
+        <view class='picker'>
+          <picker bindchange="bindSpeciesChange" value="{{Species[index_species]}}" range="{{Species}}" name='Species'>
+            <text class='select_text' style='padding:5rpx;'>{{Species[index_species]}}</text>
+          </picker>
+          <image class='select_img {{showSP&&"select_img_rotate"}}' src='/images/pulldown.png'></image>
+        </view>
+        <view class='star'> **</view>
+      </view>
+
+
+        <view class='select_box'>
+          <text class='select_info'> {{content.Taxon}}:</text>
+          <view class='taxonPicker'>
+            <picker bindchange="bindTaxonNameChange" value="{{TaxonName[index_taxonName]}}" range="{{TaxonName}}" name='TaxonName'>
+              <text class='select_text' style='padding:5rpx;'>{{TaxonName[index_taxonName]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+
+        <view class='select_box'>
+          <text class='select_info'>  {{content.TaxonID}}:</text>
+          <view class='picker'>
+            <picker bindchange="bindTaxonIDChange" value="{{TaxonID[index_taxonID]}}" range="{{TaxonID}}" name='TaxonID'>
+              <text class='select_text' style='padding:5rpx;'>{{TaxonID[index_taxonID]}}</text>
+            </picker>
+          </view>
+          <view class='star'> **</view>
+        </view>
+
+        <view class='select_box'>
+          <text class='select_info'>  {{content.strainName}}:</text>
+          <view class='picker' style='margin-top:20rpx;'>
+            <input type="text" class="weui-search-bar__input" value="{{inputStrainName}}" bindinput="inputTyping_StrainName" name='strainName' />
+          </view>
+          <view class='star'> **</view>
+        </view>
+        <scroll-view hidden='{{hide_scroll_strainName}}' class="scroll" scroll-y style="height: 200rpx;">
+          <view class="tempArr" wx:if="{{inputStrainName.length > 0}}">
+            <view wx:for='{{temporaryStrainNameArray}}' bindtap='selectStrainName' data-strainname='{{item}}'>
+              {{item}}
+            </view>
+          </view>
+          <view wx:else>
+            <view wx:for='{{StrainName}}' bindtap='selectStrainName' data-strainname='{{item}}' class="tempArr">
+              {{item}}
+            </view>
+          </view>
+        </scroll-view>
+
+        <view wx:if="{{sourceTypeSelected == 'Tissue' || sourceTypeSelected== '组织' }}">
+          <view class='select_box'>
+            <text class='select_info'>  {{content.system}}:</text>
+            <view class='picker'>
+              <picker bindchange="bindSystemChange" value="{{System[index_system]}}" range="{{System}}" name='System'>
+                <text class='select_text' style='padding:5rpx;'>{{System[index_system]}}</text>
+              </picker>
+            </view>
+            <view class='star'> **</view>
+          </view>
+
+          <view class='select_box'>
+            <text class='select_info'>  {{content.organ}}:</text>
+            <view class='picker'>
+              <picker bindchange="bindOrganChange" value="{{Organ[index_organ]}}" range="{{Organ}}" name='Organ'>
+                <text class='select_text' style='padding:5rpx;'>{{Organ[index_organ]}}</text>
+              </picker>
+            </view>
+            <view class='star'> **</view>
+          </view>
+
+          <view class='select_box'>
+            <text class='select_info'>  {{content.status}}:</text>
+            <view class='picker'>
+              <picker bindchange="bindStatusChange" value="{{Status[index_status]}}" range="{{Status}}" name='Status'>
+                <text class='select_text' style='padding:5rpx;'>{{Status[index_status]}}</text>
+              </picker>
+            </view>
+            <view class='star'> **</view>
+          </view>
+        </view>
+        <view wx:if="{{sourceTypeSelected == 'Cell' || sourceTypeSelected== '细胞'}}">
+          <view class='select_box'>
+            <text class='select_info'>  {{content.cellType}}:</text>
+            <view class='picker'>
+              <picker bindchange="bindCellTypeChange" value="{{CellType[index_celltype]}}" range="{{CellType}}" name='CellType'>
+                <text class='select_text' style='padding:5rpx;' >{{CellType[index_celltype]}}</text>
+              </picker>
+            </view>
+            <view class='star'> **</view>
+          </view>
+
+          <!-- <view class='select_box'>
+          <text class='select_info'> 细胞名:</text>
+          <view class='picker'>
+            <picker bindchange="bindCellNameChange" value="{{CellName[index_cellname]}}" range="{{CellName}}" name='CellName'>
+              <text class='select_text' style='padding:5rpx;'>{{CellName[index_cellname]}}</text>
+            </picker>
+          </view>
+        </view> -->
+
+
+          <view class='select_box'>
+            <text class='select_info'>  {{content.cell}}:</text>
+            <view class='picker' style='margin-top:20rpx;'>
+              <input type="text" class="weui-search-bar__input" value="{{inputCellName}}" bindinput="inputTyping_CellName" name='cellName' />
+            </view>
+            <view class='star'> **</view>
+          </view>
+          <scroll-view hidden='{{hide_scroll_cellName}}' class="scroll" scroll-y style="height: 200rpx;">
+            <view class="tempArr" wx:if="{{inputCellName.length > 0}}">
+              <view wx:for='{{temporaryCellNameArray}}' bindtap='selectCellName' data-cellname='{{item}}'>
+                {{item}}
+              </view>
+            </view>
+            <view wx:else>
+              <view wx:for='{{CellName}}' bindtap='selectCellName' data-cellname='{{item}}' class="tempArr">
+                {{item}}
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+
+        <view wx:if="{{sourceTypeSelected == 'Fluid' || sourceTypeSelected == '体液'}}">
+          <view class='select_box'>
+            <text class='select_info'>  {{content.fluid}}:</text>
+            <view class='picker-FluidName'>
+              <picker bindchange="bindFluidNameChange" value="{{FluidName[index_fluidname]}}" range="{{FluidName}}" name='FluidName'>
+                <text class='select_text' style='padding:5rpx;'>{{FluidName[index_fluidname]}}</text>
+              </picker>
+            </view>
+            <view class='star'> **</view>
+          </view>
+        </view>
+
+        <view class='select_box'>
+          <text class='select_info'>  {{content.sampleNumber}}:</text>
+          <input class="input-number" style='width:60%' bindinput='totalConditionNumberChange' name='totalConditionNumber' />
+          <view class='star'> **</view>
+        </view>
+
+        <button formType="submit" class='weui-btn' hover-class='click-button'> {{content.next}}</button>
+    </form>
+
+
+    </view>
+
+  </view>

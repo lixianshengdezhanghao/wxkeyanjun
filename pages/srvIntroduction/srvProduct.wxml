@@ -1,0 +1,41 @@
+<view class='page'>
+  <view class="page__hd">
+    <view class="container">
+      <text class="title">{{content.title}}</text>
+    </view>
+  </view>
+  <view class="page__bd container__bd">
+    <view wx:for="{{content.serviceTypeList}}" wx:for-index="serviceTypeIndex" wx:for-item='Type' class="weui-cells weui-cells_after-title ">
+      <view class='select-box'>
+        <text class='select_title' > {{Type.title}}</text>
+        <label wx:for="{{Type.subtitle}}" wx:for-item='subtitle' >
+        <navigator url="./srvIntroDetail?subtitle={{subtitle.name}}&title={{Type.title}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd text-my">{{subtitle.name}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      </label>
+      </view>
+    </view>
+  </view>
+  
+  <!-- <view class="page__bd container__bd">
+    <view class="weui-cells weui-cells_after-title ">
+      <navigator url="./srvSubProduct?title=蛋白质组学定性分析" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd text-my">蛋白质组学定性分析</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="./srvSubProduct?title=蛋白质组学定量分析" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd text-my">蛋白质组学定量分析</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="./srvSubProduct?title=修饰蛋白质组学分析" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd text-my">修饰蛋白质组学分析</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="./srvSubProduct?title=转录因子DNA结合活性谱分析" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd text-my">转录因子DNA结合活性谱分析</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+  </view> -->
+</view>

@@ -1,0 +1,30 @@
+/* component/tabBar/tabBar.wxss */
+.tabbar{
+    display: flex;
+    background: #fff;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    border-top:1rpx solid #ccc; 
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.tabbar-btn{
+    height: 90rpx;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+.tabbar-btn image{
+    height: 50rpx;
+    width: 50rpx;
+}
+.tabbar-text{
+    font-size: 26rpx;
+    color: #4e4e4e;
+}
+.tabbar_active{
+    font-size: 26rpx;
+    color:#1296db;
+}

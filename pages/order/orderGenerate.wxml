@@ -1,0 +1,32 @@
+<view class='page'>
+  <view class='container'>
+    <text class='title'>订单生成中</text>
+    <view class='select_box' style='margin:10rpx'>
+      <text class='select_info' style='width:50%'>  条码邮寄地址</text>
+      <input class='select' />
+    </view>
+    <view class='select_box' >
+      <text class='select_info'>  送样时间</text>
+      <picker class='picker' mode="date" value="{{date}}" start="2018-07-16" end="2019-09-01" bindchange="bindDateChange">
+        <text class='select_text'>{{date}}</text>
+        <!-- <image class='select_img ' src='/images/pulldown.png'></image> -->
+      </picker>
+    </view>
+    <view class='select_box' >
+      <text class='select_info'>  送样方式</text>
+      <picker class='picker' value="{{index_way}}" range="{{deliverWay}}" bindchange="bindDWChange">
+        <text class='select_text'>{{deliverWay[index_way]}}</text>
+        <!-- <image class='select_img ' src='/images/pulldown.png'></image> -->
+      </picker>
+    </view>
+    <view class='total'>
+      <text class='total_text'>金额确定</text>
+      <text class='total_num'></text>
+    </view>
+    <view class='button-area'>
+      <button class='submit' bindtap='submit'> 确定</button>
+    </view>
+    
+
+  </view>
+</view>

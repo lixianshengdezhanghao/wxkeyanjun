@@ -1,0 +1,15 @@
+
+.contact-btn {
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  /* border:0.5rpx solid #87CEEB; */
+  background-color:#87CEEB;
+  width:80%;
+  height:60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size: 30rpx;
+  box-shadow:0rpx 2rpx 5rpx 5rpx #BEBEBE;
+}

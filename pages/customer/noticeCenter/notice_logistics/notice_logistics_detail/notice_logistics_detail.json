@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-steps": "/component-library/vant/steps/index"
+  }
+}

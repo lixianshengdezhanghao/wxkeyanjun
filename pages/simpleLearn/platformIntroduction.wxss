@@ -1,0 +1,35 @@
+.title{
+  margin-top:30rpx;
+  font-size: 40rpx;
+}
+.PlatFormIntroduction{
+  height: 400rpx;
+  width: 80%;
+  margin-top:30rpx;
+}
+.item{
+  margin-top:20rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.entries{
+  font-family: '黑体';
+  font-size: 35rpx;
+  margin:20rpx;
+
+}
+.content{
+  margin:30rpx;
+  font-size: 28rpx;
+  display: flex;
+
+}
+
+.instrument{
+  height: 400rpx;
+  width:80%;
+  display: flex;
+  margin-bottom: 20rpx;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

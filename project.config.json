@@ -1,0 +1,89 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wx31b2d1d51de32365",
+	"projectname": "iProteome",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "消费者",
+					"pathName": "pages/customer/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "报告",
+					"pathName": "pages/customer/report/report",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绑定套件",
+					"pathName": "pages/customer/bind/bind",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "服务协议",
+					"pathName": "pages/customer/consent/consent",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "lab",
+					"pathName": "pages/customer/laboratory/laboratory",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "project",
+					"pathName": "pages/customer/item/item",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绑定成功",
+					"pathName": "pages/customer/bind-succeed/bind-succeed",
+					"scene": null
+				}
+			]
+		}
+	}
+}

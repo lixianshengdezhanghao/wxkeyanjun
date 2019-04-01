@@ -1,0 +1,11 @@
+<view class='page'>
+
+  <canvas class='firstCanvas' canvas-id="firstCanvas" bindtouchmove='move' bindtouchstart='start' bindtouchend='end' bindtouchcancel='cancel' bindlongtap='tap' disable-scroll='true' binderror='error'>
+  </canvas>
+
+  <view class='btnArea'>
+  <button class='weui-btn' hover-class='click-button' style='width:200rpx;' bindtap='clearClick'>{{content.clear}}</button>
+  <button class='weui-btn save-btn' hover-class='click-button' bindtap='saveClick'>{{content.save}}</button>
+  </view>
+  <!-- <image id='signatureImg' src='{{signImage}}'></image> -->
+</view>

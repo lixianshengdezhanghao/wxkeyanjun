@@ -1,0 +1,89 @@
+<!--pages/customer/customer.wxml-->
+<view class="page ">
+  <view class="title">个人信息</view>
+  <form bindsubmit="formSubmit" bindreset="formReset" class="form-box">
+  <view>上次提交时间：{{submitTime}}</view>
+ <view style="margin:10rpx">一、个人基本信息</view>
+  <view class="weui-flex item">
+    <view  class="item-title" > 姓名: </view>
+    <input value="{{userinfo.name}}" name='name' />
+  </view>
+  <view class="weui-flex item">
+    <view  class="item-title" >  性别: </view>
+    <view class="weui-flex__item">
+      <radio-group class="radio-group"  style="margin-left:10rpx;" name='gender'  bindchange="genderChange">
+        <label class="radio" wx:for="{{Gender}}">
+          <radio value="{{item.gender}}" checked="{{item.checked}}"/>{{item.gender}} </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="weui-flex item">
+    <view  class="item-title" >  出生日期: </view>
+      <picker mode="date" value="{{userinfo.birthDate}}" start="1948-01-01" end="2020-01-01" bindchange="bindDateChange" name="birthDate">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+  </view>
+  <view class="weui-flex item">
+    <view  class="item-title" >  身高: </view>
+      <input name='height'  value="{{userinfo.height}}" />
+    <view style='white-space:pre;'> cm </view>
+  </view>
+  <view class="weui-flex item">
+    <view class="item-title " >  体重: </view>
+      <input name='weight'  value="{{userinfo.weight}}" />
+    <view style='white-space:pre;'> kg </view>
+  </view>
+  <view class="weui-flex item">
+    <view  class="item-title" >  血压: </view>
+    <view class="weui-flex__item">
+      <input  bindinput="bindKeyInput" name='blood_pressure1'  value="{{userinfo.blood_pressure1}}"></input>
+    </view>
+    <view style='white-space:pre;'> mmHg/ </view>
+    <view class="weui-flex__item">
+      <input  bindinput="bindKeyInput" name='blood_pressure2' value="{{userinfo.blood_pressure2}}" />
+    </view>
+    <view style='white-space:pre;'> mmHg </view>
+  </view>
+
+  <view class="weui-flex item">
+    <view  class="item-title" > 地址：</view>
+    <picker class="weui-flex__item" mode="region" bindchange="bindRegionChange" value="{{userinfo.address}}"  name="address">
+      <view class="picker">
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </view>
+    </picker>
+  </view> 
+
+  <view class="weui-flex item">
+    <view> 最近是否体检结果有无异常: </view>
+    <view class="weui-flex__item">
+      <radio-group class="radio-group" bindchange="radioChange" name='abnormality' value="{{userinfo.abnormality}}">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.value}}</label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="text item">二、个人基本情况（选填）</view>
+  <view class="text item">提交体检报告:</view>
+  <view class="gallery item">
+    <view class="item" wx:for="{{images}}" wx:key="">
+      <image style="width: {{imageWidth}}px; height: {{imageWidth}}px" src=" {{item}}" bindtap="previewImage" mode="scaleToFill" />
+      <!-- 删除按钮 -->
+      <!-- <view class="delete" bindtap="delete" data-index="{{index}}"> -->
+        <image class="delete" bindtap="delete" data-index="{{index}}" style="left: {{imageWidth - 100}}rpx;" src="/images/icon_delete.png" />
+      <!-- </view> -->
+    </view>
+    <view class="item">
+      <image style="width: {{imageWidth/2}}px; height: {{imageWidth/2}}px" src="/images/icon_add.png" class="button-upload" bindtap="chooseImage" />
+    </view>
+  </view>
+ 
+  <view class="btn-area">
+    <button class="weui-btn" bindtap="submit2">提交体检报告</button>
+    <button  class="weui-btn" formType="submit">提交</button>
+    <button  class="weui-btn" formType="reset">重置</button>
+  </view>
+</form>
+</view>

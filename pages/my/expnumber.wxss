@@ -1,0 +1,4 @@
+.info{
+  margin-top:10rpx 5rpx;
+  border-bottom: 1prx solid  red;
+}

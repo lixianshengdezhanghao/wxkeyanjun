@@ -1,0 +1,5 @@
+<view class='page'>
+  <view class='container'>
+    <image mode='widthFix' class='img' src='{{content.src}}' data-src="{{content.src}}"  bindtap='previewImage' />
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<!--pages/bind/bind.wxml-->
+<view class="page">
+  <view class="header">
+    <v-steps stepsId="{{stepsId}}"></v-steps>
+  </view>
+
+  <view class="bind-title">扫描套件</view>
+  
+  <view class="footer-content">
+    <view class="bind-suite">
+      <view class="input-suite">
+        <view class="suite-notes">套件号码</view>
+        <button class="scan-btn" bindtap="scanNumber">扫一扫</button>
+      </view>
+      <input class='weui-input' bindinput="suiteCode" name="suiteCode" placeholder="{{code}}" />
+      <view class="suite-text"> 14位的套件码位于采集管上，位置如图所示</view>
+      <image class="collector-img" src="/images/customer/caijiqi.jpg"></image>
+      <view class="suite-notes">检查者姓名</view>
+      <input class='weui-input' bindinput="name" name="name" placeholder="{{name}}" />
+      
+    </view>
+    <button disabled="{{disabled}}" class="my_btn" bindtap="next">下一步</button>
+  </view>
+</view>

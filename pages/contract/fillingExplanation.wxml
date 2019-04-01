@@ -1,0 +1,16 @@
+<view class='page'>
+  <view class='page__hd'>
+    <text class='title'> {{content.title}}</text>
+  </view>
+  <view class='page__bd'>
+   <view  wx:for='{{content.fillingExplanationList}}'>
+      <text class='explanation'>{{item}} </text>
+   </view>
+  <button class='weui-btn' hover-class='click-button'  bindtap='next'> {{content.next}}</button>
+  </view>
+
+
+
+
+
+</view>

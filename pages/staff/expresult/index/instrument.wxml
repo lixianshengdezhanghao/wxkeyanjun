@@ -1,0 +1,19 @@
+<view class='page'>
+  <view class='page__hd'>
+    <text class='title'>{{content.title}}</text>
+  </view>
+  <view class='page__bd'>
+    <!-- <scroll-view scroll-y style="height: 600rpx;" bindscrolltolower="refesh"> -->
+    <!-- <view></view> -->
+    
+    <view wx:for="{{list}}" class='content' id="{{item.id}}" bindtap="kindToggle" wx:key="instrument">
+      <view  >
+        <view class='weui-cell__bd'>{{content.instrument}}: {{item.instrument}}</view>
+        <view class='weui-cell__bd'>{{content.update}}: {{item.update}}</view>
+        <view class='weui-cell__bd'>{{content.status}}: {{item.status}}</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access" style='margin-left:40%'></view>
+    </view>
+    <!-- </scroll-view> -->
+  </view>
+</view>

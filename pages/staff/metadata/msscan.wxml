@@ -1,0 +1,16 @@
+<!-- pages/metadata/samplescan.wxml -->
+<view class='page'>
+<view class="page__hd ">
+<text class='title'> {{content.title}}</text>
+</view>
+
+<view class="page__hd ">
+<text class='title'> {{content.subtitle}}</text>
+</view>
+
+<form bindsubmit="submit">
+    <input class='weui-input' bindinput="bindKeyInput" maxlength="11" type="text" class="marginview" name="phone" placeholder="{{content.placeholder}}" confirm-type='send' />
+</form>
+<button  class='btn' style='width:70%;height:200rpx;font-size:40rpx;' bindtap="scanNumber">{{content.scan}}</button>
+</view>
+<!-- <button class="marginview" bindtap="submit">Submit</button> -->

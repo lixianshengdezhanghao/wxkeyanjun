@@ -1,0 +1,33 @@
+<view class="order">
+    <view class="title-order">
+        <image class="cell" src="/images/customer/jindubeijing.jpg"></image>
+        <view class="titleO">
+            <view class="title-text">项目进度</view>
+            <image class="icon" src="/images/favicon4.png">
+                Firmiana</image>
+        </view>
+    </view>
+    <view class="content-order">
+        <!-- 项目进度条 -->
+        <view id="progressBar">
+            <!-- 进度条 -->
+            <view>
+                <text style='height:{{row}}%'></text>
+            </view>
+            <!-- 五个圆 -->
+            <text class="{{value>=2?'bule':'white'}}"></text>
+            <text class="{{value>=3?'bule':'white'}}"></text>
+            <text class="{{value>=4?'bule':'white'}}"></text>
+            <text class="{{value>=5?'bule':'white'}}"></text>
+            <text class="{{value>=1?'bule':'white'}}"></text>
+        </view>
+        <!-- 项目进度条结束 -->
+        <view class="element">
+            <view>收到样本</view>
+            <view>样本制备中</view>
+            <view>上机检测中</view>
+            <view>数据处理中</view>
+            <view>报告</view>
+        </view>
+    </view>
+</view>

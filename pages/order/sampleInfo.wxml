@@ -1,0 +1,78 @@
+<view class='page'>
+  <view class="page__hd ">
+    <text class='title'> {{content.sampleInfo}}</text>
+  </view>
+  <view class="page__bd">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class='select_box'>
+        <text class='select_info'> {{content.analysisTime}}:</text>
+
+        <picker class='picker' value='{{content.AnalysisTime[index_AnalysisTime]}}' range='{{content.AnalysisTime}}' bindchange='bindAnalysisTimeChange' name='AnalysisTime'>
+          <text class='select_text'>{{content.AnalysisTime[index_AnalysisTime]}}</text>
+        </picker>
+        <view class='star'> **</view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'> {{content.dataAnalysis}}:</text>
+        <picker class='picker' value='{{content.DataAnalysis[index_dataAnalysis]}}' range='{{content.DataAnalysis}}' bindchange='bindDataAnalysisChange' name='DataAnalysis'>
+          <text class='select_text'>{{content.DataAnalysis[index_dataAnalysis]}}</text>
+        </picker>
+        <view class='star'> **</view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'> {{content.projectNotes}}:</text>
+        <textarea class='comments' bindinput='CommentsChange' value='{{comments}}' maxlength='-1' name='Comments'></textarea>
+
+      </view>
+         <view class='select_box'>
+        <text class='select_info'>  {{content.partyA}}:</text>
+        <input class="input-number" style='width:60%' bindinput='partyAChange' value='{{partyA}}' name='partyA' />
+        <view class='star'> **</view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>  {{content.legalRepresentative}}:</text>
+        <input class="input-number" style='width:60%' bindinput='legalRepresentativeChange' name='legalRepresentative' value='{{legalRepresentative}}' />
+        <view class='star'> **</view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>  {{content.projectContactPerson}}:</text>
+        <input class="input-number" style='width:60%' bindinput='projectContactPersonChange'  value='{{projectContactPerson}}' name='projectContactPerson' />
+        <view class='star'> **</view>
+      </view>
+      <view class='select_box' style='margin-top:30rpx'>
+        <text class='select_info'> {{content.address}}:</text>
+        <textarea class='comments' style='height:120rpx' bindinput='addressChange' value='{{address}}' maxlength='-1' name='Address'></textarea>
+        <!-- <input class="input-number " style='width:60%；height:200rpx;' bindinput='bindAddressChange' name='Address' /> -->
+        <view class='star'> **</view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'> {{content.contactNumber}}:</text>
+        <view class='input-phonenumber'>
+          <input bindinput='contactNumberChange' name='contactNumber' value='{{contactNumber}}'/>
+        </view>
+        <view class='star' style='margin-left:0rpx;'> **{{content.note}}</view>
+      </view>
+      
+      <view class='select_box'>
+        <text class='select_info'>  {{content.postcode}}:</text>
+        <input class="input-number" style='width:60%' bindinput='postcodeChange' name='postcode' value='{{postcode}}' />
+        <view class='star'> **</view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>  {{content.fax}}:</text>
+        <input class="input-number" style='width:60%' bindinput='faxChange' name='fax' value='{{fax}}' />
+        <view class='star'> **</view>
+      </view>
+
+
+      
+
+      <button class='weui-btn' hover-class='click-button' formType="submit"> {{content.submitOrder}}</button>
+
+
+    </form>
+  </view>
+
+
+
+</view>

@@ -1,0 +1,5 @@
+/* component/steps/steps.wxss */
+.bind-step{
+    padding-top: 30rpx;
+    margin:0rpx 10rpx 30rpx auto;
+  }

@@ -1,0 +1,138 @@
+<!--pages/my_order/my_order.wxml-->
+<view class='page'>
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+    <view class="swiper-tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待付款</view>
+    <view class="swiper-tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待收货</view>
+    <view class="swiper-tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">已完成</view>
+    <view class="swiper-tab-item {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">查询</view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange">
+    <swiper-item>
+      <scroll-view class="hot-box" scroll-y="false" scroll-top="0">
+        <block wx:for="{{orders.data}}" wx:key="{{index}}">
+          <view class="order-details">
+            <view class="order-list-title">
+              <text class="user-name">{{item.name}}</text>
+              <text class="order-status" bindtap="toOrderDetail">{{item.payState}}</text>
+            </view>
+            <view class="order-list-details" bindtap="toSchedule">
+              <view class="product-img">
+                <image src="/images/customer/dingdan.png" background-size="cover"></image>
+              </view>
+              <view class="product-info">
+                <view class="product-title">预定时间:{{item.dates}}</view>
+                <text class="product-price">当前状态:{{item.state}}</text>
+              </view>
+            </view>
+            <view class="product-count">
+              <text bindtap="toReport">健康指数</text>
+              <text bindtap="toLogistics">物流查询</text>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class="hot-box" scroll-y="true">
+        <view class="order-details">
+          <view class="order-list-title">
+            <text class="user-name">李先生</text>
+            <text class="order-status">交易中</text>
+          </view>
+          <view class="order-list-details" bindtap="toSchedule">
+            <view class="product-img">
+              <image src="{{item.url}}" background-size="cover"></image>
+            </view>
+            <view class="product-info">
+              <view class="product-title">预定时间:2019-3-15</view>
+              <text class="product-price">当前状态:上机检测中</text>
+            </view>
+          </view>
+          <view class="product-count">
+            <view>
+              <text>健康指数:98%</text>
+              <text>物流查询</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class="hot-box" scroll-y="true">
+        <view class="order-details">
+          <view class="order-list-title">
+            <text class="user-name">李先生</text>
+            <text class="order-status">交易完成</text>
+          </view>
+          <view class="order-list-details" bindtap="toSchedule">
+            <view class="product-img">
+              <image src="{{item.url}}" background-size="cover"></image>
+            </view>
+            <view class="product-info">
+              <view class="product-title">预定时间:2019-3-15</view>
+              <text class="product-price">当前状态:上机检测中</text>
+            </view>
+          </view>
+          <view class="product-count">
+            <view>
+              <text>健康指数:98%</text>
+              <text>物流查询</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class="hot-box" scroll-y="true">
+        <view class="order-details">
+          <view class="order-list-title">
+            <text class="user-name">李先生</text>
+            <text class="order-status">交易完成</text>
+          </view>
+          <view class="order-list-details" bindtap="toSchedule">
+            <view class="product-img">
+              <image src="{{item.url}}" background-size="cover"></image>
+            </view>
+            <view class="product-info">
+              <view class="product-title">预定时间:2019-3-15</view>
+              <text class="product-price">当前状态:上机检测中</text>
+            </view>
+          </view>
+          <view class="product-count">
+            <view>
+              <text>健康指数:98%</text>
+              <text>物流查询</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <view class="content-query">
+        <view class="search-content">
+          <input class="input-query" type="text" placeholder="请输入您要查询的项目" />
+          <button class="search-img" hover-class="btnhover">
+            <image src="/images/customer/search.png"></image>
+          </button>
+        </view>
+
+        <scroll-view class="hot-box" scroll-y="true">
+          <view class="query-customer">
+            <image class="query-userimg" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <text class="query-nickname">
+              <!-- {{userInfo.nickName}} -->王富贵——尿检</text>
+            <view class="look-details" bindtap="toReport"><text>查看报告</text>></view>
+          </view>
+          <view class="query-details">
+            <view class="hospital-details"><text>取样医院：</text><text>复旦医院</text></view>
+            <view class="pay-details"><text>合同订单</text><text>￥600</text></view>
+            <view class="look-pay" bindtap="toOrderDetail"><text>查看订单</text>></view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+</view>

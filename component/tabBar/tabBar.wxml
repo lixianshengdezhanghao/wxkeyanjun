@@ -1,0 +1,16 @@
+<!--component/tabBar/tabBar.wxml-->
+
+<view class="tabbar">
+    <view class="tabbar-btn" bindtap="toLab">
+        <image src="{{num==1?'/images/customer/tabBar/lab-b.png':'/images/customer/tabBar/lab-h.png'}}"></image>
+        <view class="{{num==1?'tabbar_active':'tabbar-text'}}">实验室</view>
+    </view>
+    <view class="tabbar-btn" bindtap="toItme">
+        <image src="{{num==2?'/images/customer/tabBar/pro-b.png':'/images/customer/tabBar/pro-h.png'}}"></image>
+        <view class="{{num==2?'tabbar_active':'tabbar-text'}}">项目</view>
+    </view>
+    <view class="tabbar-btn" bindtap="toMy">
+        <image src="{{num==3?'/images/customer/tabBar/my-b.png':'/images/customer/tabBar/my-h.png'}}"></image>
+        <view class="{{num==3?'tabbar_active':'tabbar-text'}}">我的</view>
+    </view>
+</view>

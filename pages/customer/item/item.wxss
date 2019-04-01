@@ -1,0 +1,86 @@
+/* pages/item/item.wxss */
+/* header部分 */
+.header {
+  background: #fff;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 60rpx;
+  box-shadow: 0rpx 2rpx 15rpx 4rpx rgba(116, 116, 116, 0.1);
+  height: 320rpx;
+  position: relative;
+}
+.item-cover{
+  height: 320rpx;
+  width: 100%;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 60rpx;
+}
+.pro-title{
+  padding-top:100rpx;
+  text-align: center;
+  font-weight: 600;
+  font-size: 36rpx;
+  color: #fff;
+  position: absolute;
+  z-index: 2;
+  top:17rpx;
+  left: 40rpx;
+}
+.pro-btn{
+  width:180rpx;  
+  height:50rpx;
+  border-radius: 50rpx;  
+  margin:40rpx auto ;    
+  font-size:28rpx; 
+  line-height: 50rpx; 
+  text-align: center;
+  color:white; 
+  border: 1rpx solid #fff; 
+  overflow:hidden;  
+  background: rgba(116, 116, 116, 0);
+  position: absolute;
+  z-index: 2;
+  top:175rpx;
+  left: 40rpx;
+}
+/* header部分结束 */
+
+/* content部分 */
+.item-content{
+  background: #fff;
+  box-shadow: 0rpx 2rpx 20rpx 4rpx rgba(116, 116, 116, 0.1);
+  border-radius: 25rpx;
+  width: 92%;
+  margin: 25rpx auto 0rpx auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 10rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.item-btn{
+  width: 300rpx;
+  padding-bottom: 250rpx;
+  border: none;
+  border-radius: 20rpx;
+  margin-left: 10rpx;
+}
+.btn-content-img{
+  height: 100rpx;
+  width: 100rpx;
+  margin-top: 35rpx;
+  text-align: center;
+}
+/* 弹出层部分 */
+.demo-btn{
+  border-radius: 50%;
+  margin: 30rpx 40rpx 20rpx 0;
+  height:130rpx;
+  width: 130rpx;
+  font-size: 24rpx;
+  line-height: 130rpx;
+  padding: 0;
+  color: #fff;
+
+}

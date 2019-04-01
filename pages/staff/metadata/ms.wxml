@@ -1,0 +1,214 @@
+<view class='page'>
+  <view class='page__bd'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class='classify'>General</view>
+      <view class='select_box'>
+        <text class='select_info'> Project:</text>
+        <text class='select_text'>{{Project}}</text>
+      </view>
+
+      <view class='select_box'>
+        <text class='select_info'> Firmiana:</text>
+        <text class="select_text">{{Firmiana}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'> Project Manager:</text>
+        <text class="select_text">{{PM}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Experiment Type:</text>
+        <text class="select_text">{{ExperimentType}}</text>
+      </view>
+      <view class='classify'>Sample Preparation</view>
+      <view class='select_box'>
+        <text class='select_info' style='width:40%'> Sample Preparation Date:</text>
+        <text class="select_text"> {{date}}</text>
+      </view>
+
+      <view class='select_box'>
+        <text class='select_info'> Operator:</text>
+
+        <text class='select_text'>{{operatorName}}</text>
+      </view>
+      <view class='select_box' name="conditionID">
+        <text class='select_info'>Sample Number:</text>
+        <text class='select_text'>{{conditionID}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Location:</text>
+        <text class='select_text'>{{location}}</text>
+
+      </view>
+
+      <view class='select_box'>
+        <text class='select_info'>Taxons:</text>
+        <text class='select_text'>{{Taxons}}</text>
+      </view>
+      <view wx:if="{{sourceTypeSelected == '组织'}}">
+        <view class='select_box'>
+          <text class='select_info'>System:</text>
+          <text class='select_text'>{{System}}</text>
+        </view>
+        <view class='select_box'>
+          <text class='select_info'>organ:</text>
+          <text class='select_text'>{{organ}}</text>
+        </view>
+        <view class='select_box'>
+          <text class='select_info'>Status:</text>
+          <text class='select_text'>{{status}}</text>
+        </view>
+        <view class='select_box'>
+          <text class='select_info'>Sample storage:</text>
+          <text class='select_text'></text>
+        </view>
+      </view>
+      <view wx:if="{{sourceTypeSelected == '细胞'}}">
+        <view class='select_box'>
+          <text class='select_info'>Cell:</text>
+          <text class='select_text'>{{CellType}}</text>
+        </view>
+      </view>
+      <view wx:if="{{sourceTypeSelected == '体液'}}">
+        <view class='select_box'>
+          <text class='select_info'>Fluid:</text>
+          <text class='select_text'>{{CellType}}</text>
+        </view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Amount:</text>
+        <text class='select_text'>{{Amount}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Protocol:</text>
+        <text class='select_text'>{{Protocol}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Temporary placement:</text>
+        <text class='select_text'>{{Temporary}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Sample loading:</text>
+        <text class='select_text'>{{loading}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Extra Comments:</text>
+        <text class='select_text'>{{comments}}</text>
+      </view>
+
+
+
+      <view class='classify'>MS analysis</view>
+      <view class='select_box'>
+        <text class='select_info'>MS analysis:</text>
+        <view class='select_text'>
+
+          <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+            <text>{{date}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Operator:</text>
+        <text class='select_text'>{{Operator_MS}}</text>
+      </view>
+
+      <view class='select_box'>
+        <text class='select_info'>Instrument:</text>
+        <view class='select_text'>
+
+          <picker bindchange="bindInstrumentPickerChange" value="{{InstrumentIndex}}" range="{{Instrument}}" name='InstrumentIndex'>
+            <text>{{Instrument[InstrumentIndex]}}</text>
+
+          </picker>
+
+        </view>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Tolerance:</text>
+        <text class='select_text'>{{Tolerance}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Gradient:</text>
+        <text class='select_text'>{{Gradient}}</text>
+      </view>
+      <view class='select_box'>
+        <text class='select_info'>Search Database:</text>
+        <view class='select_text'>
+          <picker bindchange="bindDatabaseChange" value="{{DatabaseIndex}}" range="{{Database}}" name='DatabaseIndex'>
+            <text>{{Database[DatabaseIndex]}}</text>
+          </picker>
+        </view>
+      </view>
+      <!-- <view class='select_box'>
+        <text class='select_info'>Fixed Modification:</text>
+        <view class='select_text'>
+          <picker bindchange="bindFixedChange" value="{{FixedIndex}}" range="{{modifications}}" name='FixedIndex'>
+            <text>{{modifications[FixedIndex]}}</text>
+          </picker>
+        </view>
+      </view> -->
+      <view class='select_box'>
+        <text class='select_info'>Fixed Modification:</text>
+        <view class='select_text' bindtap='selectFixedDialog'>
+          <text> {{FixedModvalue}} </text>
+        </view>
+        <view class="free-dialog {{showFixedDialog ? 'free-dialog--show' : '' }}">
+          <view class="free-dialog__mask" bindtap="selectFixedDialog" />
+          <view class="free-dialog__container">
+            <view style="padding: 5% 5% 15%;">
+              <view bindtap='FixedModcancel' class="free-button free-dialog-reset">取消</view>
+              <view bindtap='FixedModok' class="free-button free-dialog-submit">确定</view>
+              <scroll-view scroll-y style="height: 300rpx;">
+                <checkbox-group class='free-radios' bindchange="checkboxFixedChange">
+                  <label class="free-radio" bindtap="clickFixed" wx:for="{{FixedModifications}}" wx:key="{{index}}" data-id="{{index}}" style="{{item.checked?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}">
+                    <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+                    <scroll-view scroll-x style='width:100%'>
+                      <text class="free-text">{{item.name}}</text>
+                    </scroll-view>
+                  </label>
+                </checkbox-group>
+              </scroll-view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='select_box'>
+        <text class='select_info'>Dynamic Modification:</text>
+        <view class='select_text'>
+          <picker bindchange="bindDynamicChange" value="{{DynamicIndex}}" range="{{modifications}}" name='DynamicIndex'>
+            <text>{{modifications[DynamicIndex]}}</text>
+          </picker>
+        </view>
+      </view> -->
+      <view class='select_box'>
+        <text class='select_info'>Dynamic Modification:</text>
+        <view class='select_text' bindtap='selectDynamicDialog'>
+          <text> {{DynamicModvalue}} </text>
+        </view>
+        <view class="free-dialog {{showDynamicDialog ? 'free-dialog--show' : '' }}">
+          <view class="free-dialog__mask" bindtap="selectDynamicDialog" />
+          <view class="free-dialog__container">
+            <view style="padding: 5% 5% 15%;">
+              <view bindtap='DynamicModcancel' class="free-button free-dialog-reset">取消</view>
+              <view bindtap='DynamicModok' class="free-button free-dialog-submit">确定</view>
+              <scroll-view scroll-y style="height: 300rpx;">
+                <checkbox-group class='free-radios' bindchange="checkboxDynamicChange">
+                  <label class="free-radio" bindtap="clickDynamic" wx:for="{{DynamicModifications}}" wx:key="{{index}}" data-id="{{index}}" style="{{item.checked?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}">
+                    <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+                    <scroll-view scroll-x style='width:100%'>
+                      <text class="free-text">{{item.name}}</text>
+                    </scroll-view>
+                  </label>
+                </checkbox-group>
+              </scroll-view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="btn-area">
+        <button class='weui-btn' style='font-size:25rpx;' formType="submit">Submit</button>
+        <button class='weui-btn' style='font-size:25rpx;' formType="reset">Reset</button>
+      </view>
+    </form>
+  </view>
+</view>

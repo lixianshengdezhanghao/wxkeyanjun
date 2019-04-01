@@ -1,0 +1,54 @@
+<view class='page'>
+  <view class='container'>
+    <text class='title_product'> {{title}}</text>
+  </view>
+
+  <block wx:for="{{list}}">
+    <view class='item'>
+      <view class='title'>
+        <image src='/images/item.png' class='img-title' />
+        <text class="theme"> {{item.theme}}</text>
+      </view>
+      <!-- <view class='sep-line' /> -->
+      <view wx:if="{{item.theme!='技术原理' && item.theme!= 'Technical Principle' }}" class="content-area">
+        <view wx:for='{{item.content}}' class="content">
+          <text > {{item}} </text>
+        </view>
+      </view>
+      <view wx:else class="content-area">
+        <view wx:for='{{item.content}}' class="content">
+          <text > {{item}} </text>
+        </view>
+        <view wx:for="{{item.src}}" class="content">
+          <image src="{{item}}"  class='techImg' mode='widthFix' bindtap='previewImage' data-src="{{item}}"  bindload="imageLoad" />
+        </view>
+        <!-- style="width: {{imagewidth*1.6}}rpx; height: {{imageheight*2}}rpx;" -->
+      </view>  
+    </view>
+  </block>
+  <!-- <block wx:for="{{list}}">
+    <view class="item" style="background-color:{{item.bkcolor}}" bindtap='toDetail' data-theme='{{item.theme}}' data-content="{{item.content}}">
+      <view style="display:flex;flex-direction:row">
+        <view style="display:flex;flex-direction:column">
+          <text class="theme"> {{item.theme}}</text> 
+          <view wx:if="{{item.theme!='技术原理'}}">
+            <view wx:for='{{item.content}}' class="content">
+              <text style="display:flex;flex-direction:row"> {{item}} </text>
+            </view>
+          </view>
+          <view wx:else >
+            <view wx:for='{{item.content}}' class="content">
+              <text > {{item}} </text>
+            </view>
+            <view wx:for="{{item.src}}" >
+             <image src="{{item}}" class='techImg' style="width: {{imagewidth*1.6}}rpx; height: {{imageheight*2}}rpx;" bindload="imageLoad"/>
+            </view>
+          </view>
+        </view>
+        </view>
+      </view>
+  </block> -->
+
+
+
+</view>

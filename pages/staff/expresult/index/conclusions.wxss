@@ -1,0 +1,41 @@
+/* pages/index/coclusions.wxss */
+
+/* .btn {
+  margin-top: 30rpx;
+  border-radius: 30rpx;
+  background-color:#87CEEB;
+  width:300rpx;
+  height:60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size: 30rpx;
+} */
+.container{
+  padding:160rpx 0;
+}
+
+.btn{
+  width:210rpx;
+  height:210rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  background-color:#87CEEB;
+  font-size:32rpx;
+  border-radius:50%;
+  box-shadow:0rpx 0rpx 25rpx 20rpx #D3D3D3	;
+  /* box-shadow:5rpx #BEBEBE; */
+}
+.weui-btn{
+   width:210rpx;
+  height:210rpx;
+  font-size:32rpx;
+  border-radius:50%;
+  box-shadow:0rpx 0rpx 25rpx 20rpx #D3D3D3	;
+}
+.btn::after{
+  border:none;
+}

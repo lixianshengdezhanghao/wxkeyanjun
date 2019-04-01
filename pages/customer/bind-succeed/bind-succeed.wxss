@@ -1,0 +1,88 @@
+/* pages/customer/bind-succeed/bind-succeed.wxss */
+/* 步骤条 */
+.header {
+    background: #fff;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 60rpx;
+    box-shadow: 0rpx 2rpx 15rpx 4rpx rgba(116, 116, 116, 0.1);
+    height: 200rpx;
+}
+
+/* 步骤结束 */
+
+/* 步骤名称 */
+.bind-title {
+    background: #fff;
+    border-radius: 10rpx;
+    box-shadow: 0rpx 1rpx 10rpx 4rpx rgba(116, 116, 116, 0.1);
+    height: 80rpx;
+    width: 98%;
+    font-size: 40rpx;
+    font-weight: 600;
+    margin: 25rpx auto 20rpx auto;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+/* 步骤名称结束 */
+
+/* 扫描套件部分 */
+.footer-content {
+    background: #fff;
+    box-shadow: 0rpx 2rpx 20rpx 4rpx rgba(116, 116, 116, 0.1);
+    border-radius: 25rpx;
+    width: 98%;
+    margin: 25rpx auto 0rpx auto;
+    padding-top: 25rpx;
+}
+
+.content-btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+}
+.btn-title{
+    color:#808080;
+    font-size: 30rpx;
+    width: 86%;
+    margin: 25rpx auto 60rpx auto;
+}
+.bind-btn {
+    height: 250rpx;
+    width: 250rpx;
+    box-shadow: 0rpx 2rpx 20rpx 4rpx rgba(116, 116, 116, 0.1);
+    margin-bottom: 60rpx;
+    border-radius: 10rpx;
+    text-align: center;
+}
+.bind-btn-img{
+    height: 80rpx;
+    width: 80rpx;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx;
+}
+.bind-btn-text{
+    color: #585858;
+}
+
+/* 按钮部分 */
+.my_btn {
+    width: 600rpx;
+    border-radius: 50rpx;
+    position: absolute;
+    margin: 30rpx 70rpx;
+    font-size: 40rpx;
+    color: white;
+    overflow: hidden;
+    background-color: #87CEEB;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my_btn::after {
+    border: 1rpx solid white;
+}

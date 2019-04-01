@@ -1,0 +1,90 @@
+<!--index.wxml-->
+<view class='page'>
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="{{content.search}}" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">{{content.search}}</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">{{content.cancel}}</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='page__bd container__bd'>
+    <!-- <scroll-view scroll-y style="height: 600rpx;" bindscrolltolower="refesh"> -->
+    <view wx:for="{{list}}" id="{{item.id}}" class='content'  bindtap="kindToggle" wx:key="instrument">
+      <view >
+        <view class='weui-cell__bd'>{{content.projectName}}: {{item.name}}</view>
+        <view class='weui-cell__bd'>{{content.projectNumber}}: {{item.id}}</view>
+        <view class='weui-cell__bd'>{{content.organ}}: {{item.organ}}</view>
+        <view class='weui-cell__bd'>{{content.status}}: {{item.status}}</view>
+        <view class='weui-cell__bd'>{{content.species}}: {{item.species}}</view>
+        <view class='weui-cell__bd'>{{content.cell}}: {{item.cellName}}</view>
+        <view class='weui-cell__bd'>{{content.experimentNumber}}:{{item.experiments}}</view>
+        <view class='weui-cell__bd'>{{content.progress}}:{{item.percentage}}</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access" style='margin-left:40%'></view>
+    </view>
+
+    <!-- <view wx:for="{{list}}" class="weui-cells weui-cells_after-title"  >
+      <view class='select-box'>
+        <navigator url="./experiment?project={{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">{{content.projectName}}:{{item.name}}</view>
+          <view class="weui-cell__bd">{{content.projectNumber}}:{{item.id}}</view>
+          <view class="weui-cell__bd">{{content.organ}}:{{item.organ}}</view>
+          <view class="weui-cell__bd">{{content.status}}:{{item.status}}</view>
+          <view class="weui-cell__bd">{{content.species}}:{{item.species}}</view>
+          <view class="weui-cell__bd">{{content.cell}}:{{item.cellName}}</view>
+          <view class="weui-cell__bd">{{content.experimentNumber}}:{{item.experiments}}</view>
+          <view class="weui-cell__bd">{{content.progress}}:{{item.percentage}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+    </view> -->
+    <!-- </scroll-view> -->
+  </view>
+
+
+
+  <view class="tips1">
+    <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+      <icon type="waiting" size="45" />
+      <text>{{content.loading}}</text>
+    </view>
+    <view wx:else>
+      <text>{{content.noMore}}</text>
+    </view>
+  </view>
+  <!-- </scroll-view> -->
+</view>

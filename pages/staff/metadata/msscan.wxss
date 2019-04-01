@@ -1,0 +1,24 @@
+/* pages/metadata/msscan.wxss */
+.btn {
+  margin-top: 30rpx;
+  border-radius: 30rpx;
+  /* border:0.5rpx solid #87CEEB; */
+  background-color:#87CEEB;
+  width:300rpx;
+  height:60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size: 30rpx;
+}
+.page{
+    background-color: #F8F8F8;
+    font-size: 32rpx;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.page__hd {
+  padding:0px 10px 5px 10px;
+  background-color: #fff;
+  text-align: center;
+}

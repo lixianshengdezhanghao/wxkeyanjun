@@ -1,0 +1,22 @@
+<!--pages/detail/detail.wxml-->
+<view class='page'>
+  <view class='page__hd'>
+    <view  class='container'>
+      <image class="logo__img" src="../../images/favicon4.png" style='border-radius: 50%;' bindtap='mainpage'></image>
+      <text class="brand" bindtap='mainpage'>Firmiana</text> 
+      <!-- <view class='switch' bindtap='swicth'  >
+        <image class="logo__img" src="../../images/icon_switch.png" style='width:50rpx;height:50rpx;border-radius: 50%;'></image>
+        <view style='font-size:26.5rpx'> 切换 </view>
+      </view> -->
+    </view>
+  </view>
+  <view  style='border-top:1rpx solid #D3D3D3;background-color: #fff;height:130rpx'> 
+    <view style='margin:40rpx auto;  padding-top:2rpx;display:flex;letter-spacing:5rpx;font-size:30rpx;justify-content:center;'> 问卷调查 </view>        
+  </view>
+  <view class="page__bd container__bd">
+    <view class="title"> {{theme}} </view>
+    <view class="content"> {{content}}</view>
+  </view>
+
+
+</view>

@@ -1,0 +1,69 @@
+.order-info{
+   border: 1rpx solid #efefef;
+ margin: 10rpx 20rpx;
+ padding: 0 20rpx;
+ font-size:25rpx;
+ width:50%;
+ /* height:50rpx; */
+ display: flex;
+ flex-direction: column;
+
+}
+.select_info{
+  width:35%;
+}
+.subinfo{
+  display: flex;
+  margin-top:10rpx;
+}
+.signArea{
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx;
+  margin-left:300rpx;
+  /* width:300rpx;
+  height:100rpx; */
+
+}
+.image-sign{
+  width:300rpx;
+  height: 300rpx;
+  margin: 10rpx;
+}
+.button-sign{
+    font-size:25rpx;
+  margin:5rpx;
+  width:200rpx;
+  height: 50rpx;
+}
+.input-number{
+  border: 1rpx solid CDC9C9;
+ margin: 10rpx 20rpx;
+ padding: 0 20rpx;
+ font-size:25rpx;
+ width:20%;
+
+ align-items: center;
+}
+.discountbtn{
+  font-size:20rpx;
+  width:20%;
+  margin-top:10rpx;
+}
+.priceArea{
+  display: flex;
+
+}
+.calculate{
+ font-size:25rpx;
+ margin:40rpx;
+ display: flex;
+ /* align-items: center;
+ align-content: center; */
+ justify-content: center;
+}
+.code{
+  color:red;
+  font-size:30rpx;
+}
+

@@ -1,0 +1,52 @@
+/* pages/customer/noticeCenter/notice_logistics/notice_logistics.wxss */
+.cantainer-logistics{
+    height: 230rpx;
+    width: 700rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    margin: 40rpx auto 20rpx auto;
+    box-shadow: 0rpx 2rpx 20rpx 4rpx rgba(126, 125, 125, 0.1);
+    padding-top: 10rpx;
+}
+.header{
+    width: 650rpx;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-img{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 15rpx;
+}
+.name{
+    margin-right: 20rpx;
+}
+.number{
+    margin-right: 60rpx;
+}
+.date{
+    font-size: 26rpx;
+    color: #808080;
+}
+.content-logistics{
+    height: 140rpx;
+    width: 650rpx;
+    background: #fafafa;
+    border-radius: 10rpx;
+    margin: 15rpx auto 0 auto;
+    /* border: 1rpx solid #d8d8d8; */
+    box-shadow: 0rpx 2rpx 10rpx 4rpx rgba(170, 170, 170, 0.1);
+    color: #808080;
+}
+
+.information{
+    width:550rpx;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    margin: auto;
+    height: 140rxp;
+    line-height: 140rpx;
+}

@@ -1,0 +1,77 @@
+<view class='page'>
+  <view class="page__hd ">
+    <text class='title'> {{content.title}}</text>
+  </view>
+  <view class="page__bd container__bd">
+    <!-- <form bindsubmit="formSubmit" bindreset="formReset"> -->
+    <view wx:for='{{orderList}}' data-index='{{index}}' class="weui-cells weui-cells_after-title">
+      <view class='select-box'>
+        <navigator url="./expnumber?project={{item.project}}&type=user" class="weui-cell weui-cell_access " style='border-top:1rpx solid #E8E8E8' hover-class="weui-cell_active">
+          <text class='select_info' style='width:20%'>  {{content.order}}{{index+1}}</text>
+          <view class='order-info' style='font-size:28rpx;'>
+            <view class='subinfo'> {{content.projectName}}:{{item.name}} </view>
+            <view class='weui-cell__bd'> {{content.sampleType}}:{{item.type}} </view>
+
+            <view class='weui-cell__bd'> {{content.species}}:{{item.AorM}} </view>
+            <view class='weui-cell__bd'> {{content.taxonID}}:{{item.taxonID}} </view>
+            <view class='weui-cell__bd'> {{content.strainName}}:{{item.strainName}} </view>
+            <view wx:if="{{item.type == '组织' || item.type == 'Tissue'}}">
+              <view class='weui-cell__bd'> {{content.system}}:{{item.system}} </view>
+              <view class='weui-cell__bd'> {{content.organ}}:{{item.organ}} </view>
+              <view class='weui-cell__bd'> {{content.status}}:{{item.status}}</view>
+            </view>
+            <view wx:elif="{{item.type == '细胞' || item.type == 'Cell' }}">
+              <view class='weui-cell__bd'> {{content.cellType}}:{{item.cellType}} </view>
+              <view class='weui-cell__bd'> {{content.cell}}:{{item.cellName}} </view>
+            </view>
+            <view wx:else>
+              <view class='weui-cell__bd'> {{content.fluid}}:{{item.fluidName}}</view>
+            </view>
+
+
+            <view class='condition-box' wx:for='{{TotalConditions}}' wx:for-index='idx'>
+              <view>****{{content.sample}}{{idx+1}}*****</view>
+              <view> 年龄：{{item.ageNum}} {{item.ageUnit}}</view>
+              <view> 性别：{{item.Gender}}</view>
+              <view> 目标基因数:{{item.GeneNum}}</view>
+              <view wx:for='{{item.TargetGeneInfo}}' wx:for-index='targetidx'>
+                <view>目标基因--{{targetidx+1}}</view>
+                <view> GeneID:{{item.GeneID}}</view>
+                <view> GeneSymbol:{{item.GeneSymbol}}</view>
+                <view> TaxonID:{{item.TaxonID}}</view>
+                <view> GenoType:{{item.GenoType}}</view>
+              </view>
+              <view> 样品状态：{{item.SampleStatus}}</view>
+              <view> 样品量: 浓度:{{item.SampleConcentration}} {{item.ConcentrationUnit}} 体积：{{item.SampleVolume}} {{item.VolumeUnit}}</view>
+              <view> 溶液:{{item.Solution}}</view>
+              <view> 刺激条件:{{item.TreatmentMethods}}--{{item.TreatmentDetail}}</view>
+              <view> 计量:{{item.ParamType}}--{{item.ParamAmount}}--{{item.ParamUnit}}</view>
+              <view> 持续时间:{{item.DurationTime}}--{{item.DurationUnit}}</view>
+              <view> 分级个数:{{item.FractionNumber}}</view>
+              <!-- <view> 生物学重复:{{item.BiologicalRepetition}}</view> -->
+              <view> 生物学重复:1</view>
+
+              <view> 技术重复:{{item.TechnicalRepetition}}</view>
+            </view>
+
+            <view class='weui-cell__bd'> {{content.selectedService}}:</view>
+            <!-- <view wx:for='{{selectedService}}'> -->
+            <view class='weui-cell__bd'> {{item.services}} </view>
+            <!-- </view> -->
+
+            <view class='weui-cell__bd'>{{content.analysisTime}}：{{item.gradient}}</view>
+            <view class='weui-cell__bd'>{{content.dataAnalysis}}:{{item.dataAnalysis}}</view>
+            <!-- <view> 条码邮寄地址:{{Address}}</view> -->
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style='margin-left:80rpx;'></view>
+
+        </navigator>
+
+      </view>
+    </view>
+
+    <!-- 
+      <button class='weui-btn' formType="submit"> 确认</button>
+    </form> -->
+  </view>
+</view>

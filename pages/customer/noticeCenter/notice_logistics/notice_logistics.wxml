@@ -1,0 +1,36 @@
+<!--pages/customer/noticeCenter/notice_logistics/notice_logistics.wxml-->
+<view class="page">
+    <view class="cantainer-logistics">
+        <view class="header">
+            <image class="header-img" src="/images/customer/wuliu.png"></image>
+            <text class="name">顺丰</text>
+            <text class="number">{{ExpressNumber}}</text>
+            <text class="date">{{list[0].time}}</text>
+        </view>
+        <view class="content-logistics" bindtap="toDetail">
+            <view class="information">{{list[0].context}}</view>
+        </view>
+    </view>
+    <view class="cantainer-logistics">
+        <view class="header">
+            <image class="header-img" src="/images/customer/wuliu.png"></image>
+            <text class="name">顺丰</text>
+            <text class="number">9895050343266</text>
+            <text class="date">2019/03/21 <text class="hour">13:22</text></text>
+        </view>
+        <view class="content-logistics" bindtap="toDetail">
+            <view class="information">离开【武汉邮件处理中心】，下一站【邮政黄冈市邮件转运中心】(经转)</view>
+        </view>
+    </view>
+    <view class="cantainer-logistics">
+        <view class="header">
+            <image class="header-img" src="/images/customer/wuliu.png"></image>
+            <text class="name">顺丰</text>
+            <text class="number">9895050343266</text>
+            <text class="date">2019/03/21 <text class="hour">13:22</text></text>
+        </view>
+        <view class="content-logistics" bindtap="toDetail">
+            <view class="information">离开【武汉邮件处理中心】，下一站【邮政黄冈市邮件转运中心】(经转)</view>
+        </view>
+    </view>
+</view>
