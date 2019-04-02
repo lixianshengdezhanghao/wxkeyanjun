@@ -3,14 +3,9 @@
     "pages/index/index",
     "pages/customer/customer",
     "pages/contract/contract",
-    "pages/customer/my/my",
     "pages/customer/bind/bind",
     "pages/customer/consent/consent",
     "pages/customer/personalInfo/personalInfo",
-    "pages/customer/item/item",
-    "pages/customer/laboratory/laboratory",
-    "pages/customer/my",
-    "pages/customer/personalInfo",
     "pages/customer/detail/detail",
     "pages/customer/cart/cart",
     "pages/customer/order/order",
@@ -71,7 +66,8 @@
     "pages/customer/noticeCenter/notice_logistics/notice_logistics",
     "pages/customer/my_order/order_details/order_details",
     "pages/customer/noticeCenter/notice_logistics/notice_logistics_detail/notice_logistics_detail",
-    "pages/customer/bind-succeed/bind-succeed"
+    "pages/customer/bind-succeed/bind-succeed",
+    "pages/welcome/welcome"
   ],
   "window": {
     "backgroundTextStyle": "light",

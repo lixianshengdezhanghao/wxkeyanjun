@@ -1,1 +1,272 @@
 /* pages/customer/customer.wxss */
+.container {
+    position: relative;
+    background-color: #fff;
+    line-height: 1.41176471;
+    font-size: 17rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.container__bd {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 90rpx 40rpx;
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.swiper-tab {
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    height: 90rpx;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0rpx 2rpx 10rpx 2rpx #cdcdcd;
+}
+
+.swiper-tab-item {
+    font-size: 30rpx;
+    display: inline-block;
+    width: 20%;
+    height: 80rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #cdcdcd;
+
+}
+
+.on {
+    color: #1296db;
+}
+
+.swiper-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.swiper-tab-item image {
+    height: 50rpx;
+    width: 40rpx;
+}
+
+.swiper-tab-text {
+    margin-top: 5rpx;
+    height: 40rpx;
+    font-size: 24rpx;
+}
+
+/* pages/item/item.wxss */
+/* header部分 */
+.header {
+    background: #fff;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 60rpx;
+    box-shadow: 0rpx 2rpx 15rpx 4rpx rgba(116, 116, 116, 0.1);
+    height: 340rpx;
+    position: relative;
+}
+
+.item-cover {
+    height: 340rpx;
+    width: 100%;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 60rpx;
+}
+
+.pro-title {
+    padding-top: 100rpx;
+    text-align: center;
+    font-weight: 600;
+    font-size: 36rpx;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    top: 0rpx;
+    left: 40rpx;
+}
+.pro-text{
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    top:160rpx;
+    left: 40rpx;
+    width: 400rpx;
+    font-size: 28rpx;
+}
+.pro-btn {
+    width: 180rpx;
+    height: 50rpx;
+    border-radius: 50rpx;
+    margin-top:85rpx;
+    font-size: 28rpx;
+    line-height: 50rpx;
+    text-align: center;
+    color: white;
+    border: 1rpx solid #fff;
+    overflow: hidden;
+    background: rgba(116, 116, 116, 0);
+    position: absolute;
+    z-index: 2;
+    top: 175rpx;
+    left: 40rpx;
+}
+
+/* header部分结束 */
+
+/* content部分 */
+.item-content {
+    background: #fff;
+    box-shadow: 0rpx 2rpx 20rpx 4rpx rgba(116, 116, 116, 0.1);
+    border-radius: 25rpx;
+    width: 92%;
+    margin: 25rpx auto 0rpx auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10rpx;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+}
+
+.item-btn {
+    width: 300rpx;
+    padding-bottom: 250rpx;
+    border: none;
+    border-radius: 20rpx;
+    margin-left: 10rpx;
+}
+
+.btn-content-img {
+    height: 100rpx;
+    width: 100rpx;
+    margin-top: 35rpx;
+    text-align: center;
+}
+
+/* 弹出层部分 */
+.demo-btn {
+    border-radius: 50%;
+    margin: 30rpx 40rpx 20rpx 0;
+    height: 130rpx;
+    width: 130rpx;
+    font-size: 24rpx;
+    line-height: 130rpx;
+    padding: 0;
+    color: #fff;
+
+}
+
+/* item结束 */
+
+/* pages/laboratory/laboratory.wxss */
+
+/* title部分 */
+.lab-header{
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 60rpx;
+    box-shadow: 0rpx 2rpx 15rpx 4rpx rgba(116, 116, 116, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .title{
+    text-align: center;
+    font-size: 36rpx;
+    font-weight: 600;
+  }
+  .btn-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 25rpx
+  }
+  .nav-btn{
+    width: 120rpx;
+    height: 200rpx;
+    text-align: center;
+  }
+  .nav-img{
+    border-radius: 50%;
+    height: 90rpx;
+    width: 90rpx;
+    margin-left: 15rpx;
+  }
+  .nav-icon{
+    height: 60rpx;
+    width: 60rpx;
+    margin-top: 15rpx;
+    text-align: center;
+  }
+  .nav-text{
+    font-size: 28rpx;
+    color: #808080;
+    margin-top: 10rpx;
+  }
+  .hide-btn{
+    color: #808080;
+    font-size: 30rpx;
+  }
+  /* title部分结束 */
+
+/* lab页面结束 */
+
+/* my页面 */
+/* 上部分 */
+.container-my {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userinfo-avatar {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.userinfo-nickname {
+    color: #aaa;
+    font-size: 40rpx;
+    text-align: center;
+}
+
+.head-cover {
+    width: 100%;
+    height: 240px;
+}
+
+.head-content {
+    position: absolute;
+    z-index: 1;
+    margin-top: 130rpx;
+}
+
+/* 上部分结束 */
+
+.text-my {
+    padding-left: 30rpx;
+    font-size: 30rpx;
+}
+/* 下部分结束 */
+/* my页面结束 */

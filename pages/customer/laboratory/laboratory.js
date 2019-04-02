@@ -8,7 +8,6 @@ Page({
       searchValue: '',
       showClearBtn: false
     },
-    searchResult: [],
     toView: "liver",
     scrollTop: 100,
     scroll_height: "",
@@ -112,8 +111,8 @@ Page({
       },
 
     ],
-    keyWords: ['123', '1', '3', '45', '5', '25'],
-    keywordsBox: [],
+    // keyWords: ['123', '1', '3', '45', '5', '25'],
+    // keywordsBox: [],
     num: 1,
     show: true,
     showText:"收起"

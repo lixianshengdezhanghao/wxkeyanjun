@@ -15,8 +15,9 @@ Page({
 
   },
   next(){
-      wx.navigateTo({
-        url: '../item/item?code=' + this.data.code + '&name=' + this.data.name,
+      wx.navigateBack({
+        delta:10,
+        url: 'pages/customer/customer?code=' + this.data.code + '&name=' + this.data.name,
       })
   },
   /**

@@ -20,7 +20,7 @@
             <view class="bind-btn">
                 <image class="bind-btn-img" src="/images/customer/pro/apply.png"></image>
                 <view class="bind-btn-text">
-                    继续申请套件
+                    查看所有订单
                 </view>
             </view>
             <view class="bind-btn">

@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText":"Firmiana - 个人中心",
-  "usingComponents": {
-    "v-tabBar":"/component/tabBar/tabBar"
-  }
-}

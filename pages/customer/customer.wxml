@@ -1,2 +1,177 @@
 <!--pages/customer/customer.wxml-->
-<text>pages/customer/customer.wxml</text>
+<view class='page'>
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px"
+        bindchange="bindChange">
+        <swiper-item>
+            <view class='header'>
+                <van-notice-bar style="position:fixed;top:0;width:100%;" mode="closeable"
+                    text="温馨提示:如果套件码没有跟检测者的账户绑定，我们可能会无法处理您的样本。" />
+                <!-- <image class="logo__img" src="/images/favicon4.png" style='border-radius: 50%;' bindtap='mainpage'></image> -->
+                <image class="item-cover" src="/images/customer/pro/item-cover.jpg" mode="aspectFill" lazy-load="false"
+                    binderror="" bindload="">
+                </image>
+                <view class="pro-title">蛋白质检测服务
+                </view>
+                <view class="pro-text">
+                    如果您持有我们的套件码，可以点击下面的按钮直接绑定套件
+                </view>
+                <view>
+                    <button class="pro-btn" bindtap='bind'>绑定套件</button>
+                </view>
+            </view>
+
+            <view class="item-content">
+                <i-button i-class="item-btn" bind:click="toggleRight1" type="ghost" type="success" shape="circle"
+                    size="small">
+                    <view class="btn-content">
+                        <image class="btn-content-img" src="/images/customer/lab/fluid.png"></image>
+                        <view class="btn-content-text">
+                            体液检测服务
+                        </view>
+                    </view>
+                </i-button>
+                <i-drawer mode="right" visible="{{showRight1}}" bind:close="toggleRight1">
+                    <view class="demo-container">
+                        <block wx:for="{{itemList[0].subnames}}">
+                            <button class="demo-btn" bindtap='addToCart' data-item='{{item.name}}'
+                                data-supplyno="{{item.supplyno}}" data-price="{{item.price}}"
+                                data-detail="{{item.value}}"
+                                style=" background:{{item.bgColor}}; box-shadow: 0rpx 2rpx 20rpx 4rpx {{item.bgColor}};">{{item.name}}
+                            </button>
+                        </block>
+                    </view>
+                </i-drawer>
+                <i-button i-class="item-btn" bind:click="toggleRight2" type="ghost" type="info" shape="circle"
+                    size="small">
+                    <view class="btn-content">
+                        <image class="btn-content-img" src="/images/customer/lab/cell.png"></image>
+                        <view class="btn-content-text">
+                            细胞检测服务
+                        </view>
+                    </view>
+                </i-button>
+                <i-drawer mode="right" visible="{{showRight2}}" bind:close="toggleRight2">
+                    <view class="demo-container">
+                        <block wx:for="{{itemList[1].subnames}}">
+                            <button class="demo-btn" bindtap='addToCart' data-item='{{item.name}}'
+                                data-supplyno="{{item.supplyno}}" data-price="{{item.price}}"
+                                data-detail="{{item.value}}"
+                                style=" background:{{item.bgColor}}; box-shadow: 0rpx 2rpx 20rpx 4rpx {{item.bgColor}};">{{item.name}}
+                            </button>
+                        </block>
+                    </view>
+
+                </i-drawer>
+                <i-button i-class="item-btn" bind:click="toggleRight3" type="ghost" type="error" shape="circle"
+                    size="small">
+                    <view class="btn-content">
+                        <image class="btn-content-img" src="/images/customer/lab/section.png"></image>
+                        <view class="btn-content-text">
+                            组织检测服务
+                        </view>
+                    </view>
+                </i-button>
+                <i-drawer mode="right" visible="{{showRight3}}" bind:close="toggleRight3">
+                    <view class="demo-container">
+                        <block wx:for="{{itemList[2].subnames}}">
+                            <button class="demo-btn" bindtap='addToCart' data-item='{{item.name}}'
+                                data-supplyno="{{item.supplyno}}" data-price="{{item.price}}"
+                                data-detail="{{item.value}}"
+                                style=" background:{{item.bgColor}}; box-shadow: 0rpx 2rpx 20rpx 4rpx {{item.bgColor}};">{{item.name}}
+                            </button>
+                        </block>
+                    </view>
+                </i-drawer>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="lab-header">
+                <view class="btn-grid" wx:if="{{show}}">
+                    <block wx:for="{{btn}}">
+                        <view class="nav-btn">
+                            <view bindtap="toScroll" data-id="{{item.id}}" class="nav-img"
+                                style=" background-color:{{item.bgColor}}; box-shadow: 0rpx 2rpx 20rpx 4rpx {{item.bgColor}};">
+                                <image class="nav-icon" src="{{item.src}}"></image>
+                            </view>
+                            <view class="nav-text">{{item.btnName}}</view>
+                        </view>
+                    </block>
+                </view>
+                <view class="hide-btn" bindtap="toShow">
+                    {{showText}}
+                </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="container-my">
+                <image class="head-cover" src="/images/customer/customer-cover.jpg"></image>
+                <view class='head-content'>
+                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+                    <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+                </view>
+            </view>
+
+            <view class="page__bd">
+                <view class="weui-cells weui-cells_after-title ">
+                    <navigator url="bind/bind" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <image style="width:50rpx;height:50rpx" src="/images/bind.png" background-size="cover"></image>
+                        <view class="weui-cell__bd text-my">绑定套件</view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    </navigator>
+                    <navigator url="report/report" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <image style="width:50rpx;height:50rpx" src="/images/icon_report.png" background-size="cover">
+                        </image>
+                        <view class="weui-cell__bd text-my">报告</view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    </navigator>
+                    <navigator url="noticeCenter/noticeCenter?noticeNumOfBind={{noticeNumOfBind}}&bindinfo={{bindinfo}}"
+                        class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view class="weui-cell__bd notice ">
+                            <image style="width:50rpx;height:50rpx" src="/images/notice.png" background-size="cover">
+                            </image>
+                            <text class="text-my">通知</text>
+                            <view wx:if="{{noticeNum}}" class="weui-badge"
+                                style="position: absolute;top: 1.0em;right: 1.8em;">
+                                {{noticeNum}}</view>
+                        </view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access"> </view>
+                    </navigator>
+                    <navigator url="cart/cart" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view class="weui-cell__bd notice ">
+                            <image style="width:50rpx;height:50rpx" src="/images/icon_ShoppingCart.png"
+                                background-size="cover"></image>
+                            <text class="text-my">检测清单（购物车）</text>
+                        </view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    </navigator>
+                    <navigator url="my_order/my_order" class="weui-cell weui-cell_access"
+                        hover-class="weui-cell_active">
+                        <image style="width:50rpx;height:50rpx" src="/images/order.png" background-size="cover"></image>
+                        <view class="weui-cell__bd text-my">订单</view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    </navigator>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="swiper-tab">
+        <view class="swiper-tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">
+            <image data-current="0"
+                src="{{currentTab==0?'/images/customer/tabBar/my-b.png':'/images/customer/tabBar/my-h.png'}}">
+            </image>
+            <view class="swiper-tab-text" data-current="0">项目</view>
+        </view>
+        <view class="swiper-tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">
+            <image data-current="1"
+                src="{{currentTab==1?'/images/customer/tabBar/lab-b.png':'/images/customer/tabBar/lab-h.png'}}">
+            </image>
+            <view class="swiper-tab-text" data-current="1">实验室</view>
+        </view>
+        <view class="swiper-tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
+            <image data-current="2"
+                src="{{currentTab==2?'/images/customer/tabBar/pro-b.png':'/images/customer/tabBar/pro-h.png'}}">
+            </image>
+            <view class="swiper-tab-text" data-current="2">我的</view>
+        </view>
+    </view>
+</view>

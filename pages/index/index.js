@@ -259,7 +259,7 @@ Page({
   bindToCustomer:function(){
     console.log('fsdad')
     wx.navigateTo({
-      url: '../customer/my/my',
+      url: '../customer/customer',
       complete:function(res){
         console.log('res',res)
       }

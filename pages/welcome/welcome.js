@@ -1,4 +1,4 @@
-// pages/customer/my.js
+// pages/welcome/welcome.js
 Page({
 
   /**

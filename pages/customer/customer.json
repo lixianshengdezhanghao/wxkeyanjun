@@ -1,3 +1,11 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "Firmiana-个人蛋白质组服务项目",
+  "usingComponents": {
+    "v-tabBar": "/component/tabBar/tabBar",
+    "van-collapse": "/component-library/vant/collapse/index",
+    "van-collapse-item": "/component-library/vant/collapse-item/index",
+    "van-notice-bar": "/component-library/vant/notice-bar/index",
+    "i-drawer": "/component-library/iview/drawer/index",
+    "i-button": "/component-library/iview/button/index"
+  }
 }
