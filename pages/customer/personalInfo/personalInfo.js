@@ -8,30 +8,34 @@ Page({
   data: {
     stepsId: [0,0,1,2],
     userinfo: {
-      name: '',
-      gender: '',
-      birthDate: '',
-      bloodtype:'',
-      address: '',
-      height: '',
-      weight: '',
-      pulseRate:'',
-      breathingRate:'',
-      blood_pressure1: '',
-      blood_pressure2: '',
-      healthStatus:'',
-      exeFrequency:'',
-      symptoms:[],
-      eatingHabits:[],
-      smokingSituation:'',
-      drinkingFrequency:'',
+      phoneNumber:'',//电话号码
+      code:[],//项目号
+      name: '',//用户姓名
+      gender: '',//性别
+      birthDate: '',//出生日期
+      date:'',//填写数据日期
+      bloodType:'',//血型
+      address: '',//地址
+      height: '',//身高
+      weight: '',//体重
+      pulseRate:'',//脉率
+      breathingRate:'',//呼吸频率
+      blood_pressure1: '',//什么血压
+      blood_pressure2: '',//数值
+      healthStatus:'',//健康状况  数字0是良好 1是一般 2是差
+      exeFrequency:'',//锻炼频率
+      symptoms:[],//健康状况，是一个数组，里面是多个字符
+      eatingHabits:[],//饮食习惯
+      smokingSituation:'',//抽烟否
+      drinkingFrequency:'',//饮酒
       occupationalExposure:[],
-      familyDisease:[],
-      drugAllergy:[],
-      diseaseHist:[],
-      phyExamTime:'',
-      phyExamSite:'',
-      abnormality: '',
+      familyDisease:[],//家族史
+      drugAllergy:[],//药物过敏史
+      diseaseHist:[],//既往史
+      phyExamTime:'',//体检时间
+      phyExamSite:'',//体检地址
+      abnormality: '',//体检结果
+      
     },
     submitTime: '',
     images: [],
@@ -147,13 +151,15 @@ Page({
       { data: '其他', checked: false },
     ],
   },
-  onLoad: function (option) {
+  onLoad: function (options) {
+    
     var that = this;
     //获取名字和code，用于传递到通知页面
     that.setData({
-      code: option.code,
-      name: option.name
+      code: options.code,
+      name: options.name
     })
+    console.log('personalInfo 页面option',options)
     wx.getStorage({
       key: 'userinfo',
       success: function (res) {
@@ -182,7 +188,7 @@ Page({
         if (wx.getStorageSync('submitTimestamp')) { //初次进入时无submitTimestamp，一定时间内提醒更新，超过一定时间则强制更新，即将需要强制更新的项设为空
           var invl = currentTimestamp - wx.getStorageSync('submitTimestamp')
           console.log('invl', invl)   //距离上次提交时的秒数
-          if (invl > 1000) {
+          if (invl > 1296000) {
             wx.showModal({
               title: '提示',
               content: '由于距你上次提交时间太长，请修改你的信息，以便更好的服务！',
@@ -209,7 +215,7 @@ Page({
             })
             console.log('修改后的', userinfo)
           }
-          else if (invl > 20) {
+          else if (invl > 864000) {
             wx.showModal({
               title: '提示',
               content: '由于距你上次提交时间较长，我们建议你修改你的某些信息，比如血压。',
@@ -320,7 +326,6 @@ Page({
         })
       }
     })
-    var stepImgList = wx.getStorageSync('stepImgList')
     that.setData({
       // imageWidth: wx.getSystemInfoSync().windowWidth / 2,
       submitTime: wx.getStorageSync('submitTime')
@@ -333,7 +338,7 @@ Page({
         })
       },
     })
-
+    console.log(this.data.userinfo)
   },
   genderChange: function (e) {
     console.log(e)
@@ -487,6 +492,7 @@ Page({
     var warn = "";//弹框时提示的内容  
     var flag = true;//判断信息输入是否完整  
     var value = e.detail.value
+    console.log(value)
     console.log('form',value)
     //判断的顺序依次是：姓名-性别-年龄-身高-体重-血压-地址-有无异常  
     if (value.name == "") {
@@ -567,5 +573,6 @@ Page({
       drugAllergy: [],
       diseaseHist: [],
     })
-  }
+  },
+  
 })

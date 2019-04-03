@@ -43,7 +43,6 @@
 
   <view class="btn-area">
     <button bindtap='agree' disabled='{{disabled}}' class="my_btn"> 下一步 </button>
-    <!-- <button bindtap='disagree' class="weui-btn"> disagree </button> -->
   </view>
 
 </view>

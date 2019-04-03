@@ -23,16 +23,102 @@
 }
 /* 步骤名称结束 */
 
+
 /* 个人信息板块 */
 .personal-information {
   background: #fff;
   box-shadow: 0rpx 2rpx 20rpx 4rpx rgba(116, 116, 116, 0.1);
   border-radius: 25rpx;
-  width: 98%;
-  margin: 25rpx auto 0rpx auto;
-  padding: 10rpx 20rpx 10rxp 20rxp;
+  width: 96%;
+  margin: 30rpx auto 30rpx auto;
+  /* padding: 10rpx 20rpx 10rxp 20rxp; */
+  padding-top: 40rpx;
+  /* border-radius: 10rpx; */
+}
+.personal-information{
+  width: 96%;
+  margin: 30rpx auto 30rpx auto;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 1rpx 10rpx 4rpx rgba(116, 116, 116, 0.1);
+  padding-top: 40rpx;
 }
 
+/* 每一块的title */
+.perinfo-cells-title-presonal,
+.perinfo-cells-title-status,
+.perinfo-cells-title-live,
+.perinfo-cells-title-allergy,
+.perinfo-cells-title-previous,
+.perinfo-cells-title-family,
+.perinfo-cells-title-report{
+  width: 200rpx;
+  height: 50rpx;
+  color: #fff;
+  border-top-right-radius: 50rpx;
+  border-bottom-right-radius: 50rpx; 
+  margin-bottom: 25rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  padding-right: 25rpx;
+  text-align: center;
+}
+.perinfo-cells-title-presonal{
+  background: #87CEEB;
+}
+.perinfo-cells-title-status{
+  margin-top: 65rpx;
+  background: #cca4e3;
+}
+.perinfo-cells-title-live{
+  margin-top: 65rpx;
+  background: #f90;
+}
+.perinfo-cells-title-allergy{
+  margin-top: 65rpx;
+  background: #ed3f14;
+}
+.perinfo-cells-title-previous{
+  margin-top: 65rpx;
+  background: #2d8cf0;
+}
+.perinfo-cells-title-family{
+  margin-top: 65rpx;
+  background: #19be6b;
+}
+.perinfo-cells-title-report{
+  margin-top: 65rpx;
+  background: #7B68EE;
+}
+
+/* 内容部分 */
+
+.perinfo-cell{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32rpx;
+  margin-top:30rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #cbcbcb;
+  padding-bottom: 10rpx;
+}
+.perinfo-cell__hd{
+  margin-left: 60rpx;
+  font-size: 32rpx;
+}
+.perinfo-cell__bd{
+  display: flex;
+  align-items: center;
+  margin-right: 60rpx;
+}
+.perinfo-input-name{
+  margin-right: 100rpx;
+  text-align: center;
+}
+.perinfo-input-gender{
+  width: 200rpx;
+} 
+/*  */
 .item {
   line-height: 80rpx;
   padding-left: 20rpx;

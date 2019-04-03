@@ -8,77 +8,79 @@
 
   <view class="personal-information">
     <form bindsubmit="formSubmit" bindreset="formReset" class="form-box">
-      <view class="weui-cells  weui-cells_after-title label">
-        <view class="weui-cell weui-cell_input ">
-          <view class="weui-cell__hd ">
-            <view class="weui-label ">姓名：</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input-name" placeholder="请输入姓名" value="{{userinfo.name}}" name='name' />
-          </view>
-          <view class="weui-cell__hd">
-            <view class="weui-label">性别：</view>
-          </view>
-          <view class="weui-cell__bd">
-            <radio-group style="margin-left:10rpx;" name='gender' bindchange="genderChange">
-              <label wx:for="{{Gender}}">
-                <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}} </label>
-            </radio-group>
-          </view>
+      <view class="perinfo-cells-title-presonal">基本信息</view>
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd">
+          <view class="perinfo-label">姓名：</view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label" style="width:140rpx">出生日期:</view>
-          </view>
-          <view class="weui-cell__bd">
-            <picker mode="date" value="{{userinfo.birthDate}}" name="birthDate" start="1948-01-01" end="2018-06-01"
-              bindchange="bindBirthDateChange">
-              <view class="weui-input" style="width:200rpx">{{birthDate}}</view>
-            </picker>
-          </view>
-        </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">血型:</view>
-          </view>
-          <view class="weui-cell__bd">
-            <radio-group value="{{userinfo.bloodType}}" name="bloodType" style="margin-left:10rpx;"
-              bindchange="bloodTypeChange">
-              <label wx:for="{{BloodType}}">
-                <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}} </label>
-            </radio-group>
-          </view>
-        </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">地址:</view>
-          </view>
-          <view class="weui-cell__bd">
-            <picker class="weui-flex__item" mode="region" bindchange="bindRegionChange" value="{{userinfo.address}}"
-              name="address">
-              <view class="picker">
-                {{region[0]}} {{region[1]}} {{region[2]}}
-              </view>
-            </picker>
-          </view>
+        <view class="perinfo-cell__bd">
+          <input class="perinfo-input-name" placeholder="请输入检测者的真实姓名" value="{{userinfo.name}}" name='name' />
         </view>
       </view>
-      <view class="weui-cells__title">一般状况</view>
-      <view class="weui-cells weui-cells_after-title label">
-        <view class="weui-cell weui-cell_input ">
-          <view class="weui-cell__hd ">
-            <view class="weui-label ">身高:</view>
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd">
+          <view class="perinfo-label">性别：</view>
+        </view>
+        <!-- <view class="perinfo-cell__bd">
+          <radio-group value="{{userinfo.bloodType}}" name="bloodType" style="margin-left:10rpx;"
+            bindchange="bloodTypeChange">
+            <label wx:for="{{BloodType}}">
+              <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}} </label>
+          </radio-group>
+        </view> -->
+      </view>
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd">
+          <view class="perinfo-label" style="width:140rpx">出生日期:</view>
+        </view>
+        <view class="perinfo-cell__bd">
+          <picker mode="date" value="{{userinfo.birthDate}}" name="birthDate" start="1948-01-01" end="2018-06-01"
+            bindchange="bindBirthDateChange">
+            <view class="perinfo-input" style="width:200rpx">{{birthDate}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd">
+          <view class="perinfo-label">血型:</view>
+        </view>
+        <view class="perinfo-cell__bd">
+          <radio-group value="{{userinfo.bloodType}}" name="bloodType" style="margin-left:10rpx;"
+            bindchange="bloodTypeChange">
+            <label wx:for="{{BloodType}}">
+              <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}} </label>
+          </radio-group>
+        </view>
+      </view>
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd">
+          <view class="perinfo-label">地址:</view>
+        </view>
+        <view class="perinfo-cell__bd">
+          <picker class="perinfo-flex__item" mode="region" bindchange="bindRegionChange" value="{{userinfo.address}}"
+            name="address">
+            <view class="picker">
+              {{region[0]}} {{region[1]}} {{region[2]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="perinfo-cells-title-status">一般状况</view>
+      <view class="perinfo-cells perinfo-cells_after-title label">
+        <view class="perinfo-cell perinfo-cell_input ">
+          <view class="perinfo-cell__hd ">
+            <view class="perinfo-label ">身高:</view>
           </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input-parameter" name='height' value="{{userinfo.height}}" />
-            <view class="weui-label unit">cm</view>
+          <view class="perinfo-cell__bd">
+            <input class="perinfo-input-parameter" name='height' value="{{userinfo.height}}" />
+            <view class="perinfo-label unit">cm</view>
           </view>
-          <view class="weui-cell__hd ">
-            <view class="weui-label ">体重:</view>
+          <view class="perinfo-cell__hd ">
+            <view class="perinfo-label ">体重:</view>
           </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input-parameter" name='weight' value="{{userinfo.weight}}" />
-            <view class="weui-label unit">kg</view>
+          <view class="perinfo-cell__bd">
+            <input class="perinfo-input-parameter" name='weight' value="{{userinfo.weight}}" />
+            <view class="perinfo-label unit">kg</view>
           </view>
         </view>
         <view class="weui-cell weui-cell_input">

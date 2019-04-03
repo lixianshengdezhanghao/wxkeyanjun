@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
-	"appid": "wx31b2d1d51de32365",
+	"appid": "wxef8002de0d7884f9",
 	"projectname": "iProteome",
 	"isGameTourist": false,
 	"condition": {
@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -65,20 +65,6 @@
 				},
 				{
 					"id": -1,
-					"name": "lab",
-					"pathName": "pages/customer/laboratory/laboratory",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "project",
-					"pathName": "pages/customer/item/item",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "绑定成功",
 					"pathName": "pages/customer/bind-succeed/bind-succeed",
 					"query": "",
@@ -88,6 +74,14 @@
 					"id": -1,
 					"name": "customer",
 					"pathName": "pages/customer/customer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/customer/personalInfo/personalInfo",
+					"query": "",
 					"scene": null
 				}
 			]

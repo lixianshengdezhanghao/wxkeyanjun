@@ -1,13 +1,5 @@
 var app =getApp();
 Page({
-  onLoad: function (options) {
-    console.log('consent 页面options',options)
-    var that = this
-    that.setData({
-      code:options.code,
-      name:options.name
-    })
-  },
   data: {
     toView: 'red',
     scrollTop: 100,
@@ -17,6 +9,14 @@ Page({
     code:'',
     name:'',
     stepsId: [0,1,2,2],
+  },
+  onLoad: function (options) {
+    console.log('consent 页面options',options)
+    var that = this
+    that.setData({
+      code:options.code,
+      name:options.name
+    })
   },
   upper: function (e) {
     console.log(e)
@@ -43,8 +43,7 @@ Page({
     })
   },
 
-  agree: function () {
-    
+  agree() {
     wx.navigateTo({
       url: '../personalInfo/personalInfo?code=' + this.data.code + '&name=' + this.data.name 
     })
