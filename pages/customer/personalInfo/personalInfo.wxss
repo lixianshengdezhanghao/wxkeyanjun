@@ -6,6 +6,7 @@
   box-shadow: 0rpx 2rpx 15rpx 4rpx rgba(116, 116, 116, 0.1);
   height: 200rpx;
 }
+
 /* 步骤结束 */
 
 /* 步骤名称 */
@@ -21,6 +22,7 @@
   text-align: center;
   line-height: 80rpx;
 }
+
 /* 步骤名称结束 */
 
 
@@ -35,7 +37,8 @@
   padding-top: 40rpx;
   /* border-radius: 10rpx; */
 }
-.personal-information{
+
+.personal-information {
   width: 96%;
   margin: 30rpx auto 30rpx auto;
   border-radius: 10rpx;
@@ -50,120 +53,164 @@
 .perinfo-cells-title-allergy,
 .perinfo-cells-title-previous,
 .perinfo-cells-title-family,
-.perinfo-cells-title-report{
+.perinfo-cells-title-report {
   width: 200rpx;
   height: 50rpx;
   color: #fff;
   border-top-right-radius: 50rpx;
-  border-bottom-right-radius: 50rpx; 
+  border-bottom-right-radius: 50rpx;
   margin-bottom: 25rpx;
   font-size: 30rpx;
   line-height: 50rpx;
   padding-right: 25rpx;
   text-align: center;
 }
-.perinfo-cells-title-presonal{
+
+.perinfo-cells-title-presonal {
   background: #87CEEB;
 }
-.perinfo-cells-title-status{
+
+.perinfo-cells-title-status {
   margin-top: 65rpx;
   background: #cca4e3;
 }
-.perinfo-cells-title-live{
+
+.perinfo-cells-title-live {
   margin-top: 65rpx;
   background: #f90;
 }
-.perinfo-cells-title-allergy{
+
+.perinfo-cells-title-allergy {
   margin-top: 65rpx;
   background: #ed3f14;
 }
-.perinfo-cells-title-previous{
+
+.perinfo-cells-title-previous {
   margin-top: 65rpx;
   background: #2d8cf0;
 }
-.perinfo-cells-title-family{
+
+.perinfo-cells-title-family {
   margin-top: 65rpx;
   background: #19be6b;
 }
-.perinfo-cells-title-report{
+
+.perinfo-cells-title-report {
   margin-top: 65rpx;
   background: #7B68EE;
 }
 
 /* 内容部分 */
 
-.perinfo-cell{
+.perinfo-cell {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 32rpx;
-  margin-top:30rpx;
+  margin-top: 30rpx;
   margin-bottom: 30rpx;
   border-bottom: 1rpx solid #cbcbcb;
   padding-bottom: 10rpx;
 }
-.perinfo-cell__hd{
+
+.perinfo-cell__hd {
   margin-left: 60rpx;
   font-size: 32rpx;
 }
-.perinfo-cell__bd{
+
+.perinfo-cell__bd {
   display: flex;
   align-items: center;
   margin-right: 60rpx;
-}
-.perinfo-input-name{
-  margin-right: 100rpx;
-  text-align: center;
-}
-.perinfo-input-gender{
-  width: 200rpx;
-} 
-/*  */
-.item {
-  line-height: 80rpx;
-  padding-left: 20rpx;
-  display: flex;
-  margin: 10rpx;
+  width: 60%;
 }
 
-.item-title {
+.perinfo-input {
+  color: #9c9c9c;
+  font-size: 30rpx;
+}
+
+/* 一行四个选框 */
+.check-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 28rpx;
+}
+
+/* 一行三个选框 */
+.checkbox-box{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 24rpx;
+}
+
+/* 一行两个选框 */
+.check-boxbox{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-size: 28rpx;
+}
+/* 基本信息 */
+.perinfo-input-name {
+  margin-right: 50rpx;
+  text-align: center;
+}
+
+/* 一般情况 */
+.perinfo-label{
+  font-size: 30rpx;
   width: 130rpx;
 }
-
-.label {
+.perinfo-unit-parameter{
   font-size: 30rpx;
+  width: 90rpx;
 }
-
-.unit {
-  padding-top: 10rpx;
-  padding-left: 20rpx;
-  width: 100rpx;
+.perinfo-input-parameter{
+  font-size: 26rpx;
 }
-
-checkbox .wx-checkbox-input {
-  border-radius: 50%;
-  width: 20rpx;
-  height: 20rpx;
+.perinfo-parameter-unit {
+  font-size: 28rpx;
+  color: #9c9c9c;
 }
-
-checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-  border: none;
+.checkbox-box label{
+  margin-bottom: 10rpx;
+}
+/* 复选重写样式 */
+checkbox .wx-checkbox-input{
+  border-radius: 50%;/* 圆角 */
+  width: 25rpx; /* 背景的宽 */
+  height: 25rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: 1px solid #87CEEB;
   background: #87CEEB;
 }
-
-checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
-  border-radius: 50%;
-  width: 20rpx;
-  height: 20rpx;
-  line-height: 40rpx;
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 25rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 25rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 25rpx;
   text-align: center;
-  font-size: 30rpx;
-  color: #fff;
+  font-size:20rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
   background: transparent;
-  transform: translate(-50%, -50%) scale(1);
-  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
 }
+/* 结束 */
 
+/* 单选框样式重置 */
 radio .wx-radio-input {
   border-radius: 50%;
   width: 20rpx;
@@ -171,7 +218,7 @@ radio .wx-radio-input {
 }
 
 radio .wx-radio-input.wx-radio-input-checked {
-  border: none;
+  border: 1px solid #87CEEB;
   background: #87CEEB;
 }
 
@@ -188,12 +235,12 @@ radio .wx-radio-input.wx-radio-input-checked::before {
   -webkit-transform: translate(-50%, -50%) scale(1);
 }
 
-.weui-input-parameter-smoke {
+/* 生活习惯 */
+.perinfo-input-parameter-smoke{
   height: 8rpx;
   width: 60rpx;
-  /* padding:0 25rpx; */
   margin: 0 10rpx;
-  border: 1rpx solid #C0C0C0;
+  border-bottom: 1rpx solid #C0C0C0;
   text-align: center;
 }
 
@@ -201,9 +248,19 @@ radio .wx-radio-input.wx-radio-input-checked::before {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-
+  width: 260rpx;
 }
 
+.perinfo-input-occupationalExposure{
+  font-size: 26rpx;
+  width: 100%;
+}
+
+/* 药物过敏史后的复选框 */
+.perinfo-cell-check{
+  width: 80%;
+  margin: 0 0 0 150rpx;
+}
 /*画廊*/
 .gallery {
   /*margin-bottom: 100rpx;*/

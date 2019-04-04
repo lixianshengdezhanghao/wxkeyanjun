@@ -28,7 +28,7 @@ Page({
       eatingHabits:[],//饮食习惯
       smokingSituation:'',//抽烟否
       drinkingFrequency:'',//饮酒
-      occupationalExposure:[],
+      occupationalExposure:[],//职业接触
       familyDisease:[],//家族史
       drugAllergy:[],//药物过敏史
       diseaseHist:[],//既往史
@@ -115,9 +115,6 @@ Page({
       { data: '偶尔', checked: false },
       { data: '经常', checked: false },
       { data: '每天', checked: false },
-    ],
-    OccupationalExposure:[
-      
     ],
     DrugAllergy:[
       { data: '无', checked: false },

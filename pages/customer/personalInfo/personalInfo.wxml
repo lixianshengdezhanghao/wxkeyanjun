@@ -7,8 +7,11 @@
   <view class="bind-title">个人信息</view>
 
   <view class="personal-information">
-    <form bindsubmit="formSubmit" bindreset="formReset" class="form-box">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+<!-- 基本信息 -->
       <view class="perinfo-cells-title-presonal">基本信息</view>
+
+      <!-- 姓名 -->
       <view class="perinfo-cell perinfo-cell_input">
         <view class="perinfo-cell__hd">
           <view class="perinfo-label">姓名：</view>
@@ -17,41 +20,47 @@
           <input class="perinfo-input-name" placeholder="请输入检测者的真实姓名" value="{{userinfo.name}}" name='name' />
         </view>
       </view>
+
+      <!-- 性别 -->
       <view class="perinfo-cell perinfo-cell_input">
         <view class="perinfo-cell__hd">
           <view class="perinfo-label">性别：</view>
         </view>
-        <!-- <view class="perinfo-cell__bd">
-          <radio-group value="{{userinfo.bloodType}}" name="bloodType" style="margin-left:10rpx;"
-            bindchange="bloodTypeChange">
-            <label wx:for="{{BloodType}}">
-              <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}} </label>
+        <view class="perinfo-cell__bd">
+          <radio-group value="{{userinfo.gender}}" name="Gender" bindchange="genderChange" class="check-box">
+            <label wx:for="{{Gender}}">
+              <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}</label>
           </radio-group>
-        </view> -->
+        </view>
       </view>
+
+      <!-- 出生日期 -->
       <view class="perinfo-cell perinfo-cell_input">
         <view class="perinfo-cell__hd">
-          <view class="perinfo-label" style="width:140rpx">出生日期:</view>
+          <view class="perinfo-label">出生日期:</view>
         </view>
-        <view class="perinfo-cell__bd">
+        <view class="perinfo-cell__bd" style="padding-left:30rpx;">
           <picker mode="date" value="{{userinfo.birthDate}}" name="birthDate" start="1948-01-01" end="2018-06-01"
             bindchange="bindBirthDateChange">
-            <view class="perinfo-input" style="width:200rpx">{{birthDate}}</view>
+            <view class="perinfo-input">{{birthDate}}</view>
           </picker>
         </view>
       </view>
+
+      <!-- 血型 -->
       <view class="perinfo-cell perinfo-cell_input">
         <view class="perinfo-cell__hd">
           <view class="perinfo-label">血型:</view>
         </view>
         <view class="perinfo-cell__bd">
-          <radio-group value="{{userinfo.bloodType}}" name="bloodType" style="margin-left:10rpx;"
-            bindchange="bloodTypeChange">
+          <radio-group value="{{userinfo.bloodType}}" name="bloodType" bindchange="radioChange" class="check-box">
             <label wx:for="{{BloodType}}">
               <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}} </label>
           </radio-group>
         </view>
       </view>
+
+      <!-- 地址 -->
       <view class="perinfo-cell perinfo-cell_input">
         <view class="perinfo-cell__hd">
           <view class="perinfo-label">地址:</view>
@@ -59,134 +68,155 @@
         <view class="perinfo-cell__bd">
           <picker class="perinfo-flex__item" mode="region" bindchange="bindRegionChange" value="{{userinfo.address}}"
             name="address">
-            <view class="picker">
+            <view class="perinfo-input">
               {{region[0]}} {{region[1]}} {{region[2]}}
             </view>
           </picker>
         </view>
       </view>
+<!-- 一般状况 -->
       <view class="perinfo-cells-title-status">一般状况</view>
-      <view class="perinfo-cells perinfo-cells_after-title label">
-        <view class="perinfo-cell perinfo-cell_input ">
-          <view class="perinfo-cell__hd ">
-            <view class="perinfo-label ">身高:</view>
-          </view>
-          <view class="perinfo-cell__bd">
-            <input class="perinfo-input-parameter" name='height' value="{{userinfo.height}}" />
-            <view class="perinfo-label unit">cm</view>
-          </view>
-          <view class="perinfo-cell__hd ">
-            <view class="perinfo-label ">体重:</view>
-          </view>
-          <view class="perinfo-cell__bd">
-            <input class="perinfo-input-parameter" name='weight' value="{{userinfo.weight}}" />
-            <view class="perinfo-label unit">kg</view>
-          </view>
+
+      <!-- 体重身高 -->
+      <view class="perinfo-cell perinfo-cell_input ">
+        <view class="perinfo-cell__hd">
+          <view class="perinfo-label">身高:</view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd ">
-            <view class="weui-label ">脉率:</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input-parameter" name='pulseRate' value="{{userinfo.pulseRate}}" />
-            <view class="weui-label unit">次/分钟</view>
-          </view>
-          <view class="weui-cell__hd ">
-            <view class="weui-label ">呼吸频率:</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input-parameter" name='breathingRate' value="{{userinfo.breathingRate}}" />
-            <view class="weui-label unit">次/分钟</view>
-          </view>
+        <view class="perinfo-cell__bd ">
+          <input class="perinfo-input-parameter" name='height' value="{{userinfo.height}}" placeholder="真实身高" />
+          <view class="perinfo-parameter-unit">cm</view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd ">
-            <view class="weui-label ">血压:</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input-parameter" name='blood_pressure1' value="{{userinfo.blood_pressure1}}" />
-            <view class="weui-label unit">/</view>
-            <input class="weui-input-parameter" name='blood_pressure2' value="{{userinfo.blood_pressure2}}" />
-            <view class="weui-label unit">mmHg</view>
-          </view>
+        <view class="perinfo-unit-parameter">
+          <view class="perinfo-label">体重:</view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd ">
-            <view class="weui-label " style="width:140rpx">健康状况:</view>
-          </view>
-          <view class="weui-cell__bd">
-            <radio-group bindchange="radioChange" value="{{userinfo.healthStatus}}" name="healthStatus">
-              <label wx:for="{{HealthStatus}}">
-                <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
-              </label>
-            </radio-group>
-          </view>
-        </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd ">
-            <view class="weui-label ">症状:</view>
-          </view>
-          <view class="weui-cell__bd">
-            <view class="weui-cell__bd">
-              <checkbox-group bindchange="checkboxChange" name="symptoms">
-                <label wx:for="{{Symptoms}}">
-                  <checkbox value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
-                </label>
-              </checkbox-group>
-            </view>
-          </view>
+        <view class="perinfo-cell__bd">
+          <input class="perinfo-input-parameter" name='weight' value="{{userinfo.weight}}" placeholder="当前身高" />
+          <view class="perinfo-parameter-unit">kg</view>
         </view>
       </view>
-      <view class="weui-cells__title">生活方式</view>
-      <view class="weui-cells weui-cells_after-title label">
-        <view class="weui-cell weui-cell_input ">
-          <view class="weui-cell__hd ">
-            <view class="weui-label" style="width:140rpx">锻炼频率:</view>
+
+      <!-- 脉率 -->
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd ">
+          <view class="perinfo-label">脉率:</view>
+        </view>
+        <view class="perinfo-cell__bd">
+          <input class="perinfo-input-parameter" name='pulseRate' value="{{userinfo.pulseRate}}" />
+          <view class="perinfo-parameter-unit" style="width:110rpx;">次/分钟</view>
+        </view>
+      </view>
+
+      <!-- 呼吸频率 -->
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd">
+          <view class="perinfo-label">呼吸频率:</view>
+        </view>
+        <view class="perinfo-cell__bd">
+          <input class="perinfo-input-parameter" name='breathingRate' value="{{userinfo.breathingRate}}" />
+          <view class="perinfo-parameter-unit"  style="width:110rpx;">次/分钟</view>
+        </view>
+      </view>
+
+      <!-- 血压 -->
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd ">
+          <view class="perinfo-label ">血压:</view>
+        </view>
+        <view class="perinfo-cell__bd">
+          <input class="perinfo-input-parameter" name='blood_pressure1' value="{{userinfo.blood_pressure1}}" />
+          <view class="perinfo-label unit">/</view>
+          <input class="perinfo-input-parameter" name='blood_pressure2' value="{{userinfo.blood_pressure2}}" />
+          <view class="perinfo-label unit">mmHg</view>
+        </view>
+      </view>
+
+      <!-- 健康状况 -->
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd ">
+          <view class="perinfo-label">健康状况:</view>
+        </view>
+        <view class="perinfo-cell__bd">
+          <radio-group bindchange="radioChange" value="{{userinfo.healthStatus}}" name="healthStatus" class="check-box">
+            <label wx:for="{{HealthStatus}}">
+              <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
+            </label>
+          </radio-group>
+        </view>
+      </view>
+
+      <!-- 症状 -->
+      <view class="perinfo-cell perinfo-cell_input">
+        <view class="perinfo-cell__hd ">
+          <view class="perinfo-label ">症状:</view>
+        </view>
+        <view class="perinfo-cell__bd">
+          <checkbox-group bindchange="checkboxChange" name="symptoms" class="checkbox-box">
+            <label wx:for="{{Symptoms}}">
+              <checkbox value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
+            </label>
+          </checkbox-group>
+        </view>
+      </view>
+
+<!-- 生活方式 -->
+      <view class="perinfo-cells-title-live">生活方式</view>
+
+        <!-- 锻炼频率 -->
+        <view class="perinfo-cell perinfo-cell_input ">
+          <view class="perinfo-cell__hd ">
+            <view class="perinfo-label">锻炼频率:</view>
           </view>
-          <view class="weui-cell__bd">
-            <radio-group bindchange="radioChange" value="{{userinfo.exeFrequency}}" name="exeFrequency">
+          <view class="perinfo-cell__bd">
+            <radio-group class="check-boxbox" bindchange="radioChange" value="{{userinfo.exeFrequency}}" name="exeFrequency">
               <label wx:for="{{ExeFrequency}}" wx:key="{{id}}">
                 <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
               </label>
             </radio-group>
           </view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd ">
-            <view class="weui-label" style="width:140rpx">饮食习惯:</view>
+
+        <!-- 饮食习惯 -->
+        <view class="perinfo-cell perinfo-cell_input">
+          <view class="perinfo-cell__hd ">
+            <view class="perinfo-label">饮食习惯:</view>
           </view>
-          <view class="weui-cell__bd">
-            <checkbox-group bindchange="checkboxChange" name="eatingHabits">
+          <view class="perinfo-cell__bd">
+            <checkbox-group class="check-boxbox" bindchange="checkboxChange" name="eatingHabits">
               <label wx:for="{{EatingHabits}}">
                 <checkbox value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
               </label>
             </checkbox-group>
           </view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd ">
-            <view class="weui-label" style="width:140rpx">吸烟情况:</view>
+
+        <!-- 吸烟情况 -->
+        <view class="perinfo-cell perinfo-cell_input">
+          <view class="perinfo-cell__hd ">
+            <view class="perinfo-label">吸烟情况:</view>
           </view>
-          <view class="weui-cell__bd">
-            <radio-group bindchange="radioChange" value="{{userinfo.smokingSituation}}" name="smokingSituation">
+          <view class="perinfo-cell__bd">
+            <radio-group class="check-boxbox" bindchange="radioChange" value="{{userinfo.smokingSituation}}" name="smokingSituation">
               <label wx:for="{{SmokingSituation}}" wx:key="{{id}}">
                 <block wx:if="{{item.data!='吸烟'}}">
                   <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
                 </block>
                 <block wx:if="{{item.data=='吸烟'}}">
                   <view class="smoke">
-                    <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}(<input
-                      class="weui-input-parameter-smoke" disabled="{{smokeDisabled}}" />支/天)</view>
+                    <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}(
+                      <input class="perinfo-input-parameter-smoke" disabled="{{smokeDisabled}}" />支/天)
+                    </view>
                 </block>
               </label>
             </radio-group>
           </view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd ">
-            <view class="weui-label" style="width:140rpx">饮酒情况:</view>
+
+        <!-- 饮酒情况 -->
+        <view class="perinfo-cell perinfo-cell_input">
+          <view class="perinfo-cell__hd ">
+            <view class="perinfo-label" style="width:140rpx">饮酒情况:</view>
           </view>
-          <view class="weui-cell__bd">
+          <view class="perinfo-cell__bd">
             <radio-group bindchange="radioChange" value="{{userinfo.drinkingFrequency}}" name="drinkingFrequency">
               <label wx:for="{{DrinkingFrequency}}">
                 <radio value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
@@ -194,57 +224,50 @@
             </radio-group>
           </view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd ">
-            <view class="weui-label" style="width:140rpx">职业接触:</view>
+        <view class="perinfo-cell perinfo-cell_input">
+          <view class="perinfo-cell__hd ">
+            <view class="perinfo-label">职业接触:</view>
           </view>
-          <view class="weui-cell__bd">
-            <checkbox-group bindchange="checkboxChange" name="occupationalExposure">
-              <label wx:for="{{OccupationalExposure}}">
-                <checkbox value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
-              </label>
-            </checkbox-group>
+          <view class="perinfo-cell__bd">
+              <input class="perinfo-input-occupationalExposure" placeholder="请输入检测者接触的有害物质" value="{{userinfo.occupationalExposure}}" name='occupationalExposure' />
           </view>
         </view>
-      </view>
-      <view class="weui-cells__title">药物过敏史</view>
-      <view class="weui-cells weui-cells_after-title label">
-        <view class="weui-cell weui-cell_input ">
-          <view class="weui-cell__bd">
-            <checkbox-group bindchange="checkboxChange" name="drugAllergy">
+
+<!-- 药物过敏史 -->
+      <view class="perinfo-cells-title-allergy">药物过敏史</view>
+        <view class="perinfo-cell perinfo-cell_input ">
+          <view class="perinfo-cell-check">
+            <checkbox-group class="check-boxbox" bindchange="checkboxChange" name="drugAllergy">
               <label wx:for="{{DrugAllergy}}">
                 <checkbox value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
               </label>
             </checkbox-group>
           </view>
-        </view>
       </view>
-      <view class="weui-cells__title">既往史</view>
-      <view class="weui-cells weui-cells_after-title label">
-        <view class="weui-cell weui-cell_input ">
-          <view class="weui-cell__bd">
-            <checkbox-group bindchange="checkboxChange" name="diseaseHist">
+
+      <view class="perinfo-cells-title-previous">既往史</view>
+        <view class="perinfo-cell weui-cell_input ">
+          <view class="perinfo-cell-check">
+            <checkbox-group  class="check-boxbox" bindchange="checkboxChange" name="diseaseHist">
               <label wx:for="{{DiseaseHist}}">
                 <checkbox value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
               </label>
             </checkbox-group>
           </view>
-        </view>
       </view>
-      <view class="weui-cells__title">家族史</view>
-      <view class="weui-cells weui-cells_after-title label">
-        <view class="weui-cell weui-cell_input ">
-          <view class="weui-cell__bd">
-            <checkbox-group bindchange="checkboxChange" name="familyDisease">
+
+      <view class="perinfo-cells-title-family">家族史</view>
+        <view class="perinfo-cell perinfo-cell_input ">
+          <view class="perinfo-cell-check">
+            <checkbox-group class="check-boxbox" bindchange="checkboxChange" name="familyDisease">
               <label wx:for="{{FamilyDisease}}">
                 <checkbox value="{{item.data}}" checked="{{item.checked}}" />{{item.data}}
               </label>
             </checkbox-group>
           </view>
-        </view>
       </view>
 
-      <view class="weui-cells__title">体检报告(选填)</view>
+      <view class="perinfo-cells-title-report">体检报告(选填)</view>
       <view class="gallery ">
         <view class="item" wx:for="{{images}}" wx:key="{{id}}">
           <image style="width: {{imageWidth}}px; height: {{imageWidth}}px" src=" {{item}}" bindtap="previewImage"
